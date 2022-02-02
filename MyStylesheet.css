@@ -1,0 +1,225 @@
+* {
+    box-sizing: border-box;
+}
+
+/* Setting variables for reuse throughout */
+:root {
+    --padding_size: 80px;
+    --slategrey: rgb(36,41,46);
+}
+
+body {
+    margin: 0px;
+    height: 1000px;
+    padding-top: var(--padding_size);
+    font-family: 'Montserrat', sans-serif;
+    font: 12px;
+}
+
+/* Sets a small empty border arounf all content */
+.bulk{
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+/* Styling for the navigation bar, code direction from https://www.w3schools.com/howto/howto_css_bottom_nav.asp, accessed 9/29/2020 
+----------------------------------------------------------------------------------------------------------------------------------- */
+
+.topBar {
+    background-color: var(--slategrey);
+    overflow: auto;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+
+.topBar p {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding-left: 20px;
+    padding-right: 16px;
+    font-weight: bolder;
+    font-size: 22px;
+    margin: auto;
+    height: 65px;
+    line-height: 65px;
+}
+
+.topBar button {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 22px 22px;
+    text-decoration: none;
+    font: 17px;
+    border: none;
+    background-color: transparent;
+}
+
+.topBar button:hover {
+    background-color: gray;
+}
+
+/* End of navbar stying 
+----------------------------------------------------------------------------------------------------------------------------------- */
+
+/* Styling for the calendar skeleton
+----------------------------------------------------------------------------------------------------------------------------------- */
+
+/* Year and month label for calendar */
+#calendardatelabel{
+    color: black;
+    font-size: 28px;
+    width: max-content;
+    margin: auto;
+}
+
+/*Day labels for calendar*/
+div.calendar_labels{
+    font-size: 14px;
+}
+
+span.calendar_labels{
+    display: inline-block;
+    text-align: center;
+
+    color: white;
+
+    width: calc(100%/7);
+    padding-top: 3px;
+    height: 30px;
+    margin: 0px, auto;
+    margin-bottom: 5px;
+    
+    border-radius: 8px;
+    border: 2px solid white;
+    background-color: rgb(153,201,255);
+}
+
+/*Each empty day in the calendar*/
+div.empty_day{
+    display: inline-block;
+    overflow-y: auto;
+
+    width: calc(100%/7);
+    height: 130px;
+    
+    border-radius: 8px;
+    border: 2px solid white;
+    background-color: rgb(240, 240, 240);
+}
+
+/*Formatting for text within empty_day*/
+p.empty_day{
+    color: grey;
+    margin: 5px;
+    margin-left: 8px;
+    font-weight: bolder;
+}
+
+/*Each day in the calendar*/
+div.cal_day{
+    display: inline-block;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    width: calc(100%/7);
+    height: 130px;
+    
+    border-radius: 8px;
+    border: 2px solid white;
+    background-color: rgb(210,210,210);
+}
+
+/*Formatting for text within empty_day*/
+p.cal_day{
+    color: rgb(0,123,255);
+    margin: 5px;
+    margin-left: 8px;
+    margin-bottom: 0px;
+    font-weight: bold;
+}
+
+/*Formatting the event outputs*/
+div.personalEvent {
+    display: block;
+
+    width: 95%;
+    margin-left: 2.5%;
+    margin-bottom: 5px;
+    height: auto;
+
+    border-radius: 5px;
+    background-color: rgb(0,123,255);
+}
+
+/*Formatting to change color when hovered over*/
+div.personalEvent:hover {
+    background-color: rgb(128,189,255);
+    cursor: pointer;
+} 
+
+/*Formatting the event outputs for other user's events*/
+div.sharedEvent {
+    display: block;
+
+    width: 95%;
+    margin-left: 2.5%;
+    margin-bottom: 5px;
+    height: auto;
+
+    border-radius: 5px;
+    background-color: rgb(0, 204, 102);
+}
+
+/*Formatting to change color when hovered over*/
+div.sharedEvent:hover {
+    background-color:rgb(128, 255, 191);
+    cursor: pointer;
+} 
+
+
+/*Formatting for text within event*/
+p.personalEventTitle{
+    margin-top: 5px;
+    margin-bottom: 0px;
+    margin-left: 5px;
+
+    color: white;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+/*Formatting for time within event*/
+p.personalEventTime{
+    margin-top: 0px;
+    padding-bottom: 3px;
+    margin-bottom: 0px;
+    margin-left: 5px;
+
+    color: white;
+    font-size: 8px;
+    font-weight: 400;
+}
+
+/* create event buttons */
+#calbuttons{
+    margin: auto;
+}
+
+#createEventButton{
+    display: block;
+    float: right;
+    visibility: hidden;
+}
+
+/* Hides the error messages */
+.invalidinput{
+    visibility: hidden;
+    color: red;
+    font-size: 10px;
+}
