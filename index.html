@@ -12,17 +12,6 @@
 </head>
 <body>
  
-<!--Loading Bar-->
-<div class="loader-wrapper">
-    <span class="loader"><span class="loader-inner"></span></span>
-    </div>
-    <script>
-        $(window).on("load", function(){
-            $(".loader-wrapper").fadeOut("slow");
-        });
-    </script>
-</div>
-
 <!--Navigation bar-->
 <div class = "topBar">
     <p>Lucas Dionisopoulos</p>
@@ -30,15 +19,54 @@
 </div>
 
 
-<div class="content">
+<!-- <div class="content">
     <img src="https://picsum.photos/300/300/?random" />
-</div>
+</div> -->
 
 
 
 <p class="construction"> 
     Currently building :)
+    <br><br><br><br><br>
 </p>
+
+
+<div class="dino-wrapper">    
+    <div class="dino-run">
+        <script>
+            windowWidth = 1000;
+            animationDistance = 50;
+            rounds = windowWidth / animationDistance;
+
+            $(window).on("load", function(){
+                
+                for(let i=0; i<rounds; i++) {
+                    $("div.dino-run").animate({
+                        left: '+=150px',
+                    });
+                }
+                
+            });
+
+        </script>
+    </div>
+</div>
+
+
+
+
+
+
+<!-- 
+Loading Bar
+<div class="loader-wrapper">
+    <span class="loader"><span class="loader-inner"></span></span>
+    <script>
+        $(window).on("load", function(){
+            $(".loader-wrapper").fadeOut("slow");
+        });
+    </script>
+</div> -->
 
 </body>
 </html>
