@@ -1,61 +1,81 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 /* Setting variables for reuse throughout */
 :root {
-    background-color: #fff;
+  background-color: #fff;
+  --orange: rgb(214, 74, 18);
+  --fire-red: rgb(226, 13, 13);
 }
 
 body {
-    height: 1000px;
-    padding: 80px 25px;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 12px;
+  height: auto;
+  overflow: hidden;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+
+  /* padding: 80px 25px 10px; This is set after loading the page  (Top, R/L, Bottom) */
+}
+
+#dino-load-screen {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  background-color: #fff;
+}
+
+#webpage {
+  display: none;
 }
 
 p.construction {
-    padding-top: 200px;
-    font-size: 24px;
-    text-align: center;
+  padding-top: 200px;
+  font-size: 24px;
+  text-align: center;
 }
 
 /* Styling for the Dino Running Animation
 ----------------------------------------------------------------------------------------------------------------------------------- */
 
-
-.dino-wrapper {
-  width: 100%;
-  height: 120px;
-  display: flex;
-  background-color: #fff;
-}
-
 .dino-run {
+  top: 70%;
   height: 94px;
   width: 95px;
+  display: flex;
   position: relative;
+  left: -15%;
+  
   background: url("/Assets/Dino/DinoRunSprite3.png");
   filter: drop-shadow(0px 0px 2px rgb(150,150,150));
 
   animation-name: dinoSprite;
-  animation-duration: 400ms;
+  animation-duration: 300ms;
   animation-timing-function: steps(2);
   animation-iteration-count: infinite;
+
   transform: translate(-25%, -25%) scale(0.5);
 }
 
+/* Resizing icon (div) if viewing on smaller screen */
 @media only screen and (min-width: 500px) {
   .dino-run {
     transform: scale(1);
   }
 }
 
+/* Resizing icon (div) if viewing on smaller screen */
+@media only screen and (min-width: 1000px) {
+  .dino-run {
+    transform: scale(1.25);
+  }
+}
+
+/* Running animation */
 @keyframes dinoSprite {
   from { background-position: 0px; }
   to { background-position: -190px;}
 }
-
 
 
 /* Styling for the loading navigation, courtesy of https://redstapler.co/add-loading-animation-to-website/ 
@@ -120,43 +140,43 @@ p.construction {
 ----------------------------------------------------------------------------------------------------------------------------------- */
 
 .topBar {
-    background-color: #fff;
-    filter: drop-shadow(0px 0px 6px rgb(150,150,150));
-    overflow: auto;
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    width: 100%;
+  background-color: #fff;
+  filter: drop-shadow(0px 0px 6px rgb(150,150,150));
+  overflow: auto;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
 }
 
 .topBar p {
-    float: left;
-    display: block;
-    color: #000;
-    text-align: center;
-    padding-left: 20px;
-    padding-right: 16px;
-    font-weight: bolder;
-    font-size: 22px;
-    margin: auto;
-    height: 65px;
-    line-height: 65px;
+  float: left;
+  display: block;
+  color: #000;
+  text-align: center;
+  padding-left: 20px;
+  padding-right: 16px;
+  font-weight: bolder;
+  font-size: 22px;
+  margin: auto;
+  height: 65px;
+  line-height: 65px;
 }
 
 .topBar button {
-    float: left;
-    display: block;
-    color: black;
-    text-align: center;
-    padding: 22px 22px;
-    text-decoration: none;
-    font: 17px;
-    border: none;
-    background-color: transparent;
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 22px 22px;
+  text-decoration: none;
+  font: 17px;
+  border: none;
+  background-color: transparent;
 }
 
 .topBar button:hover {
-    background-color: pink;
+  background-color: pink;
 }
 
 /* End of navbar stying 
