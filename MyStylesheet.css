@@ -18,7 +18,7 @@ body {
   /* padding: 80px 25px 10px; This is set after loading the page  (Top, R/L, Bottom) */
 }
 
-#dino-load-screen {
+#load-screen {
   height: 100vh;
   width: 100vw;
   display: flex;
@@ -46,7 +46,7 @@ p.construction {
   position: relative;
   left: -15%;
   
-  background: url("/Assets/Dino/DinoRunSprite6.png");
+  background: url("/Assets/Dino/DinoSprite.png");
   filter: drop-shadow(0px 0px 2px rgb(150,150,150));
 
   animation-name: dinoSprite;
@@ -65,7 +65,7 @@ p.construction {
   position: relative;
   left: -40%;
   
-  background: url("/Assets/Dino/MeteorSprite3.png");
+  background: url("/Assets/Dino/MeteorSprite.png");
   filter: drop-shadow(0px 0px 4px rgb(150,150,150));
 
   animation-name: meteorSprite;
