@@ -57,9 +57,32 @@ p.construction {
   transform: translate(-25%, -25%) scale(0.5);
 }
 
+.meteor {
+  top: 10%;
+  height: 140px;
+  width: 140px;
+  display: flex;
+  position: relative;
+  left: -40%;
+  
+  background: url("/Assets/Dino/MeteorSprite3.png");
+  filter: drop-shadow(0px 0px 4px rgb(150,150,150));
+
+  animation-name: meteorSprite;
+  animation-duration: 300ms;
+  animation-timing-function: steps(2);
+  animation-iteration-count: infinite;
+
+  transform: translate(-25%, -25%) scale(0.5);
+}
+
+
 /* Resizing icon (div) if viewing on smaller screen */
 @media only screen and (min-width: 500px) {
   .dino-run {
+    transform: scale(1);
+  }
+  .meteor {
     transform: scale(1);
   }
 }
@@ -67,6 +90,9 @@ p.construction {
 /* Resizing icon (div) if viewing on smaller screen */
 @media only screen and (min-width: 1000px) {
   .dino-run {
+    transform: scale(1.25);
+  }
+  .meteor {
     transform: scale(1.25);
   }
 }
@@ -77,63 +103,11 @@ p.construction {
   to { background-position: -1140px;}
 }
 
-
-/* Styling for the loading navigation, courtesy of https://redstapler.co/add-loading-animation-to-website/ 
------------------------------------------------------------------------------------------------------------------------------------ */
-
-.content {
-    align-items: center;
-    width:100%;
+/* Meteor animation */
+@keyframes meteorSprite {
+  from { background-position: 0px; }
+  to { background-position: -280px; }
 }
-
-.loader-wrapper {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  display: flex;
-  top: 0;
-  left: 0;
-  background-color: #fff;
-  justify-content: center;
-  align-items: center;
-}
-
-.loader {
-  display: inline-block;
-  width: 30px;
-  height: 30px;
-  position: relative;
-  border: 4px solid #000;
-  animation: loader 2s infinite ease;
-}
-
-.loader-inner {
-  vertical-align: top;
-  display: inline-block;
-  width: 100%;
-  background-color: #000;
-  animation: loader-inner 2s infinite ease-in;
-}
-
-@keyframes loader {
-  0% { transform: rotate(0deg);}
-  25% { transform: rotate(180deg);}
-  50% { transform: rotate(180deg);}
-  75% { transform: rotate(360deg);}
-  100% { transform: rotate(360deg);}
-}
-
-@keyframes loader-inner {
-  0% { height: 0%;}
-  25% { height: 0%;}
-  50% { height: 100%;}
-  75% { height: 100%;}
-  100% { height: 0%;}
-}
-
-  
-/* End of loading bar styling 
------------------------------------------------------------------------------------------------------------------------------------ */
 
 
 /* Styling for the navigation bar, code direction from https://www.w3schools.com/howto/howto_css_bottom_nav.asp, accessed 9/29/2020 

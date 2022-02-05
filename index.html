@@ -15,38 +15,48 @@
 <!-- Dino Loading Screen -->
 <div id='dino-load-screen'>
 
-    <div class="dino-run">
-        <script>
+    <div class="dino-run"></div>
+        <div class="meteor"></div>
+        
+            <script>
 
-            function LoadSequence() {
-                FadeOutLoadScreen();
-                setTimeout(DisplayPage, 600);  // After page fades out, turn back on visibility of webpage        
-            }
-    
-            function FadeOutLoadScreen() {
-                $("#dino-load-screen").fadeOut("fast");   // Fade out dino loading screen
-            }
+                function LoadSequence() {
+                    FadeOutLoadScreen();
+                    setTimeout(DisplayPage, 600);  // After page fades out, turn back on visibility of webpage        
+                }
+        
+                function FadeOutLoadScreen() {
+                    $("#dino-load-screen").fadeOut("fast");   // Fade out dino loading screen
+                }
 
-            function DisplayPage() {
-                document.body.style = "padding: 80px 25px 10px;"
-                document.body.style = "overflow: auto;"
-                $("#webpage").fadeIn("slow");
-            }
+                function DisplayPage() {
+                    document.body.style = "padding: 80px 25px 10px;"
+                    document.body.style = "overflow: auto;"
+                    $("#webpage").fadeIn("slow");
+                }
 
-            // Animate dino running across the screen and call LoadSequence to load webpage
-            $(function() {
-                setInterval(function() {
-                    $('.dino-run').animate({ left: $(window).width()*1.1 + 'px' }, {
-                        duration: 3600, 
-                        easing: 'linear',
-                        complete: function() {LoadSequence()}
-                    });
-                }, 10);
-            });
+                // Animate dino running across the screen and call LoadSequence to load webpage
+                $(function() {
+                    setInterval(function() {
+                        $('.dino-run').animate(
+                            { left: $(window).width()*1.25 + 'px' }, {
+                            duration: 3600, 
+                            easing: 'linear',
+                        });
 
-        </script>
-    </div>
+                        $('.meteor').animate({ 
+                            left: $(window).width()*1.1 + 'px',
+                            top: "45%" }, {
+                            
+                            duration: 4000, 
+                            easing: 'linear',
+                            complete: function() {LoadSequence()}
+                        });
+                    }, 10); 
+                });
 
+            </script>
+     
 </div>
 
 <!-- Div to hold webpage -->
@@ -61,57 +71,11 @@
     <p class="construction" id="construction"> 
         Currently Building :)
         <br><br><br><br><br><br><br><br><br><br><br>
-        Testing
         <br><br><br><br><br><br><br><br><br><br><br>
-        Testing
+        Check me out later!
     </p>
 
 </div>
-
-
-<script>
-    
-    // $(window).on("Load", function() {
-    //     alert("location.url")
-    // });
-    
-    
-    
-    // $('#btn1').click(function() {
-    //   document.body.style = "overflow-y: hidden"
-    // });
-
-
-    // //     for(let i=0; i<rounds; i++) {
-    // //         $("div.dino-run").animate({
-    //             left: "+=200px"
-    //         });
-    //     }
-
-    //     $("div.dino-wrapper").fadeOut("10s");
-    // });
-
-</script>
-
-
-
-
-
-
-
-
-
-
-<!-- 
-Loading Bar
-<div class="loader-wrapper">
-    <span class="loader"><span class="loader-inner"></span></span>
-    <script>
-        $(window).on("load", function(){
-            $(".loader-wrapper").fadeOut("slow");
-        });
-    </script>
-</div> -->
 
 </body>
 </html>
