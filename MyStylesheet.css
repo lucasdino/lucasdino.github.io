@@ -46,12 +46,12 @@ p.construction {
   position: relative;
   left: -15%;
   
-  background: url("/Assets/Dino/DinoRunSprite3.png");
+  background: url("/Assets/Dino/DinoRunSprite6.png");
   filter: drop-shadow(0px 0px 2px rgb(150,150,150));
 
   animation-name: dinoSprite;
-  animation-duration: 300ms;
-  animation-timing-function: steps(2);
+  animation-duration: 1200ms;
+  animation-timing-function: steps(12);
   animation-iteration-count: infinite;
 
   transform: translate(-25%, -25%) scale(0.5);
@@ -74,7 +74,7 @@ p.construction {
 /* Running animation */
 @keyframes dinoSprite {
   from { background-position: 0px; }
-  to { background-position: -190px;}
+  to { background-position: -1140px;}
 }
 
 
