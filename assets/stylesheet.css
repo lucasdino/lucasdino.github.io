@@ -6,6 +6,7 @@
 :root {
   background-color: var(--subtle-white);
   --ooh-red-hot: rgb(226, 13, 13);
+  --midnight-red: rgb(153, 10, 10);
   --muted-red: rgb(224, 120, 120);
   --subtle-tan: rgb(211, 203, 201);
   --subtle-white: rgb(235, 235, 235);
@@ -23,9 +24,15 @@ p {
   margin: 0;
   padding: 0;
 }
-p[data-attribute="currently"] {
+p[data-attribute="highlight"] {
   font-weight: 500;
   color: var(--ooh-red-hot);
+  display: inline;
+}
+h2 {
+  font-size: 14pt;
+  font-weight: 500;
+  color: var(--muted-red);
   display: inline;
 }
 hr {
@@ -39,6 +46,58 @@ hr {
 .meat {
   margin-top: 30px;
   padding: 2.8vw 20px;
+}
+p[data-attribute="heading"] {
+  font-size: 18pt;
+  font-weight: 600;
+  color: var(--midnight-red);
+  margin-top: 10pt;
+  margin-bottom: 6pt;
+  padding-bottom: 2pt;
+  border-bottom: 1.5px solid #d3d3d3;
+}
+
+/* Formatting for carousel elements */
+.carousel {
+  display: flex;
+  overflow-x: auto;
+}
+.carousel-element {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  width: 400px;
+  height: 200px;
+  margin: 10px;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2); /* Light drop shadow */
+  text-decoration: none;
+  color: black;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+.carousel-element:hover {
+  background-color: rgb(225, 225, 225);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+.carousel-element:hover h2 {
+  color: var(--ooh-red-hot);
+}
+.carousel-element h2, .carousel-element p {
+  margin: 0; /* Remove default margins */
+}
+.carousel-element hr {
+  margin: 10px 0; /* Add some spacing around the horizontal rule */
+}
+hr[data-attribute="carousel"] {
+  margin-top: 4px;
+  margin-bottom: 4px;
+  width: 100%;
+}
+p[data-attribute="carousel"] {
+  font-size: 10pt;
+  color: black;
 }
 
 /* Formatting for bullet lists */
