@@ -35,7 +35,7 @@
                         $('.dino-run').css({'left': '-10vw', 'top': '2vh'}).animate({
                             left: $(window).width() * 1.25 + 'px',
                         }, {
-                            duration: 7200,
+                            duration: 7000,
                             easing: 'linear',
                             complete: function() {
                                 $(this).hide();
@@ -46,7 +46,7 @@
                         $('.meteor').css({'left': '-20vw', 'top': '0vh'}).animate({
                             left: $(window).width() * 1.1 + 'px',
                         }, {
-                            duration: 7400,
+                            duration: 7200,
                             easing: 'linear',
                             complete: function() {
                                 $(this).hide();
@@ -62,7 +62,7 @@
                         'align-items': 'flex-start',
                     });
                     $('.dino-container').append(`
-                        <div class="social-icons">
+                        <div class="social-icons" style="opacity: 0; transition: opacity 0.5s ease-in-out;">
                             <div data-attribute="linkedin">
                                 <a href="https://www.linkedin.com/in/lucasdionisopoulos/" data-attribute="linkedin">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -89,6 +89,9 @@
                     $('.dino-container').css({
                         'height': 'auto',
                     });
+                    setTimeout(() => {
+                        $('.social-icons').css('opacity', 1);
+                    }, 40);
                 }
             </script>    
         </div>
