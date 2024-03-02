@@ -41,6 +41,16 @@ hr {
   padding: 2.8vw 20px;
 }
 
+/* Heinous formatting for personal page */
+a[data-attribute="honk-name"] {
+  font-family: "Honk", system-ui;
+  font-size: 2.2vw;
+}
+a[data-attribute="honk-nav"] {
+  font-family: "Honk", system-ui;
+  font-size: 1.4vw;
+}
+
 /* Formatting for contact page */
 .contact {
   display: flex;
@@ -78,6 +88,10 @@ hr {
 a[data-attribute="mutedlink"] {
   color: var(--muted-red);
   text-decoration: none;
+}
+a[data-attribute="mutedlink"]:hover {
+  color: var(--ooh-red-hot);
+  font-weight: 400;
 }
 .headshot-container{
   display: flex;
@@ -177,4 +191,66 @@ img[data-attribute="headshot"] {
 }
 .social-icons div[data-attribute="github"]:hover svg {
   fill: black;
+}
+
+/* Styling for the Dino Running Animation (Personal Page) */
+.dino-container {
+  position: relative;
+  display: flex;
+}
+.dino-run {
+  height: 94px;
+  width: 95px;
+  display: flex;
+  position: relative;
+
+  background: url("/assets/dino/DinoSprite.png");
+  filter: drop-shadow(0px 0px 2px rgb(150,150,150));
+
+  animation-name: dinoSprite;
+  animation-duration: 1200ms;
+  animation-timing-function: steps(12);
+  animation-iteration-count: infinite;
+}
+.meteor {
+  height: 140px;
+  width: 140px;
+  display: flex;
+  position: relative;
+
+  background: url("/assets/dino/MeteorSprite.png");
+  filter: drop-shadow(0px 0px 4px rgb(150,150,150));
+
+  animation-name: meteorSprite;
+  animation-duration: 300ms;
+  animation-timing-function: steps(2);
+  animation-iteration-count: infinite;
+}
+/* Resizing icon (div) if viewing on smaller screen */
+@media only screen and (min-width: 500px) {
+  .dino-run {
+    transform: scale(0.4);
+  }
+  .meteor {
+    transform: scale(0.4);
+  }
+}
+/* Resizing icon (div) if viewing on smaller screen */
+@media only screen and (min-width: 1000px) {
+  .dino-run {
+    transform: scale(0.6);
+  }
+  .meteor {
+    transform: scale(0.6);
+  }
+}
+/* Running animation */
+@keyframes dinoSprite {
+  from { background-position: 0px; }
+  to { background-position: -1140px;}
+}
+/* Meteor animation */
+@keyframes meteorSprite {
+  from { background-position: 0px; }
+  to { background-position: -280px; }
 }
