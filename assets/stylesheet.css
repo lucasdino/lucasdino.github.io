@@ -155,7 +155,7 @@ img[data-attribute="headshot"] {
   top: 0;
   left: 0;
   width: 100%; 
-  z-index: 1000;
+  z-index: 2500;
   display: flex;
   align-items: flex-end;
   justify-content: flex-start;
@@ -249,6 +249,23 @@ a[data-attribute="honk-name"] {
 a[data-attribute="honk-nav"] {
   font-family: "Honk", system-ui;
 }  
+.map-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+#travel_map {
+  height: 50vh;
+  width: 90%;
+  margin: 0 auto;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  overflow: hidden;
+}
+
+
 
 /* Styling for the Dino Running Animation (Personal Page) */
 .dino-container {

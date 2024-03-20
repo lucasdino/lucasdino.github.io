@@ -7,94 +7,217 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Honk&family=Kode+Mono:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="/assets/stylesheet.css">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-</head>
-<body>
-    <div class="topbar">
-        <a class="title" href="/index.html" data-attribute="honk-name">Lucas Dionisopoulos</a>
-        <a class="navpointer" href="/pages/professional.html">Professional</a>
-        <a class="navpointer" href="/pages/research.html">Research</a>
-        <a class="navpointer" attribute="active_page" href="/pages/personal.html" data-attribute="honk-nav">Personal</a>
-        <a class="navpointer" href="/pages/contact.html">Contact</a>
-    </div>
-
-    <div class="meat">
-        <p>
-            In process 8)
-        </p>
-    </div>
-
-    <div class="footer-container">
-        <div class="dino-container">
-            <div class="dino-run"></div>   <!-- Create Running Dino -->
-            <div class="meteor"></div>   <!-- Create Meteor -->
-
-            <script>
-                $(function() {
-                    function animateDinoAndMeteor() {
-                        $('.dino-run').css({'left': '-10vw', 'top': '2vh'}).animate({
-                            left: $(window).width() * 1.25 + 'px',
-                        }, {
-                            duration: 7000,
-                            easing: 'linear',
-                            complete: function() {
-                                $(this).hide();
-                                loadNewContent();
-                            }
-                        });
-                
-                        $('.meteor').css({'left': '-20vw', 'top': '0vh'}).animate({
-                            left: $(window).width() * 1.1 + 'px',
-                        }, {
-                            duration: 7200,
-                            easing: 'linear',
-                            complete: function() {
-                                $(this).hide();
-                            }
-                        });
-                    }
-                    animateDinoAndMeteor();
-                });
-                
-                function loadNewContent() {
-                    $('.dino-container').css({
-                        'display': 'flex',
-                        'align-items': 'flex-start',
-                    });
-                    $('.dino-container').append(`
-                        <div class="social-icons" style="opacity: 0; transition: opacity 0.5s ease-in-out;">
-                            <div data-attribute="linkedin">
-                                <a href="https://www.linkedin.com/in/lucasdionisopoulos/" data-attribute="linkedin">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                        <path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/>
-                                    </svg>
-                                </a>
-                            </div>
-                            <div data-attribute="x-twitter">
-                                <a href="https://twitter.com/_lucasdino" data-attribute="x-twitter">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-                                    </svg>                
-                                </a>
-                            </div> 
-                            <div data-attribute="github">
-                                <a href="https://github.com/lucasdino" data-attribute="github">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 17">
-                                        <path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"/>
-                                    </svg>                
-                                </a>
-                            </div> 
-                        </div> 
-                    `);
-                    $('.dino-container').css({
-                        'height': 'auto',
-                    });
-                    setTimeout(() => {
-                        $('.social-icons').css('opacity', 1);
-                    }, 40);
-                }
-            </script>    
+    </head>
+    <body>
+        <div class="topbar">
+            <a class="title" href="/index.html" data-attribute="honk-name">Lucas Dionisopoulos</a>
+            <a class="navpointer" href="/pages/professional.html">Professional</a>
+            <a class="navpointer" href="/pages/research.html">Research</a>
+            <a class="navpointer" attribute="active_page" href="/pages/personal.html" data-attribute="honk-nav">Personal</a>
+            <a class="navpointer" href="/pages/contact.html">Contact</a>
         </div>
-    </div>
-</body>
+
+        <div class="meat">
+            <p>
+                <div id="travel_map">    
+                    <script>
+                        var map = L.map('travel_map', {worldCopyJump: true}).setView([14, 0], 2.2);
+                        L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png', {
+                            attribution: '&copy; <a href="https://stadiamaps.com/" target="_blank">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/" target="_blank">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a>',
+                        }).addTo(map);
+                        
+                        var categories = {
+                            "Family Time": {
+                                zoomLevel: 5,
+                                center: [37.7749, -122.4194],
+                                locations: [
+                                    { name: "Delafield", latLng: [43.0599, -88.4042], photo: "placeholder_photo_url", blurb: "placeholder_blurb"},
+                                    { name: "Cabin", latLng: [40.7145, -99.9118], photo: "placeholder_photo_url", blurb: "placeholder_blurb"},
+                                    { name: "McCook", latLng: [40.2051, -100.5976], photo: "placeholder_photo_url", blurb: "placeholder_blurb"},
+                                ]
+                            },
+                            "Colombia": {
+                                zoomLevel: 5,
+                                center: [37.7749, -122.4194],
+                                locations: [
+                                    { name: "Cartagena", latLng: [10.4269, -75.5469], photo: "placeholder_photo_url", blurb: "placeholder_blurb"},
+                                    { name: "Medellin", latLng: [6.2087, -75.5704], photo: "placeholder_photo_url", blurb: "placeholder_blurb"},
+                                    { name: "Bogota", latLng: [4.5966, -74.0701], photo: "placeholder_photo_url", blurb: "placeholder_blurb"},
+                                ]
+                            },
+                            // "Barcelona": {
+                                
+                                //     // { name: "Barcelona", latLng: [41.3910, 2.1807], photo: "placeholder_photo_url", blurb: "placeholder_blurb"},
+                                // }
+                                "Croatia": {
+                                    zoomLevel: 5,
+                                center: [37.7749, -122.4194],
+                                locations: [
+                                    { name: "Dubrovnik", latLng: [42.6412, 18.1100], photo: "placeholder_photo_url", blurb: "placeholder_blurb"},
+                                    { name: "Tisno", latLng: [43.7990, 15.6415], photo: "placeholder_photo_url", blurb: "placeholder_blurb"},
+                                ]
+                            },
+                            "Greece": {
+                                zoomLevel: 5,
+                                center: [37.7749, -122.4194],
+                                locations: [
+                                    { name: "Thessaloniki", latLng: [40.6381, 22.9399], photo: "placeholder_photo_url", blurb: "placeholder_blurb"},
+                                    { name: "Chalkidiki", latLng: [40.2270, 23.7652], photo: "placeholder_photo_url", blurb: "placeholder_blurb"},
+                                    { name: "Olympus", latLng: [40.0857, 22.3586], photo: "placeholder_photo_url", blurb: "placeholder_blurb"},
+                                    { name: "Meteora", latLng: [39.7212, 21.6309], photo: "placeholder_photo_url", blurb: "placeholder_blurb"},
+                                    { name: "Ioannina", latLng: [39.6690, 20.8576], photo: "placeholder_photo_url", blurb: "placeholder_blurb"},
+                                    { name: "Vikos Gorge", latLng: [39.9162, 20.7478], photo: "placeholder_photo_url", blurb: "placeholder_blurb"},
+                                    { name: "Corfu", latLng: [39.6260, 19.9193], photo: "placeholder_photo_url", blurb: "placeholder_blurb"},
+                                    { name: "Kalamata", latLng: [37.0305, 22.1169], photo: "placeholder_photo_url", blurb: "placeholder_blurb"},
+                                    { name: "Athens", latLng: [37.9372, 23.9471], photo: "placeholder_photo_url", blurb: "placeholder_blurb"},
+                                ]
+                            },
+                            // "Flights": {
+                                
+                                // { name: "Jeddah", latLng: [21.6636, 39.1725], photo: "placeholder_photo_url", blurb: "placeholder_blurb"},
+                                // { name: "Dubai", latLng: [25.2491, 55.3528], photo: "placeholder_photo_url", blurb: "placeholder_blurb"},
+                                // { name: "Bangkok", latLng: [13.6937, 100.7507], photo: "placeholder_photo_url", blurb: "placeholder_blurb"},
+                                // }
+                            "Australia": {
+                                zoomLevel: 5,
+                                center: [37.7749, -122.4194],
+                                locations: [
+                                    { name: "Sydney", latLng: [-33.8707, 151.2070], photo: "placeholder_photo_url", blurb: "placeholder_blurb"},
+                                    { name: "Tasmania", latLng: [-42.8827, 147.3163], photo: "placeholder_photo_url", blurb: "placeholder_blurb"},
+                                    { name: "Brisbane", latLng: [-27.4662, 153.0134], photo: "placeholder_photo_url", blurb: "placeholder_blurb" },
+                                    { name: "Byron Bay", latLng: [-28.6401, 153.6268], photo: "placeholder_photo_url", blurb: "placeholder_blurb" },
+                                    { name: "Melbourne", latLng: [-37.8147, 144.9691], photo: "placeholder_photo_url", blurb: "placeholder_blurb" },
+                                    { name: "Canberra", latLng: [-35.1594, 149.1183], photo: "placeholder_photo_url", blurb: "placeholder_blurb" },
+                                    { name: "Singapore", latLng: [1.3595, 103.9895], photo: "placeholder_photo_url", blurb: "placeholder_blurb" }
+                                ]
+                            },
+                            "Return": {
+                                zoomLevel: 5,
+                                center: [37.7749, -122.4194],
+                                locations: [
+                                    { name: "San Francisco", latLng: [37.7636, -122.4779], photo: "placeholder_photo_url", blurb: "placeholder_blurb" },
+                                    { name: "Chicago", latLng: [41.7890, -87.7414], photo: "placeholder_photo_url", blurb: "placeholder_blurb" },
+                                    { name: "Delafield", latLng: [43.0599, -88.4042], photo: "placeholder_photo_url", blurb: "placeholder_blurb" }
+                                ]
+                            },
+                        }
+                        
+                        var orangeDonutIcon = L.divIcon({
+                            className: 'orange-donut-icon',
+                            html: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5" fill="none" stroke="#E27D2A" stroke-width="4"/></svg>',
+                            iconSize: [24, 24],
+                            iconAnchor: [12, 12]
+                        });
+                        
+                        function addParentMarkers() {
+                            Object.keys(categories).forEach(category => {
+                                var parentMarker = L.marker(categories[category].center).addTo(map)
+                                    .bindPopup(`${category}`)
+                                    .on('click', function() {
+                                        map.setView(categories[category].center, categories[category].zoomLevel);
+                                        // Optionally clear existing submarkers and add new ones for this category
+                                        addSubMarkers(categories[category].locations);
+                                    });
+                            });
+                        }
+
+                        // Function to add submarkers for a category
+                        function addSubMarkers(locations) {
+                            locations.forEach(location => {
+                                L.marker(location.latLng, {icon: orangeDonutIcon}).addTo(map).bindPopup(`<h3>${location.name}</h3><p>${location.blurb}</p><img src='${location.photo}' alt='${location.name}' style='width:100%;'>`);
+                            });
+                        }
+
+                        addParentMarkers();
+
+                        map.on('zoomend', function() {
+                            var currentZoom = map.getZoom();
+                            if (currentZoom > 5) {
+                                // Adjust this logic based on how you manage markers
+                                // e.g., addSubMarkers for the currently focused category
+                            } else {
+                                // Optionally, clear submarkers if zoomed out
+                            }
+                        });
+                    </script>    
+                </div>
+            </p>
+        </div>
+
+        <div class="footer-container">
+            <div class="dino-container">
+                <div class="dino-run"></div>   <!-- Create Running Dino -->
+                <div class="meteor"></div>   <!-- Create Meteor -->
+
+                <script>
+                    $(function() {
+                        function animateDinoAndMeteor() {
+                            $('.dino-run').css({'left': '-10vw', 'top': '2vh'}).animate({
+                                left: $(window).width() * 1.25 + 'px',
+                            }, {
+                                duration: 7000,
+                                easing: 'linear',
+                                complete: function() {
+                                    $(this).hide();
+                                    loadNewContent();
+                                }
+                            });
+                    
+                            $('.meteor').css({'left': '-20vw', 'top': '0vh'}).animate({
+                                left: $(window).width() * 1.1 + 'px',
+                            }, {
+                                duration: 7200,
+                                easing: 'linear',
+                                complete: function() {
+                                    $(this).hide();
+                                }
+                            });
+                        }
+                        animateDinoAndMeteor();
+                    });
+                    
+                    function loadNewContent() {
+                        $('.dino-container').css({
+                            'display': 'flex',
+                            'align-items': 'flex-start',
+                        });
+                        $('.dino-container').append(`
+                            <div class="social-icons" style="opacity: 0; transition: opacity 0.5s ease-in-out;">
+                                <div data-attribute="linkedin">
+                                    <a href="https://www.linkedin.com/in/lucasdionisopoulos/" data-attribute="linkedin">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                            <path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/>
+                                        </svg>
+                                    </a>
+                                </div>
+                                <div data-attribute="x-twitter">
+                                    <a href="https://twitter.com/_lucasdino" data-attribute="x-twitter">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                                        </svg>                
+                                    </a>
+                                </div> 
+                                <div data-attribute="github">
+                                    <a href="https://github.com/lucasdino" data-attribute="github">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 17">
+                                            <path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"/>
+                                        </svg>                
+                                    </a>
+                                </div> 
+                            </div> 
+                        `);
+                        $('.dino-container').css({
+                            'height': 'auto',
+                        });
+                        setTimeout(() => {
+                            $('.social-icons').css('opacity', 1);
+                        }, 40);
+                    }
+                </script>    
+            </div>
+        </div>
+    </body>
 </html>
