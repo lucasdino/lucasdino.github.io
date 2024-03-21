@@ -24,121 +24,239 @@
             <p>
                 <div id="travel_map">    
                     <script>
-                        var map = L.map('travel_map', {worldCopyJump: true}).setView([14, 0], 2.2);
+                        var map = L.map('travel_map', {
+                            center: [14, 0],
+                            zoom: 2.4,
+                            worldCopyJump: false,
+                            maxBounds: [[-90, -150], [90, 180]],
+                            maxBoundsViscosity: 10.0
+                        });
                         L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png', {
                             attribution: '&copy; <a href="https://stadiamaps.com/" target="_blank">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/" target="_blank">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a>',
                         }).addTo(map);
                         
                         var categories = {
+                            "MidwayLHS": {
+                                parent: false,
+                                drawMarker: false,
+                                markerLocation: [21, -140.4],
+                                center: [21, -140.4],
+                            },
+                            "Return": {
+                                parent: true, 
+                                drawMarker: true,
+                                zoomLevel: 5,
+                                markerLocation: [37.75, -122.45],
+                                center: [37.7, -107],
+                                locations: [
+                                    { name: "MidwayLHS", mark: false, dashed: true, latLng: [21, -140.4], photo: "", blurb: "" },
+                                    { name: "San Francisco", mark: true, dashed: true, latLng: [37.7636, -122.4779], photo: "", blurb: "After 48 hours of pure travel...yeah we did not smell great. One of the better showers I've ever had. I did get to see Ian and Mitch and took my first Waymo ride." },
+                                    { name: "Chicago", mark: true, dashed: false, latLng: [41.7890, -87.7414], photo: "", blurb: "The LAST flight - total count: 22. This was actually a really cool flight; we flew directly over I-80 in Nebraska which I know like the back of my hand. Got to see Nebraska and the 'ol stompin' grounds from the sky at dusk!" },
+                                    { name: "Delafield", mark: true, dashed: false, latLng: [43.0599, -88.4042], photo: "", blurb: "Around the world in 153 days!! Time to rela...just kidding, time to finish grad school applications." }
+                                ]
+                            },
                             "Family Reunion": {
                                 parent: true,
+                                drawMarker: true,
                                 zoomLevel: 6,
+                                markerLocation: [43, -88.4],
                                 center: [41, -95],
                                 locations: [
-                                    { name: "Delafield", latLng: [43.0599, -88.4042], photo: "placeholder_photo_url", blurb: "placeholder_blurb"},
-                                    { name: "Innsbrook", latLng: [38.7666, -91.0302], photo: "placeholder_photo_url", blurb: "placeholder_blurb"},
-                                    { name: "Cabin", latLng: [40.7145, -99.9118], photo: "placeholder_photo_url", blurb: "placeholder_blurb"},
+                                    { name: "Delafield", mark: true, dashed: false, latLng: [43.0599, -88.4042], photo: "", blurb: ""},
+                                    { name: "Innsbrook", mark: true, dashed: false, latLng: [38.7666, -91.0302], photo: "", blurb: ""},
+                                    { name: "Cabin", mark: true, dashed: false, latLng: [40.7145, -99.9118], photo: "", blurb: ""},
+                                    { name: "McCook", mark: true, dashed: true, latLng: [40.2078, -100.5980], photo: "", blurb: ""},
+                                    { name: "Denver", mark: true, dashed: true, latLng: [39.8564, -104.6784], photo: "", blurb: ""},
+                                    { name: "Cartagena", mark: false, dashed: false, latLng: [10.4269, -75.5469], photo: "", blurb: ""}
                                 ]
                             },
                             "Colombia": {
                                 parent: true,
+                                drawMarker: true,
                                 zoomLevel: 6,
+                                markerLocation: [8, -75],
                                 center: [8, -75],
                                 locations: [
-                                    { name: "Cartagena", latLng: [10.4269, -75.5469], photo: "placeholder_photo_url", blurb: "placeholder_blurb"},
-                                    { name: "Medellin", latLng: [6.2087, -75.5704], photo: "placeholder_photo_url", blurb: "placeholder_blurb"},
-                                    { name: "Bogota", latLng: [4.5966, -74.0701], photo: "placeholder_photo_url", blurb: "placeholder_blurb"},
+                                    { name: "McCook", mark: false, dashed: true, latLng: [40.2078, -100.5980], photo: "", blurb: ""},
+                                    { name: "Cartagena", mark: true, dashed: false, latLng: [10.4269, -75.5469], photo: "", blurb: ""},
+                                    { name: "Tierra Bomba", mark: true, dashed: false, latLng: [10.3254, -75.5907], photo: "", blurb: ""},
+                                    { name: "Cartagena", mark: false, dashed: true, latLng: [10.4269, -75.5469], photo: "", blurb: ""},
+                                    { name: "Medellin", mark: true, dashed: true, latLng: [6.2087, -75.5704], photo: "", blurb: ""},
+                                    { name: "Bogota", mark: true, dashed: true, latLng: [4.5966, -74.0701], photo: "", blurb: ""},
+                                    { name: "Barcelona", mark: false, dashed: false, latLng: [41.4, 2.18], photo: "", blurb: ""},
                                 ]
                             },
                             "Barcelona": {
                                 parent: false,
+                                drawMarker: true,
+                                markerLocation: [41.4, 2.18],
                                 center: [41.4, 2.18],
-                                locations: [
-                                    { name: "Barcelona", latLng: [41.3910, 2.1807], photo: "placeholder_photo_url", blurb: "placeholder_blurb"}
-                                ]
                             },
                             "Croatia": {
                                 parent: true,
-                                zoomLevel: 7,
-                                center: [43.5, 16],
+                                drawMarker: true,
+                                zoomLevel: 8,
+                                markerLocation: [43.7, 15.9],
+                                center: [43.3, 16.2],
                                 locations: [
-                                    { name: "Dubrovnik", latLng: [42.6412, 18.1100], photo: "placeholder_photo_url", blurb: "placeholder_blurb"},
-                                    { name: "Tisno", latLng: [43.7990, 15.6415], photo: "placeholder_photo_url", blurb: "placeholder_blurb"},
+                                    { name: "Barcelona", mark: false, dashed: true, latLng: [41.4, 2.18], photo: "", blurb: ""},
+                                    { name: "Dubrovnik", mark: true, dashed: false, latLng: [42.6412, 18.1100], photo: "", blurb: ""},
+                                    { name: "Ploce", mark: false, dashed: false, latLng: [43.0452, 17.4856], photo: "", blurb: ""},
+                                    { name: "Split", mark: false, dashed: false, latLng: [43.5171, 16.5216], photo: "", blurb: ""},
+                                    { name: "Sibenik", mark: true, dashed: false, latLng: [43.7374, 15.8898], photo: "", blurb: ""},
+                                    { name: "Tisno", mark: true, dashed: false, latLng: [43.7990, 15.6415], photo: "", blurb: ""},
+                                    { name: "Jezera", mark: false, dashed: false, latLng: [43.7850, 15.6414], photo: "", blurb: ""},
+                                    { name: "Kaprije", mark: true, dashed: false, latLng: [43.6884, 15.7090], photo: "", blurb: ""},
+                                    { name: "Jezera", mark: false, dashed: false, latLng: [43.7850, 15.6414], photo: "", blurb: ""},
+                                    { name: "Meurter", mark: false, dashed: false, latLng: [43.8222, 15.5918], photo: "", blurb: ""},
+                                    { name: "Jezera", mark: false, dashed: false, latLng: [43.7850, 15.6414], photo: "", blurb: ""},
+                                    { name: "Tisno", mark: true, dashed: false, latLng: [43.7990, 15.6415], photo: "", blurb: ""},
+                                    { name: "Sibenik", mark: false, dashed: true, latLng: [43.7374, 15.8898], photo: "", blurb: ""},
+                                    { name: "Stockholm", mark: false, dashed: false, latLng: [59.6492, 17.9356], photo: "", blurb: ""},
                                 ]
+                            },
+                            "Stockholm": {
+                                parent: false,
+                                drawMarker: true,
+                                markerLocation: [59.6492, 17.9356],
+                                center: [59.6492, 17.9356],
                             },
                             "Greece": {
                                 parent: true,
+                                drawMarker: true,
                                 zoomLevel: 7,
+                                markerLocation: [38, 23.75],
                                 center: [38.8, 22],
                                 locations: [
-                                    { name: "Thessaloniki", latLng: [40.6381, 22.9399], photo: "placeholder_photo_url", blurb: "placeholder_blurb"},
-                                    { name: "Chalkidiki", latLng: [40.2270, 23.7652], photo: "placeholder_photo_url", blurb: "placeholder_blurb"},
-                                    { name: "Thessaloniki", marker: false, latLng: [40.6381, 22.9399], photo: "placeholder_photo_url", blurb: "placeholder_blurb"},
-                                    { name: "Olympus", latLng: [40.0857, 22.3586], photo: "placeholder_photo_url", blurb: "placeholder_blurb"},
-                                    { name: "Meteora", latLng: [39.7212, 21.6309], photo: "placeholder_photo_url", blurb: "placeholder_blurb"},
-                                    { name: "Ioannina", latLng: [39.6690, 20.8576], photo: "placeholder_photo_url", blurb: "placeholder_blurb"},
-                                    { name: "Vikos Gorge", latLng: [39.9162, 20.7478], photo: "placeholder_photo_url", blurb: "placeholder_blurb"},
-                                    { name: "Corfu", latLng: [39.6260, 19.9193], photo: "placeholder_photo_url", blurb: "placeholder_blurb"},
-                                    { name: "Kalamata", latLng: [37.0305, 22.1169], photo: "placeholder_photo_url", blurb: "placeholder_blurb"},
-                                    { name: "Patras", latLng: [38.2444, 21.7291], photo: "placeholder_photo_url", blurb: "placeholder_blurb"},
-                                    { name: "Kalamata", marker: false, latLng: [37.0305, 22.1169], photo: "placeholder_photo_url", blurb: "placeholder_blurb"},
-                                    { name: "Athens", latLng: [37.9719, 23.7244], photo: "placeholder_photo_url", blurb: "placeholder_blurb"},
+                                    { name: "Stockholm", mark: false, dashed: true, latLng: [59.6492, 17.9356], photo: "", blurb: ""},
+                                    { name: "Thessaloniki", mark: true, dashed: false, latLng: [40.6381, 22.9399], photo: "", blurb: ""},
+                                    { name: "Nea Moudania", mark: false, dashed: false, latLng: [40.2632, 23.2734], photo: "", blurb: ""},
+                                    { name: "Chalkidiki", mark: true, dashed: false, latLng: [40.2270, 23.7652], photo: "", blurb: ""},
+                                    { name: "Athos View", mark: false, dashed: false, latLng: [40.0318, 24.0150], photo: "", blurb: ""},
+                                    { name: "Porto Koufo", mark: false, dashed: false, latLng: [39.9607, 23.9298], photo: "", blurb: ""},
+                                    { name: "Metamorfosi", mark: false, dashed: false, latLng: [40.2276, 23.6332], photo: "", blurb: ""},
+                                    { name: "Nea Moudania", mark: false, dashed: false, latLng: [40.2632, 23.2734], photo: "", blurb: ""},
+                                    { name: "Thessaloniki", mark: false, dashed: false, latLng: [40.6381, 22.9399], photo: "", blurb: ""},
+                                    { name: "Pella", mark: true, dashed: false, latLng: [40.7615, 22.5278], photo: "", blurb: ""},
+                                    { name: "Vergina", mark: true, dashed: false, latLng: [40.4869, 22.3188], photo: "", blurb: ""},
+                                    { name: "Litochoro", mark: false, dashed: false, latLng: [40.0930, 22.5653], photo: "", blurb: ""},
+                                    { name: "Olympus", mark: true, dashed: false, latLng: [40.0857, 22.3586], photo: "", blurb: ""},
+                                    { name: "Litochoro", mark: false, dashed: false, latLng: [40.0930, 22.5653], photo: "", blurb: ""},
+                                    { name: "Larissa", mark: false, dashed: false, latLng: [39.6162, 22.4224], photo: "", blurb: ""},
+                                    { name: "Trikala", mark: false, dashed: false, latLng: [39.5357, 21.7728], photo: "", blurb: ""},
+                                    { name: "Meteora", mark: true, dashed: false, latLng: [39.7212, 21.6309], photo: "", blurb: ""},
+                                    { name: "Panagia", mark: false, dashed: false, latLng: [39.8031, 21.2867], photo: "", blurb: ""},
+                                    { name: "Ioannina", mark: true, dashed: false, latLng: [39.6690, 20.8576], photo: "", blurb: ""},
+                                    { name: "Vikos Gorge", mark: true, dashed: false, latLng: [39.9162, 20.7478], photo: "", blurb: ""},
+                                    { name: "Ioannina", mark: false, dashed: false, latLng: [39.6690, 20.8576], photo: "", blurb: ""},
+                                    { name: "Kozani", mark: false, dashed: false, latLng: [40.2994, 21.7033], photo: "", blurb: ""},
+                                    { name: "Thessaloniki", mark: false, dashed: true, latLng: [40.6381, 22.9399], photo: "", blurb: ""},
+                                    { name: "Corfu", mark: true, dashed: false, latLng: [39.6260, 19.9193], photo: "", blurb: ""},
+                                    { name: "Gouvia", mark: false, dashed: false, latLng: [39.6497, 19.8443], photo: "", blurb: ""},
+                                    { name: "Pirgi", mark: false, dashed: false, latLng: [39.7102, 19.8523], photo: "", blurb: ""},
+                                    { name: "Albanian Overlook", mark: false, dashed: false, latLng: [39.7534, 19.9363], photo: "", blurb: ""},
+                                    { name: "Kassiopi", mark: false, dashed: false, latLng: [39.7877, 19.9157], photo: "", blurb: ""},
+                                    { name: "Roda", mark: false, dashed: false, latLng: [39.7862, 19.7898], photo: "", blurb: ""},
+                                    { name: "Canal D'Amour", mark: true, dashed: false, latLng: [39.7945, 19.7008], photo: "", blurb: ""},
+                                    { name: "Angelokastro", mark: true, dashed: false, latLng: [39.6786, 19.6886], photo: "", blurb: ""},
+                                    { name: "Roda", mark: false, dashed: false, latLng: [39.7862, 19.7898], photo: "", blurb: ""},
+                                    { name: "Kassiopi", mark: false, dashed: false, latLng: [39.7877, 19.9157], photo: "", blurb: ""},
+                                    { name: "Albanian Overlook", mark: false, dashed: false, latLng: [39.7534, 19.9363], photo: "", blurb: ""},
+                                    { name: "Pirgi", mark: false, dashed: false, latLng: [39.7102, 19.8523], photo: "", blurb: ""},
+                                    { name: "Gouvia", mark: false, dashed: false, latLng: [39.6497, 19.8443], photo: "", blurb: ""},
+                                    { name: "Corfu", mark: false, dashed: true, latLng: [39.6260, 19.9193], photo: "", blurb: ""},
+                                    { name: "Athens", mark: true, dashed: false, latLng: [37.9719, 23.7244], photo: "", blurb: ""},
+                                    { name: "Corinth", mark: false, dashed: false, latLng: [37.9264, 22.9946], photo: "", blurb: ""},
+                                    { name: "Tripoli", mark: false, dashed: false, latLng: [37.5037, 22.3999], photo: "", blurb: ""},
+                                    { name: "Allagi", mark: false, dashed: false, latLng: [37.2519, 22.0174], photo: "", blurb: ""},
+                                    { name: "Kalamata", mark: true, dashed: false, latLng: [37.0305, 22.1169], photo: "", blurb: ""},
+                                    { name: "Allagi", mark: false, dashed: false, latLng: [37.2519, 22.0174], photo: "", blurb: ""},
+                                    { name: "Tripoli", mark: false, dashed: false, latLng: [37.5037, 22.3999], photo: "", blurb: ""},
+                                    { name: "Corinth", mark: false, dashed: false, latLng: [37.9264, 22.9946], photo: "", blurb: ""},
+                                    { name: "Gulf of Corinth", mark: false, dashed: false, latLng: [38.1780, 22.2468], photo: "", blurb: ""},
+                                    { name: "Erineos", mark: false, dashed: false, latLng: [38.3257, 21.9515], photo: "", blurb: ""},
+                                    { name: "Rio", mark: false, dashed: false, latLng: [38.3026, 21.7888], photo: "", blurb: ""},
+                                    { name: "Patras", mark: true, dashed: false, latLng: [38.2444, 21.7291], photo: "", blurb: ""},
+                                    { name: "Rio", mark: false, dashed: false, latLng: [38.3026, 21.7888], photo: "", blurb: ""},
+                                    { name: "Nafpaktos", mark: false, dashed: false, latLng: [38.3734, 21.7802], photo: "", blurb: ""},
+                                    { name: "Trizonia", mark: false, dashed: false, latLng: [38.3922, 22.0686], photo: "", blurb: ""},
+                                    { name: "Galaxidi", mark: false, dashed: false, latLng: [38.3675, 22.3789], photo: "", blurb: ""},
+                                    { name: "Delphi", mark: true, dashed: false, latLng: [38.4831, 22.4799], photo: "", blurb: ""},
+                                    { name: "Galaxidi", mark: false, dashed: false, latLng: [38.3675, 22.3789], photo: "", blurb: ""},
+                                    { name: "Trizonia", mark: false, dashed: false, latLng: [38.3922, 22.0686], photo: "", blurb: ""},
+                                    { name: "Nafpaktos", mark: false, dashed: false, latLng: [38.3734, 21.7802], photo: "", blurb: ""},
+                                    { name: "Rio", mark: false, dashed: false, latLng: [38.3026, 21.7888], photo: "", blurb: ""},
+                                    { name: "Patras", mark: true, dashed: false, latLng: [38.2444, 21.7291], photo: "", blurb: ""},
+                                    { name: "Rio", mark: false, dashed: false, latLng: [38.3026, 21.7888], photo: "", blurb: ""},
+                                    { name: "Erineos", mark: false, dashed: false, latLng: [38.3257, 21.9515], photo: "", blurb: ""},
+                                    { name: "Gulf of Corinth", mark: false, dashed: false, latLng: [38.1780, 22.2468], photo: "", blurb: ""},
+                                    { name: "Corinth", mark: false, dashed: false, latLng: [37.9264, 22.9946], photo: "", blurb: ""},
+                                    { name: "Tripoli", mark: false, dashed: false, latLng: [37.5037, 22.3999], photo: "", blurb: ""},
+                                    { name: "Allagi", mark: false, dashed: false, latLng: [37.2519, 22.0174], photo: "", blurb: ""},
+                                    { name: "Kalamata", mark: true, dashed: false, latLng: [37.0305, 22.1169], photo: "", blurb: ""},
+                                    { name: "Allagi", mark: false, dashed: false, latLng: [37.2519, 22.0174], photo: "", blurb: ""},
+                                    { name: "Tripoli", mark: false, dashed: false, latLng: [37.5037, 22.3999], photo: "", blurb: ""},
+                                    { name: "Corinth", mark: false, dashed: false, latLng: [37.9264, 22.9946], photo: "", blurb: ""},
+                                    { name: "Athens", mark: true, dashed: true, latLng: [37.9719, 23.7244], photo: "", blurb: ""},
+                                    { name: "Jeddah", mark: false, dashed: false, latLng: [21.6636, 39.1725], photo: "", blurb: ""},
                                 ]
                             },
                             "Jeddah": {
                                 parent: false,
+                                drawMarker: true,
+                                markerLocation: [21.6636, 39.1725],
                                 center: [21.6636, 39.1725],
-                                locations: [
-                                    { name: "Jeddah", latLng: [21.6636, 39.1725], photo: "placeholder_photo_url", blurb: "placeholder_blurb"}
-                                ]
                             },
                             "Dubai": {
                                 parent: false,
+                                drawMarker: true,
+                                markerLocation: [25.2491, 55.3528],
                                 center: [25.2491, 55.3528],
-                                locations: [
-                                    { name: "Dubai", latLng: [25.2491, 55.3528], photo: "placeholder_photo_url", blurb: "placeholder_blurb"}
-                                ]
                             },
                             "Bangkok": {
                                 parent: false,
+                                drawMarker: true,
+                                markerLocation: [13.6937, 100.7507],
                                 center: [13.6937, 100.7507],
-                                locations: [
-                                    { name: "Bangkok", latLng: [13.6937, 100.7507], photo: "placeholder_photo_url", blurb: "placeholder_blurb"}
-                                ]
                             },
                             "Australia": {
                                 parent: true, 
+                                drawMarker: true,
                                 zoomLevel: 5,
+                                markerLocation: [-35, 149],
                                 center: [-35, 149],
                                 locations: [
-                                    { name: "Sydney", latLng: [-33.8707, 151.2070], photo: "placeholder_photo_url", blurb: "placeholder_blurb"},
-                                    { name: "Tasmania", latLng: [-42.8827, 147.3163], photo: "placeholder_photo_url", blurb: "placeholder_blurb"},
-                                    { name: "Brisbane", latLng: [-27.4662, 153.0134], photo: "placeholder_photo_url", blurb: "placeholder_blurb" },
-                                    { name: "Byron Bay", latLng: [-28.6401, 153.6268], photo: "placeholder_photo_url", blurb: "placeholder_blurb" },
-                                    { name: "Nimbin", latLng: [-28.5943, 153.2228], photo: "placeholder_photo_url", blurb: "placeholder_blurb" },
-                                    { name: "Byron Bay", marker: false, latLng: [-28.6401, 153.6268], photo: "placeholder_photo_url", blurb: "placeholder_blurb" },
-                                    { name: "Melbourne", latLng: [-37.8147, 144.9691], photo: "placeholder_photo_url", blurb: "placeholder_blurb" },
-                                    { name: "Canberra", latLng: [-35.1594, 149.1183], photo: "placeholder_photo_url", blurb: "placeholder_blurb" },
+                                    { name: "Bangkok", mark: false, dashed: true, latLng: [13.6937, 100.7507], photo: "", blurb: ""},
+                                    { name: "Sydney", mark: true, dashed: true, latLng: [-33.8707, 151.2070], photo: "", blurb: ""},
+                                    { name: "Tasmania", mark: true, dashed: false, latLng: [-42.8827, 147.3163], photo: "", blurb: ""},
+                                    { name: "Mt. Wellington", mark: true, dashed: false, latLng: [-42.8976, 147.2344], photo: "", blurb: ""},
+                                    { name: "Tasmania", mark: false, dashed: true, latLng: [-42.8827, 147.3163], photo: "", blurb: ""},
+                                    { name: "Brisbane", mark: true, dashed: false, latLng: [-27.4662, 153.0134], photo: "", blurb: "" },
+                                    { name: "Byron Bay", mark: true, dashed: false, latLng: [-28.6401, 153.6268], photo: "", blurb: "" },
+                                    { name: "Nimbin", mark: true, dashed: false, latLng: [-28.5960, 153.2231], photo: "", blurb: "" },
+                                    { name: "Byron Bay", mark: false, dashed: false, latLng: [-28.6401, 153.6268], photo: "", blurb: "" },
+                                    { name: "Brisbane", mark: false, dashed: true, latLng: [-27.4662, 153.0134], photo: "", blurb: "" },
+                                    { name: "Melbourne", mark: true, dashed: true, latLng: [-37.8147, 144.9691], photo: "", blurb: "" },
+                                    { name: "Canberra", mark: true, dashed: true, latLng: [-35.1594, 149.1183], photo: "", blurb: "" },
+                                    { name: "Melbourne", mark: true, dashed: true, latLng: [-37.8147, 144.9691], photo: "", blurb: "" },
+                                    { name: "Singapore", mark: false, dashed: false, latLng: [1.3595, 103.9895], photo: "", blurb: ""},
                                 ]
                             },
                             "Singapore": {
                                 parent: false,
+                                drawMarker: true,
+                                markerLocation: [1.3595, 103.9895],
                                 center: [1.3595, 103.9895],
-                                locations: [
-                                    { name: "Singapore", latLng: [1.3595, 103.9895], photo: "placeholder_photo_url", blurb: "placeholder_blurb" }
-                                ]
                             },
-                            "Return": {
-                                parent: true, 
-                                zoomLevel: 5,
-                                center: [37, -122],
-                                locations: [
-                                    { name: "San Francisco", latLng: [37.7636, -122.4779], photo: "placeholder_photo_url", blurb: "placeholder_blurb" },
-                                    { name: "Chicago", latLng: [41.7890, -87.7414], photo: "placeholder_photo_url", blurb: "placeholder_blurb" },
-                                    { name: "Delafield", latLng: [43.0599, -88.4042], photo: "placeholder_photo_url", blurb: "placeholder_blurb" }
-                                ]
-                            },
+                            "MidwayRHS": {
+                                parent: false,
+                                drawMarker: false,
+                                markerLocation: [21, 140.4],
+                                center: [21, -140.4],
+                            }
                         }
+                        var singaporeLocation = [1.3595, 103.9895]
+                        var sfLocation = [37.75, 237.55]
                         
                         // Styling for our markers
                         var donutMarker = L.divIcon({
@@ -151,7 +269,7 @@
                             className: 'light-donut-icon',
                             html: '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><circle cx="10" cy="10" r="4" fill="none" stroke="#EF9A9A" stroke-width="4"/></svg>',
                             iconSize: [16, 16],
-                            iconAnchor: [8, 8]
+                            iconAnchor: [10, 10]
                         });
                         
                         // Defining some preliminary variables
@@ -169,56 +287,144 @@
                             return div;
                         };
                         function returnToMainMapView() {
+                            function onMoveEnd() {
+                                removeSubMarkers();
+                                addParentMarkers();
+                                hideBackButton();
+                                map.off('moveend', onMoveEnd);
+                            }
+
+                            map.on('moveend', onMoveEnd);
                             map.setView(initialMapView.center, initialMapView.zoom);
-                            removeSubMarkers();
-                            addParentMarkers();
-                            hideBackButton();
                         }
+
                         function showBackButton() {backButton.addTo(map);}
                         function hideBackButton() {backButton.remove();}
 
                         // Code for our parent markers
                         function removeParentMarkers() {parentMarkers.clearLayers();}
                         function addParentMarkers() {
+                            var latLngs = [];
+                            var edgePoints = calculateEdgePoints();
+                            categories["MidwayLHS"].markerLocation = edgePoints.leftMostPoint;
+                            categories["MidwayRHS"].markerLocation = edgePoints.rightMostPoint;
+                            categories["Return"].locations[0].latLng = edgePoints.leftMostPoint;
+
                             Object.entries(categories).forEach(([category, details]) => {
                                 var markerIcon = details.parent ? donutMarker : np_donutMarker;
-                                var marker = L.marker(details.center, {icon: markerIcon})
-                                    .bindPopup(category);
-
-                                marker.on('click', function() {
+                                if (details.drawMarker) {
+                                    var marker = L.marker(details.markerLocation, {icon: markerIcon})
+                                        .bindPopup(category);
+    
+                                    marker.on('mouseover', function(e) {
+                                        marker.openPopup();
+                                    }).on('mouseout', function(e) {
+                                        marker.closePopup();
+                                    });
+    
                                     if (details.parent) {
-                                        map.setView(details.center, details.zoomLevel);
-                                        addSubMarkers(details.locations);
-                                        showBackButton();
-                                        removeParentMarkers();
+                                        marker.on('click', function() {
+                                            map.setView(details.center, details.zoomLevel);
+                                            addSubMarkers(details.locations);
+                                            showBackButton();
+                                            removeParentMarkers();
+                                        });
                                     }
-                                })
-                                .on('mouseover', function(e) {
-                                    marker.openPopup();
-                                })
-                                .on('mouseout', function(e) {
-                                    marker.closePopup();
-                                });
-                                parentMarkers.addLayer(marker);
+                                    parentMarkers.addLayer(marker);
+                                };
+                                latLngs.push(details.markerLocation)
                             });
+
+                            if (latLngs.length > 1) {
+                                var polyline = L.polyline(latLngs, {color: '#F8B6B6', opacity: 0.4, weight: 2, dashArray: '2, 4'}).addTo(map);
+                                parentMarkers.addLayer(polyline);
+                            }
+
                             parentMarkers.addTo(map);
                         }
 
                         // Defining function to call our submarkers
                         function removeSubMarkers() {subMarkers.clearLayers();}
                         function addSubMarkers(locations) {
-                            locations.forEach(function(location) {
-                                var subMarker = L.marker(location.latLng, {icon: np_donutMarker}).bindPopup(location.name);
-                                subMarker.on('mouseover', function(e) {
-                                    subMarker.openPopup();
-                                })
-                                .on('mouseout', function(e) {
-                                    subMarker.closePopup();
-                                });
-                                subMarkers.addLayer(subMarker);
+                            var latLngs = [];
+
+                            locations.forEach(function(location, index) {
+                                if (location.mark) {
+                                    var subMarker = L.marker(location.latLng, {icon: np_donutMarker});
+
+                                    var popupContent = `
+                                        <div class="popup-content">
+                                            <h4 class="popup-title">${location.name}</h4>
+                                            <p class="popup-blurb">${location.blurb}</p>
+                                            <img src="${location.photo}" class="popup-image" alt="Location Image">
+                                        </div>
+                                    `;
+                                    subMarker.bindPopup(popupContent);
+
+                                    subMarker._popupOpenedByClick = false;
+                                    subMarker.getPopup().on('close', function() {
+                                        subMarker._popupOpenedByClick = false;
+                                    });
+                                    subMarker.on('click', function() {
+                                        this._popupOpenedByClick = !this._popupOpenedByClick;
+                                        if (this._popupOpenedByClick) {
+                                            this.openPopup();
+                                        } else {this.closePopup();}
+                                    }).on('mouseover', function() {
+                                        if (!this._popupOpenedByClick) {
+                                            this.openPopup();
+                                        }
+                                    }).on('mouseout', function() {
+                                        if (!this._popupOpenedByClick) {
+                                            this.closePopup();
+                                        }
+                                    });
+                                    subMarkers.addLayer(subMarker);
+                                }
+
+                                // Create individual polyline for each segment
+                                if (index < locations.length - 1) { // Ensure there is a next location
+                                    var nextLocation = locations[index + 1];
+                                    var segmentLatLngs = [location.latLng, nextLocation.latLng];
+                                    var polylineOptions = {
+                                        color: '#F8B6B6', 
+                                        opacity: 0.4, 
+                                        weight: 2
+                                    };
+                                    if (location.dashed) {
+                                        polylineOptions.dashArray = '2, 4';
+                                    }
+                                    var segmentPolyline = L.polyline(segmentLatLngs, polylineOptions).addTo(map);
+                                    subMarkers.addLayer(segmentPolyline);
+                                }
                             });
                             subMarkers.addTo(map);
                         }
+
+                        // Function to handle drawing the line from Singapore to San Francisco
+                        function calculateEdgePoints() {
+                            const bounds = map.getBounds();
+                            const normalizedSFLongitude = (sfLocation[1] + 360) % 360;
+                            const normalizedSingaporeLongitude = (singaporeLocation[1] + 360) % 360;
+                                
+                            const slope = (sfLocation[0] - singaporeLocation[0]) / (normalizedSFLongitude - normalizedSingaporeLongitude);
+                            const yIntercept = singaporeLocation[0] - slope * normalizedSingaporeLongitude;
+                            
+                            const leftMostLongitude = bounds.getWest();
+                            const rightMostLongitude = bounds.getEast();
+                            const latitudeAtLeftMost = slope * ((leftMostLongitude + 360) % 360) + yIntercept;
+                            const latitudeAtRightMost = slope * ((rightMostLongitude + 360) % 360) + yIntercept;
+                            
+                            const adjustedLeftMostLongitude = leftMostLongitude > 180 ? leftMostLongitude - 360 : leftMostLongitude;
+                            const adjustedRightMostLongitude = rightMostLongitude < 0 ? rightMostLongitude + 360 : rightMostLongitude;
+                            
+                            return {
+                                leftMostPoint: [latitudeAtLeftMost, adjustedLeftMostLongitude],
+                                rightMostPoint: [latitudeAtRightMost, adjustedRightMostLongitude]
+                            };
+                        }
+
+                        const edgePoints = calculateEdgePoints();
 
                         // Initial view
                         addParentMarkers();
