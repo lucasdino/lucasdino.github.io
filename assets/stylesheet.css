@@ -248,7 +248,7 @@ a[data-attribute="honk-name"] {
 }  
 a[data-attribute="honk-nav"] {
   font-family: "Honk", system-ui;
-}  
+}
 .map-container {
   display: flex;
   flex-direction: column;
@@ -275,20 +275,36 @@ a[data-attribute="honk-nav"] {
   color: #333;
 }
 .popup-content {
-  font-size: 12px;
+  margin: 0px;
 }
 .popup-title {
+  margin-top: 2px;
+  margin-bottom: 2px;
+  font-size: 14px;
   color: var(--ooh-red-hot);
   font-weight: bold;
 }
-.popup-blurb {
-  margin: 8px 0;
+.leaflet-popup-content .popup-blurb {
+  margin: 0px;
+  font-size: 10px;
+}
+.leaflet-popup-content .popup-hr {
+  border: none;
+  height: 1px;
+  width: 100%;
+  background-color: #d3d3d3;
 }
 .popup-image {
   max-width: 100%;
-  border-radius: 5px;
+  border-radius: 2px;
   box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
 }
+.popup-content br::after {
+  content: "";
+  display: block;
+  margin-top: 10px;
+}
+
 
 
 
