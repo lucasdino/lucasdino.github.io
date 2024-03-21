@@ -257,12 +257,22 @@ a[data-attribute="honk-nav"] {
   margin-top: 20px;
 }
 #travel_map {
-  height: 50vh;
-  width: 90%;
+  height: 65vh;
+  width: 80%;
   margin: 0 auto;
   border-radius: 15px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
   overflow: hidden;
+}
+.back-to-map-btn {
+  background-color: #f5f5f5;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  padding: 5px 5px;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #333;
 }
 
 

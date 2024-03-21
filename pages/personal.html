@@ -30,73 +30,108 @@
                         }).addTo(map);
                         
                         var categories = {
-                            "Family Time": {
-                                zoomLevel: 5,
-                                center: [37.7749, -122.4194],
+                            "Family Reunion": {
+                                parent: true,
+                                zoomLevel: 6,
+                                center: [41, -95],
                                 locations: [
                                     { name: "Delafield", latLng: [43.0599, -88.4042], photo: "placeholder_photo_url", blurb: "placeholder_blurb"},
+                                    { name: "Innsbrook", latLng: [38.7666, -91.0302], photo: "placeholder_photo_url", blurb: "placeholder_blurb"},
                                     { name: "Cabin", latLng: [40.7145, -99.9118], photo: "placeholder_photo_url", blurb: "placeholder_blurb"},
-                                    { name: "McCook", latLng: [40.2051, -100.5976], photo: "placeholder_photo_url", blurb: "placeholder_blurb"},
                                 ]
                             },
                             "Colombia": {
-                                zoomLevel: 5,
-                                center: [37.7749, -122.4194],
+                                parent: true,
+                                zoomLevel: 6,
+                                center: [8, -75],
                                 locations: [
                                     { name: "Cartagena", latLng: [10.4269, -75.5469], photo: "placeholder_photo_url", blurb: "placeholder_blurb"},
                                     { name: "Medellin", latLng: [6.2087, -75.5704], photo: "placeholder_photo_url", blurb: "placeholder_blurb"},
                                     { name: "Bogota", latLng: [4.5966, -74.0701], photo: "placeholder_photo_url", blurb: "placeholder_blurb"},
                                 ]
                             },
-                            // "Barcelona": {
-                                
-                                //     // { name: "Barcelona", latLng: [41.3910, 2.1807], photo: "placeholder_photo_url", blurb: "placeholder_blurb"},
-                                // }
-                                "Croatia": {
-                                    zoomLevel: 5,
-                                center: [37.7749, -122.4194],
+                            "Barcelona": {
+                                parent: false,
+                                center: [41.4, 2.18],
+                                locations: [
+                                    { name: "Barcelona", latLng: [41.3910, 2.1807], photo: "placeholder_photo_url", blurb: "placeholder_blurb"}
+                                ]
+                            },
+                            "Croatia": {
+                                parent: true,
+                                zoomLevel: 7,
+                                center: [43.5, 16],
                                 locations: [
                                     { name: "Dubrovnik", latLng: [42.6412, 18.1100], photo: "placeholder_photo_url", blurb: "placeholder_blurb"},
                                     { name: "Tisno", latLng: [43.7990, 15.6415], photo: "placeholder_photo_url", blurb: "placeholder_blurb"},
                                 ]
                             },
                             "Greece": {
-                                zoomLevel: 5,
-                                center: [37.7749, -122.4194],
+                                parent: true,
+                                zoomLevel: 7,
+                                center: [38.8, 22],
                                 locations: [
                                     { name: "Thessaloniki", latLng: [40.6381, 22.9399], photo: "placeholder_photo_url", blurb: "placeholder_blurb"},
                                     { name: "Chalkidiki", latLng: [40.2270, 23.7652], photo: "placeholder_photo_url", blurb: "placeholder_blurb"},
+                                    { name: "Thessaloniki", marker: false, latLng: [40.6381, 22.9399], photo: "placeholder_photo_url", blurb: "placeholder_blurb"},
                                     { name: "Olympus", latLng: [40.0857, 22.3586], photo: "placeholder_photo_url", blurb: "placeholder_blurb"},
                                     { name: "Meteora", latLng: [39.7212, 21.6309], photo: "placeholder_photo_url", blurb: "placeholder_blurb"},
                                     { name: "Ioannina", latLng: [39.6690, 20.8576], photo: "placeholder_photo_url", blurb: "placeholder_blurb"},
                                     { name: "Vikos Gorge", latLng: [39.9162, 20.7478], photo: "placeholder_photo_url", blurb: "placeholder_blurb"},
                                     { name: "Corfu", latLng: [39.6260, 19.9193], photo: "placeholder_photo_url", blurb: "placeholder_blurb"},
                                     { name: "Kalamata", latLng: [37.0305, 22.1169], photo: "placeholder_photo_url", blurb: "placeholder_blurb"},
-                                    { name: "Athens", latLng: [37.9372, 23.9471], photo: "placeholder_photo_url", blurb: "placeholder_blurb"},
+                                    { name: "Patras", latLng: [38.2444, 21.7291], photo: "placeholder_photo_url", blurb: "placeholder_blurb"},
+                                    { name: "Kalamata", marker: false, latLng: [37.0305, 22.1169], photo: "placeholder_photo_url", blurb: "placeholder_blurb"},
+                                    { name: "Athens", latLng: [37.9719, 23.7244], photo: "placeholder_photo_url", blurb: "placeholder_blurb"},
                                 ]
                             },
-                            // "Flights": {
-                                
-                                // { name: "Jeddah", latLng: [21.6636, 39.1725], photo: "placeholder_photo_url", blurb: "placeholder_blurb"},
-                                // { name: "Dubai", latLng: [25.2491, 55.3528], photo: "placeholder_photo_url", blurb: "placeholder_blurb"},
-                                // { name: "Bangkok", latLng: [13.6937, 100.7507], photo: "placeholder_photo_url", blurb: "placeholder_blurb"},
-                                // }
+                            "Jeddah": {
+                                parent: false,
+                                center: [21.6636, 39.1725],
+                                locations: [
+                                    { name: "Jeddah", latLng: [21.6636, 39.1725], photo: "placeholder_photo_url", blurb: "placeholder_blurb"}
+                                ]
+                            },
+                            "Dubai": {
+                                parent: false,
+                                center: [25.2491, 55.3528],
+                                locations: [
+                                    { name: "Dubai", latLng: [25.2491, 55.3528], photo: "placeholder_photo_url", blurb: "placeholder_blurb"}
+                                ]
+                            },
+                            "Bangkok": {
+                                parent: false,
+                                center: [13.6937, 100.7507],
+                                locations: [
+                                    { name: "Bangkok", latLng: [13.6937, 100.7507], photo: "placeholder_photo_url", blurb: "placeholder_blurb"}
+                                ]
+                            },
                             "Australia": {
+                                parent: true, 
                                 zoomLevel: 5,
-                                center: [37.7749, -122.4194],
+                                center: [-35, 149],
                                 locations: [
                                     { name: "Sydney", latLng: [-33.8707, 151.2070], photo: "placeholder_photo_url", blurb: "placeholder_blurb"},
                                     { name: "Tasmania", latLng: [-42.8827, 147.3163], photo: "placeholder_photo_url", blurb: "placeholder_blurb"},
                                     { name: "Brisbane", latLng: [-27.4662, 153.0134], photo: "placeholder_photo_url", blurb: "placeholder_blurb" },
                                     { name: "Byron Bay", latLng: [-28.6401, 153.6268], photo: "placeholder_photo_url", blurb: "placeholder_blurb" },
+                                    { name: "Nimbin", latLng: [-28.5943, 153.2228], photo: "placeholder_photo_url", blurb: "placeholder_blurb" },
+                                    { name: "Byron Bay", marker: false, latLng: [-28.6401, 153.6268], photo: "placeholder_photo_url", blurb: "placeholder_blurb" },
                                     { name: "Melbourne", latLng: [-37.8147, 144.9691], photo: "placeholder_photo_url", blurb: "placeholder_blurb" },
                                     { name: "Canberra", latLng: [-35.1594, 149.1183], photo: "placeholder_photo_url", blurb: "placeholder_blurb" },
+                                ]
+                            },
+                            "Singapore": {
+                                parent: false,
+                                center: [1.3595, 103.9895],
+                                locations: [
                                     { name: "Singapore", latLng: [1.3595, 103.9895], photo: "placeholder_photo_url", blurb: "placeholder_blurb" }
                                 ]
                             },
                             "Return": {
+                                parent: true, 
                                 zoomLevel: 5,
-                                center: [37.7749, -122.4194],
+                                center: [37, -122],
                                 locations: [
                                     { name: "San Francisco", latLng: [37.7636, -122.4779], photo: "placeholder_photo_url", blurb: "placeholder_blurb" },
                                     { name: "Chicago", latLng: [41.7890, -87.7414], photo: "placeholder_photo_url", blurb: "placeholder_blurb" },
@@ -105,43 +140,88 @@
                             },
                         }
                         
-                        var orangeDonutIcon = L.divIcon({
+                        // Styling for our markers
+                        var donutMarker = L.divIcon({
                             className: 'orange-donut-icon',
-                            html: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5" fill="none" stroke="#E27D2A" stroke-width="4"/></svg>',
+                            html: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5" fill="none" stroke="#D00909" stroke-width="4"/></svg>',
                             iconSize: [24, 24],
                             iconAnchor: [12, 12]
                         });
-                        
-                        function addParentMarkers() {
-                            Object.keys(categories).forEach(category => {
-                                var parentMarker = L.marker(categories[category].center).addTo(map)
-                                    .bindPopup(`${category}`)
-                                    .on('click', function() {
-                                        map.setView(categories[category].center, categories[category].zoomLevel);
-                                        // Optionally clear existing submarkers and add new ones for this category
-                                        addSubMarkers(categories[category].locations);
-                                    });
-                            });
-                        }
-
-                        // Function to add submarkers for a category
-                        function addSubMarkers(locations) {
-                            locations.forEach(location => {
-                                L.marker(location.latLng, {icon: orangeDonutIcon}).addTo(map).bindPopup(`<h3>${location.name}</h3><p>${location.blurb}</p><img src='${location.photo}' alt='${location.name}' style='width:100%;'>`);
-                            });
-                        }
-
-                        addParentMarkers();
-
-                        map.on('zoomend', function() {
-                            var currentZoom = map.getZoom();
-                            if (currentZoom > 5) {
-                                // Adjust this logic based on how you manage markers
-                                // e.g., addSubMarkers for the currently focused category
-                            } else {
-                                // Optionally, clear submarkers if zoomed out
-                            }
+                        var np_donutMarker = L.divIcon({
+                            className: 'light-donut-icon',
+                            html: '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><circle cx="10" cy="10" r="4" fill="none" stroke="#EF9A9A" stroke-width="4"/></svg>',
+                            iconSize: [16, 16],
+                            iconAnchor: [8, 8]
                         });
+                        
+                        // Defining some preliminary variables
+                        var initialMapView = { center: map.getCenter(), zoom: map.getZoom() };
+                        var parentMarkers = L.layerGroup();
+                        var subMarkers = L.layerGroup();
+
+                        // Code for our back button once you click in on a parent location
+                        var backButton = L.control({position: 'topright'});
+                        backButton.onAdd = function() {
+                            var div = L.DomUtil.create('div', 'back-button');
+                            var button = L.DomUtil.create('button', 'back-to-map-btn', div);
+                            button.innerText = "Back to Main Map";
+                            L.DomEvent.on(button, 'click', returnToMainMapView);
+                            return div;
+                        };
+                        function returnToMainMapView() {
+                            map.setView(initialMapView.center, initialMapView.zoom);
+                            removeSubMarkers();
+                            addParentMarkers();
+                            hideBackButton();
+                        }
+                        function showBackButton() {backButton.addTo(map);}
+                        function hideBackButton() {backButton.remove();}
+
+                        // Code for our parent markers
+                        function removeParentMarkers() {parentMarkers.clearLayers();}
+                        function addParentMarkers() {
+                            Object.entries(categories).forEach(([category, details]) => {
+                                var markerIcon = details.parent ? donutMarker : np_donutMarker;
+                                var marker = L.marker(details.center, {icon: markerIcon})
+                                    .bindPopup(category);
+
+                                marker.on('click', function() {
+                                    if (details.parent) {
+                                        map.setView(details.center, details.zoomLevel);
+                                        addSubMarkers(details.locations);
+                                        showBackButton();
+                                        removeParentMarkers();
+                                    }
+                                })
+                                .on('mouseover', function(e) {
+                                    marker.openPopup();
+                                })
+                                .on('mouseout', function(e) {
+                                    marker.closePopup();
+                                });
+                                parentMarkers.addLayer(marker);
+                            });
+                            parentMarkers.addTo(map);
+                        }
+
+                        // Defining function to call our submarkers
+                        function removeSubMarkers() {subMarkers.clearLayers();}
+                        function addSubMarkers(locations) {
+                            locations.forEach(function(location) {
+                                var subMarker = L.marker(location.latLng, {icon: np_donutMarker}).bindPopup(location.name);
+                                subMarker.on('mouseover', function(e) {
+                                    subMarker.openPopup();
+                                })
+                                .on('mouseout', function(e) {
+                                    subMarker.closePopup();
+                                });
+                                subMarkers.addLayer(subMarker);
+                            });
+                            subMarkers.addTo(map);
+                        }
+
+                        // Initial view
+                        addParentMarkers();
                     </script>    
                 </div>
             </p>
