@@ -54,9 +54,9 @@
                                 parentPhoto: "",
                                 locations: [
                                     { name: "MidwayLHS", mark: false, dashed: true, latLng: [21, -140.4], photo: "", blurb: "" },
-                                    { name: "San Francisco", mark: true, dashed: true, latLng: [37.7636, -122.4779], photo: "", blurb: "After 48 hours of pure travel...yeah we did not smell great. One of the better showers I've ever had.<br>Great layover - I got to see Ian and Mitch and took my first Waymo ride." },
-                                    { name: "Chicago", mark: true, dashed: false, latLng: [41.7890, -87.7414], photo: "", blurb: "The LAST flight - 22 total.<br>This was actually a really cool flight. We flew directly over I-80 in Nebraska which I know like the back of my hand. Got to see Nebraska and the 'ol stompin' grounds from the sky at dusk!" },
-                                    { name: "Delafield", mark: true, dashed: false, latLng: [43.0599, -88.4042], photo: "", blurb: "Around the world in 153 days!!<br>Time to rela...just kidding, time to finish grad school applications." }
+                                    { name: "San Francisco", mark: true, dashed: true, latLng: [37.7636, -122.4779], photo: "", blurb: "After 48 hours of pure travel...yeah we did not smell great. One of the better showers I've ever had.</p><p class='popup-blurb'>Great layover - I got to see Ian and Mitch and took my first Waymo ride." },
+                                    { name: "Chicago", mark: true, dashed: false, latLng: [41.7890, -87.7414], photo: "", blurb: "The LAST flight - 22 total.</p><p class='popup-blurb'>This was actually a really cool flight. We flew directly over I-80 in Nebraska which I know like the back of my hand. Got to see Nebraska and the 'ol stompin' grounds from the sky at dusk!" },
+                                    { name: "Delafield", mark: true, dashed: false, latLng: [43.0599, -88.4042], photo: "", blurb: "Around the world in 153 days!!</p><p class='popup-blurb'>Time to rela...just kidding, time to finish grad school applications." }
                                 ]
                             },
                             "Family Reunion": {
@@ -99,7 +99,7 @@
                                 drawMarker: true,
                                 markerLocation: [41.4, 2.18],
                                 center: [41.4, 2.18],
-                                parentBlurb: "Oh no! An 8 hour layover in a cool city I've never been to...what a shame.<br>Walked all over the city, thrifted a few things for Croatia, and had a beer on the beach. Mustached menace.",
+                                parentBlurb: "Oh no! An 8 hour layover in a cool city I've never been to...what a shame.</p><p class='popup-blurb'>Walked all over the city, thrifted a few things for Croatia, and had a beer on the beach.</p><p class='popup-blurb'>Mustached menace.",
                                 parentPhoto: "",
                             },
                             "Croatia": {
@@ -163,7 +163,7 @@
                                     { name: "Meteora", mark: true, dashed: false, latLng: [39.7212, 21.6309], photo: "", blurb: ""},
                                     { name: "Panagia", mark: false, dashed: false, latLng: [39.8031, 21.2867], photo: "", blurb: ""},
                                     { name: "Ioannina", mark: true, dashed: false, latLng: [39.6690, 20.8576], photo: "", blurb: ""},
-                                    { name: "Vikos Gorge", mark: true, dashed: false, latLng: [39.9162, 20.7478], photo: "", blurb: ""},
+                                    { name: "Vikos Gorge", mark: true, dashed: false, latLng: [39.9162, 20.7478], photo: "/assets/pics/sabbatical/vikosgorge.jpg", blurb: "Vikos Gorge! One of the most beautiful places I've ever been -- hiked to Drakolimni and Beloi Veiwpoint.</p><p class='popup-blurb'>It is as if Zion NP was more green with white rock. Would love to come back and camp here."},
                                     { name: "Ioannina", mark: false, dashed: false, latLng: [39.6690, 20.8576], photo: "", blurb: ""},
                                     { name: "Kozani", mark: false, dashed: false, latLng: [40.2994, 21.7033], photo: "", blurb: ""},
                                     { name: "Thessaloniki", mark: false, dashed: true, latLng: [40.6381, 22.9399], photo: "", blurb: ""},
@@ -247,7 +247,7 @@
                                 zoomLevel: 5,
                                 markerLocation: [-35, 149],
                                 center: [-35, 149],
-                                parentBlurb: "NUUAAAARRR WAY! We actually made it.<br>(See Athens for story)",
+                                parentBlurb: "NUUAAAARRR WAY! We actually made it.</p><p class='popup-blurb'>Time to sit some pets.",
                                 parentPhoto: "",
                                 locations: [
                                     { name: "Bangkok", mark: false, dashed: true, latLng: [13.6937, 100.7507], photo: "", blurb: ""},
@@ -348,7 +348,7 @@
                                             <h4 class="popup-title">${category}</h4>
                                             <hr id="popup-hr">
                                             <p class="popup-blurb">${details.parentBlurb}</p>
-                                            ${details.parentPhoto ? `<img src="${details.parentPhoto}" class="popup-image" alt="Location Image">` : ''}
+                                            ${details.parentPhoto ? `<div class="popup-image-container"><img src="${details.parentPhoto}" class="popup-image" alt="Location Image"></div>` : ''}
                                         </div>
                                     `;
                                     marker.bindPopup(popupContent);
@@ -394,7 +394,7 @@
                                             <h4 class="popup-title">${location.name}</h4>
                                             <hr id="popup-hr">
                                             <p class="popup-blurb">${location.blurb}</p>
-                                            ${location.photo ? `<img src="${location.photo}" class="popup-image" alt="Location Image">` : ''}
+                                            ${location.photo ? `<div class="popup-image-container"><img src="${location.photo}" class="popup-image" alt="Location Image"></div>` : ''}
                                         </div>
                                     `;
                                     subMarker.bindPopup(popupContent);
