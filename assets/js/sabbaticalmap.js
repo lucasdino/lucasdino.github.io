@@ -32,7 +32,7 @@ var sub_marker = L.divIcon({
 });
 
 
-// Importing our map locations / blurbs / links to pics and defining initial vars for our map
+// Importing our map locations and setting vars
 import { mapLocations } from './maplocations.js';
 var singaporeLocation = [1.3595, 103.9895]
 var sfLocation = [37.75, 237.55]
