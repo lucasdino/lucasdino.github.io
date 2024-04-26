@@ -33,7 +33,7 @@ var sub_marker = L.divIcon({
 
 
 // Importing our map locations / blurbs / links to pics and defining initial vars for our map
-import { mapLocations } from './maplocations.js';
+import { mapLocations } from '/assets/js/mapLocations.js';
 var singaporeLocation = [1.3595, 103.9895]
 var sfLocation = [37.75, 237.55]
 var initialMapView = { center: map.getCenter(), zoom: map.getZoom() };
