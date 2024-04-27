@@ -149,7 +149,7 @@ export const mapLocations = {
             { name: "Pirgi", mark: false, dashed: false, latLng: [39.7102, 19.8523], photo: "", blurb: ""},
             { name: "Gouvia", mark: false, dashed: false, latLng: [39.6497, 19.8443], photo: "", blurb: ""},
             { name: "Corfu", mark: false, dashed: true, latLng: [39.6260, 19.9193], photo: "", blurb: ""},
-            { name: "Athens", mark: false, dashed: true, latLng: [37.9719, 23.7244], photo: "", blurb: ""},
+            { name: "Athens", mark: false, dashed: false, latLng: [37.9719, 23.7244], photo: "", blurb: ""},
             { name: "Corinth", mark: false, dashed: false, latLng: [37.9264, 22.9946], photo: "", blurb: ""},
             { name: "Tripoli", mark: false, dashed: false, latLng: [37.5037, 22.3999], photo: "", blurb: ""},
             { name: "Allagi", mark: false, dashed: false, latLng: [37.2519, 22.0174], photo: "", blurb: ""},
@@ -181,7 +181,7 @@ export const mapLocations = {
             { name: "Allagi", mark: false, dashed: false, latLng: [37.2519, 22.0174], photo: "", blurb: ""},
             { name: "Tripoli", mark: false, dashed: false, latLng: [37.5037, 22.3999], photo: "", blurb: ""},
             { name: "Corinth", mark: false, dashed: false, latLng: [37.9264, 22.9946], photo: "", blurb: ""},
-            { name: "Athens", mark: true, dashed: false, latLng: [37.9719, 23.7244], photo: "", blurb: "Alright so Greeks love to protest. And the day before I was supposed to leave, it came out that the air traffic controllers were planning to strike...the next day. I had to be in Tasmania to start a pet sit and was already cutting it close, so last minute booked a 4-leg trip that left at 11:50pm that night and would get me to Tasmania in time.</p><p class='popup-blurb'>Only redeemable part? My travel insurance covered it. Oh, and I got to experience flying Emirates which is elite."},
+            { name: "Athens", mark: true, dashed: true, latLng: [37.9719, 23.7244], photo: "", blurb: "Alright so Greeks love to protest. And the day before I was supposed to leave, it came out that the air traffic controllers were planning to strike...the next day. I had to be in Tasmania to start a pet sit and was already cutting it close, so last minute booked a 4-leg trip that left at 11:50pm that night and would get me to Tasmania in time.</p><p class='popup-blurb'>Only redeemable part? My travel insurance covered it. Oh, and I got to experience flying Emirates which is elite."},
             { name: "Jeddah", mark: false, dashed: false, latLng: [21.6636, 39.1725], photo: "", blurb: ""},
         ]
     },
