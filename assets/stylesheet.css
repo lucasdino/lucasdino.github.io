@@ -29,6 +29,13 @@ p[data-attribute="highlight"] {
   color: var(--ooh-red-hot);
   display: inline;
 }
+p[data-attribute="research-preface"] {
+  font-size: 10pt;
+  font-weight: 400;
+  font-style: italic;
+  color: rgb(120, 120, 120);
+  display: inline;
+}
 h2 {
   font-size: 14pt;
   font-weight: 500;
