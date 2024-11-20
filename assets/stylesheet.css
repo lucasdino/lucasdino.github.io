@@ -36,6 +36,13 @@ p[data-attribute="research-preface"] {
   color: rgb(120, 120, 120);
   display: inline;
 }
+p[data-attribute="research-footnote"] {
+  font-size: 10pt;
+  font-weight: 400;
+  font-style: italic;
+  color: rgb(80, 80, 80);
+  display: inline;
+}
 h2 {
   font-size: 14pt;
   font-weight: 500;

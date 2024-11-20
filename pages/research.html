@@ -23,25 +23,30 @@
             My broad interest is <b>neurosymbolic reasoning</b> - combining neural pathways with symbolic reasoning. My beliefs are the following:
         </p>
         <ul class="custom-list">
-            <li>Intelligence is pattern recognition - and the more you can abstract, the more you can reuse recognized patterns.</li>
-            <li>Deep learning has proven large models can be shockingly intelligent. Why? Because shallow layers allow for abstraction, and deep layers allow for pattern recognition on abstract elements.</li>
-            <li>LLMs have shown that deep learning plus attention and scaling can lead to useful and remarkable systems.</li>
-            <li>Scaling works and will continue to work but is incredibly inefficient. We will soon hit the point where the marginal benefit of more compute doesn't warrant its exponential cost.</li>
-        </ul> <br>
+            <li>Neural methods rock. Intelligence comes down to abstraction and pattern recognition - deep learning has been so effective because it allows abstraction in earlier layers with pattern recognition in later layers.</li>
+            <li>LLMs are useful and will continue to get better. <i>But</i> they have fundamental limitations with their current architecture.</li>
+            <li>Scaling is incredible inefficient. We will soon hit the point where the marginal benefit of lobbing more compute doesn't warrant its cost...<i> yes, I do think scaling will hit a 'wall'.</i></li>
+        </ul>
         <p>
-            I could be fully wrong on this! Maybe scaling and compounding improvements to architecture, data, training, and fine-tuning plus some version of search and RAG gets us there. But I think the ideal system requires the following that is currently lacking in LLMs:
+            I could be fully wrong on this! Maybe compounding improvements to architecture, data, training, and fine-tuning plus some version of inference-time compute and RAG gets us there. But I believe an ideal system requires the following that currently lack in decoder-only transformers<sup><it>(1)</it></sup>:
         </p>
         <ul class="custom-list">
-            <li><p data-attribute="highlight">Significant Conditional Computation:</p> We should minimize compute by using only the necessary pathways. Required compute should scale with difficulty of problem.</li>
-            <li><p data-attribute="highlight">Integration of Symbolic Components:</p> Neural pathways are clearly powerful - but incorporating symbolic modules can enable more reliable and truthful AI.</li>
-            <li><p data-attribute="highlight">Ability for Continual Learning:</p> Models should be able to learn from new information and utilize these insights later on - and I don't believe ICL + RAG is a sufficient answer.</li>
+            <li><p data-attribute="highlight">Significant Conditional Computation:</p> We should minimize computation by using only the necessary pathways, and required compute should scale with the difficulty of the problem.</li>
+            <li><p data-attribute="highlight">Integration of Symbolic Components:</p> Neural pathways are clearly powerful - but models should natively interweave symbolic modules (e.g., math, world/scenario modeling).</li>
+            <li><p data-attribute="highlight">Ability for Continual Learning:</p> Models should be able to learn new information (beyond ICL or RAG).</li>
         </ul><br>
-        <p>
-            I'm currently working on a few projects adjacent to these ideas. <i>More to come here.</i>
-        </p><br>
+        <p data-attribute="heading">What's Keeping Me Busy?</p>
+        <ul class="custom-list"></ul>
+            <li><p data-attribute="highlight">ARC Challenge:</p> A* search over a DSL (using a learned PCFG) that operates at the 'object' level.</li>
+            <li><p data-attribute="highlight">NLP:</p> Preliminary testing of hierarchal context (vs. entirely token-level embeddings) in a decoder-only transformer.</li>
+            <li><p data-attribute="highlight">Other Interests:</p> Library learning. Building models that natively leverage knowledge graphs. Incorporating symbolic modules directly into a transformer's architecture.</li>
+        </ul><br>
+        <hr>
         <p data-attribute="research-preface">
-            <b>Please don't hesitate to reach out if this interests you, you have a different perspective, or you think there are papers I should check out. I love discussing these things!</b>
-        </p>
+            <b>Please reach out if this interests you. Or if you disagree. Or if you think there is a paper I should check out. I love chatting about this stuff!</b>
+        </p><br>
+        <p data-attribute="research-footnote">
+            <i><sup>(1)</sup> I get the following arguments. 1) Chain of thought / inference-time compute addresses conditional computation; 2) Tool use and search integration addresses my second concern; 3) ICL, RAG, and long-context can address continual learning. However, I believe these are insufficient.</i><br><br>
         
     </div>
 
