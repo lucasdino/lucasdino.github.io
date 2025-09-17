@@ -1,8 +1,12 @@
+/* 
+#####################################################
+Site-level variables
+#####################################################
+*/
 * {
   box-sizing: border-box;
 }
 
-/* Setting variables for reuse throughout */
 :root {
   background-color: var(--subtle-white);
   --ooh-red-hot: rgb(226, 13, 13);
@@ -71,7 +75,12 @@ p[data-attribute="heading"] {
   border-bottom: 1.5px solid #d3d3d3;
 }
 
-/* Formatting for carousel elements */
+
+/* 
+#####################################################
+Carousel Elements
+#####################################################
+*/
 .carousel {
   display: flex;
   overflow-x: auto;
@@ -86,7 +95,7 @@ p[data-attribute="heading"] {
   margin: 10px;
   padding: 15px;
   border-radius: 10px;
-  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2); /* Light drop shadow */
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
   text-decoration: none;
   color: black;
   transition: background-color 0.3s, box-shadow 0.3s;
@@ -99,10 +108,10 @@ p[data-attribute="heading"] {
   color: var(--ooh-red-hot);
 }
 .carousel-element h2, .carousel-element p {
-  margin: 0; /* Remove default margins */
+  margin: 0;
 }
 .carousel-element hr {
-  margin: 10px 0; /* Add some spacing around the horizontal rule */
+  margin: 10px 0;
 }
 hr[data-attribute="carousel"] {
   margin-top: 4px;
@@ -115,32 +124,123 @@ p[data-attribute="carousel"] {
 }
 
 
-/* --- Inline list card (thumbnail + title + summary) --- */
-.listline { display:flex; align-items:flex-start; gap:16px; padding:18px 16px; border-radius:0; text-decoration:none; color:black; }
-.listline:hover { background:rgb(225,225,225); border-radius:12px; cursor:pointer; }
-.listline:hover .listline-thumb { background:inherit; }
-.listline + .listline { border-top:1px solid #e6e6e6; }
-.listline:visited, .listline * { color:inherit; text-decoration:none; }
-
-/* base thumb box; aspect/height overridden by variant */
-.listline-thumb {
-  flex:0 0 auto; height:150px; aspect-ratio:7/3; display:flex; align-items:center; justify-content:flex-start;
-  border-radius:6px; background:var(--subtle-white); overflow:hidden;
+/* 
+#####################################################
+List Card (Thumbnail + Title + Summary)
+#####################################################
+*/
+.listline {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 18px 16px;
+  border-radius: 0;
+  text-decoration: none;
+  color: black;
 }
+
+.listline:hover {
+  /* transparent light red */
+  background: rgba(226, 13, 13, 0.07);
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+/* typography changes on hover */
+.listline:hover .listline-title {
+  color: var(--ooh-red-hot);
+}
+
+.listline:hover .listline-summary {
+  color: black;
+}
+
+/* include line separator between cards */
+.listline { position: relative; }
+.listline + .listline {
+  border-top: none;
+}
+.listline + .listline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 97%;
+  height: 1px;
+  background: #d1d1d1;
+}
+
+.listline:visited,   /* keep links neutral */
+.listline * {
+  color: inherit;
+  text-decoration: none;
+}
+
+.listline-thumb {
+  flex: 0 0 auto;
+  height: 150px;
+  aspect-ratio: 7 / 3;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background: transparent;
+  border-radius: 0;
+  overflow: visible;
+}
+
 .listline-thumb img {
-  max-width:100%; max-height:100%; object-fit:contain; object-position:left center; display:block;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  object-position: left center;
+  display: block;
+  border-radius: 6px;
+  box-shadow: none;
+  filter:
+    drop-shadow(-2px 3px 4px rgba(0,0,0,0.14))
+    drop-shadow(-6px 9px 16px rgba(0,0,0,0.18));
 }
 
 /* variants */
-.listline--research .listline-thumb { height:160px; aspect-ratio:7/3; }      /* wider  */
-.listline--professional .listline-thumb { height:150px; aspect-ratio:5/3; }  /* 2:1 box */
+.listline--research .listline-thumb {
+  height: 160px;
+  aspect-ratio: 7 / 3; /* wider */
+}
 
-.listline-body { flex:1; display:flex; flex-direction:column; min-width:0; }
-.listline-title { font-weight:700; font-size:13.5pt; line-height:1.25; color:black; }
-.listline-summary { margin-top:6px; font-size:11pt; line-height:1.4; color:rgb(100,100,100); overflow:visible; display:block; }
+.listline--professional .listline-thumb {
+  height: 150px;
+  aspect-ratio: 5 / 3; /* 5:3 box */
+}
 
+.listline-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
 
-/* Formatting for bullet lists */
+.listline-title {
+  font-weight: 700;
+  font-size: 13.5pt;
+  line-height: 1.25;
+  color: black;
+}
+
+.listline-summary {
+  margin-top: 6px;
+  font-size: 11pt;
+  line-height: 1.4;
+  color: rgb(140, 140, 140);
+  overflow: visible;
+  display: block;
+}
+
+/* 
+#####################################################
+Bullet Lists
+#####################################################
+*/
 .custom-list {
   font-size: 12pt;
   list-style: none;
@@ -171,6 +271,13 @@ a[data-attribute="mutedlink"]:hover {
   color: var(--ooh-red-hot);
   font-weight: 400;
 }
+
+
+/* 
+#####################################################
+Container for the ugly mug
+#####################################################
+*/
 .headshot-container{
   display: flex;
   align-items: flex-start;
@@ -188,7 +295,12 @@ img[data-attribute="headshot"] {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
 }
 
-/* Formatting for the top-bar */
+
+/* 
+#####################################################
+Navbar
+#####################################################
+*/
 .topbar {
   position: fixed;
   background-color: var(--subtle-white);
@@ -234,7 +346,12 @@ img[data-attribute="headshot"] {
   color: var(--ooh-red-hot);
 }
 
-/* Set up the code for the footer */
+
+/* 
+#####################################################
+Footer
+#####################################################
+*/
 .footer-container {
   position: fixed;
   display: flex;
@@ -272,7 +389,12 @@ img[data-attribute="headshot"] {
   fill: black;
 }
 
-/* Formatting for contact page */
+
+/* 
+#####################################################
+Contact Page
+#####################################################
+*/
 .contact {
   display: flex;
   justify-content: center;
@@ -283,7 +405,12 @@ img[data-attribute="headshot"] {
   color: rgb(150, 150, 150);
 }
 
-/* Heinous formatting for personal page */
+
+/* 
+#####################################################
+Personal Page
+#####################################################
+*/
 a[data-attribute="honk-name"] {
   font-family: "Honk", system-ui;
 }  
@@ -318,10 +445,21 @@ h1 {
   width: 30vw;
 }
 #map_text p {
-  font-size: 20px;
+  margin: 0 0 10px;
+  font-size: 18px;
   font-weight: 500;
-  color: black;
-  margin: 15px;
+  line-height: 1.45;
+}
+#map_text em {
+  color: var(--muted-red);
+  font-style: normal;
+  font-weight: 500;
+}
+#map_text .aside {
+  margin-top: 6px;
+  font-size: 14px;
+  color: rgb(140,140,140);
+  font-weight: 400;
 }
 #map_text span[data-attribute="highlight"] {
   color: var(--muted-red);
@@ -389,10 +527,11 @@ h1 {
   box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
 }
 
-
-
-
-/* Styling for the Dino Running Animation (Personal Page) */
+/* 
+-----------------------
+Dino Running Animation
+-----------------------
+*/
 .dino-container {
   display: flex;
   width: 98%; 
