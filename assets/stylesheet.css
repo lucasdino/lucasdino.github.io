@@ -224,6 +224,8 @@ List Card (Thumbnail + Title + Summary)
   font-weight: 700;
   font-size: 13.5pt;
   line-height: 1.25;
+  display: inline-block;
+  margin-right: 8px;
   color: black;
 }
 
@@ -234,6 +236,30 @@ List Card (Thumbnail + Title + Summary)
   color: rgb(140, 140, 140);
   overflow: visible;
   display: block;
+}
+
+/* 
+#####################################################
+Research
+#####################################################
+*/
+.badge {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 10pt;
+  line-height: 1;
+  color: #fff;
+  vertical-align: baseline;
+  box-shadow:
+    0 6px 14px rgba(178, 0, 0, 0.28),
+    inset 0 1px 0 rgba(255,255,255,0.18);
+}
+
+.badge--neurips {
+  background: linear-gradient(135deg, #ff3b3b 0%, #dc1111 45%, #b20000 100%);
 }
 
 /* 
