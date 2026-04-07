@@ -9,7 +9,7 @@
   const AI_PREFIX = "ai_designed";
 
   const INFO_TEXT =
-    "<COME BACK 4/5/26 THX> Want to see how good AI agents have gotten? I asked each to redesign my website. One single prompt and let them cook.";
+    "<TBU ON CLAUDE + GEMINI> Want to see how good AI agents have gotten? I asked each to rebuild my website. One single prompt and let 'em cook.";
 
   function versionPath(versionId) {
     const v = VERSIONS.find((x) => x.id === versionId);

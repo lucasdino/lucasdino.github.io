@@ -1,93 +1,154 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Lucas Dionisopoulos</title>
-        <link rel="icon" href="/assets/dino/DinoIcon.ico" type="image/x-icon">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="stylesheet.css">
-        <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "a31ef88eb6a94f49b864a41163ab806c"}'></script>
-        <script src="/shared_js/version-switcher.js"></script>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucas Dionisopoulos | Research</title>
+    <link rel="icon" href="../../assets/dino/DinoIcon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="stylesheet.css">
+    <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "a31ef88eb6a94f49b864a41163ab806c"}'></script>
+    <script defer src="../../shared_js/version-switcher.js"></script>
+    <script defer src="script.js"></script>
 </head>
-<body>
-    <div class="topbar">
-        <a class="title" href="/index.html">Lucas Dionisopoulos</a>
-        <a class="navpointer" href="/pages/professional.html">Professional</a>
-        <a class="navpointer" attribute="active_page" href="/pages/research.html">Research</a>
-        <a class="navpointer" href="/pages/personal.html">Personal</a>
-        <a class="navpointer" href="/pages/contact.html">Contact</a>
-    </div>
+<body class="page-research">
+    <header class="site-header">
+        <nav class="topbar" aria-label="Primary">
+            <a class="title" href="index.html">
+                <span class="title__name">Lucas Dionisopoulos</span>
+                <span class="title__tag">ML systems, research, and field notes</span>
+            </a>
+            <div class="topbar__nav">
+                <a class="navpointer" href="professional.html">Professional</a>
+                <a class="navpointer" attribute="active_page" aria-current="page" href="research.html">Research</a>
+                <a class="navpointer" href="personal.html">Personal</a>
+                <a class="navpointer" href="contact.html">Contact</a>
+            </div>
+        </nav>
+    </header>
 
-    <div class="meat">
-        Working on RL + LLMs with <a href="https://pearls-lab.github.io/" data-attribute="mutedlink">PEARLS Lab</a>.
-        <br><br>
-        My current project is focused on building a corporate simulation to use as a multi-turn RL environment for LLMs. The goal is to simulate market dynamics with semi-optimal competition. This can then be used to generate realistic tasks in finance, data analysis, and general corporate strategy that require multi-turn interactions + tool calling with costs.
-        <br><br>
-        More to come!
-        <br><br>
-
-        <p data-attribute="heading">Research</p>
-        <a class="listline listline--research" href="/assets/files/llm_chess_neurips_forlm_2025.pdf">
-            <div class="listline-thumb"><img src="/assets/thumbnails/llmchess_takeaway.jpg" alt=""></div>
-            <div class="listline-body">
-            <div class="listline-title">
-                Reasoning Through Chess: How Reasoning Evolves from Data Through Fine-Tuning and Reinforcement Learning
-                <span class="badge badge--neurips">NeurIPS 2025 FoRLM Workshop (Oral)</span>
+    <main class="page-shell">
+        <section class="page-header">
+            <div data-reveal>
+                <p class="eyebrow">Research</p>
+                <h1 class="display display--page">Reasoning, environments, and what data teaches a model to do.</h1>
+                <p class="lede">
+                    I'm currently working on RL + LLMs with
+                    <a class="inline-link" href="https://pearls-lab.github.io/">PEARLS Lab</a>.
+                    The main thread right now is building a corporate simulation that can act as a multi-turn RL environment for language models.
+                </p>
+                <p class="lede">
+                    The goal is to generate realistic tasks in finance, data analysis, and corporate strategy where tool calls have costs and the agent has to think across turns rather than one-shot prompts.
+                </p>
             </div>
-            <div class="listline-summary">
-                <b>Lead author.</b> Outperformed state-of-the-art open-source reasoning models in chess through SFT and RL on a 7B-parameter language model. The key focus of this work was to study how fine-tuning influenced post-RL reasoning (both <i>quantitative</i> and <i>qualitative</i> performance) using custom theoretically-inspired datasets. <br><br><i>Under review for ICML 2026.</i>
-            </div>
-            </div>
-        </a>
-
-        <a class="listline listline--research" href="https://lucasdino.notion.site/Attempted-Neural-A-Guided-Search-on-ARC-AGI-171c748e5e4a801796f6d7e13f78714c?pvs=4">
-            <div class="listline-thumb"><img src="/assets/thumbnails/arcprize_pcfg_thumbnail.jpg" alt=""></div>
-            <div class="listline-body">
-            <div class="listline-title">A* Neural Guided Search on ARC-AGI</div>
-            <div class="listline-summary">
-                Trained an image embedding model from scratch (<i>modified iBOT</i>) using a synthetic data generation pipeline to combine with a probabilistic context-free grammar (PCFG) in a neurosymbolic programming approach for ARC-AGI.
-            </div>
-            </div>
-        </a>
-        
-        <a class="listline listline--research" href="https://lucasdino.notion.site/Philosophize-That-147c748e5e4a8054b857eee9e47bf62d?pvs=4">
-            <div class="listline-thumb"><img src="/assets/thumbnails/philosophize_thumbnail.jpg" alt=""></div>
-            <div class="listline-body">
-            <div class="listline-title">Philosophize That</div>
-            <div class="listline-summary">
-                Created a corpus of philosophical texts using various techniques to isolate signal from correlated noise and trained a model using document-level embeddings to classify the philosophical basis of my own journal entries.
-            </div>
-            </div>
-        </a>
-    </div>
-
-    <div class="footer-container">
-        <div class="footer-elements">
-            <div class="social-icons">
-                <div data-attribute="linkedin">
-                    <a href="https://www.linkedin.com/in/lucasdionisopoulos/" data-attribute="linkedin">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                            <path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/>
-                        </svg>
-                    </a>
+            <aside class="panel panel--tint page-header__note" data-reveal>
+                <p class="section-kicker">What I care about</p>
+                <div class="tag-row">
+                    <span class="tag">RL for LLMs</span>
+                    <span class="tag">Data-centric behavior</span>
+                    <span class="tag">Reasoning</span>
+                    <span class="tag">Environment design</span>
                 </div>
-                <div data-attribute="x-twitter">
-                    <a href="https://x.com/dinoacropolis" data-attribute="x-twitter">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-                        </svg>                
-                    </a>
-                </div> 
-                <div data-attribute="github">
-                    <a href="https://github.com/lucasdino" data-attribute="github">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 17">
-                            <path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"/>
-                        </svg>                
-                    </a>
-                </div> 
+                <p>More to come. The current work is still being built, which is exactly why it is interesting.</p>
+            </aside>
+        </section>
+
+        <section class="research-grid">
+            <a class="panel featured-paper" href="../../assets/files/llm_chess_neurips_forlm_2025.pdf" data-reveal>
+                <div class="paper-art">
+                    <img src="../../assets/thumbnails/llmchess_takeaway.jpg" alt="Reasoning Through Chess poster preview">
+                </div>
+                <div class="paper-copy">
+                    <p class="project-card__eyebrow">Featured Paper</p>
+                    <h2 class="paper-copy__title">Reasoning Through Chess</h2>
+                    <p class="paper-copy__summary">
+                        Lead author on work showing how fine-tuning data influences downstream reasoning after reinforcement learning.
+                        We outperformed state-of-the-art open-source reasoning models in chess using SFT and RL on a 7B language model.
+                    </p>
+                    <p class="paper-copy__summary">
+                        The part I care about most is not just the benchmark result. It is the relationship between dataset construction, learned transition dynamics, and the style of reasoning that survives RL.
+                    </p>
+                    <div class="paper-badge-row">
+                        <span class="paper-badge">Lead Author</span>
+                        <span class="paper-badge">NeurIPS 2025 FoRLM Oral</span>
+                        <span class="paper-badge">ICML 2026 Under Review</span>
+                    </div>
+                </div>
+            </a>
+
+            <div class="direction-grid">
+                <article class="panel direction-card" data-reveal>
+                    <p class="project-card__eyebrow">Current Thread</p>
+                    <h3>Corporate simulation for LLMs</h3>
+                    <p>Designing a multi-turn environment with semi-optimal competition so agents have to reason under incentives, costs, and evolving state.</p>
+                </article>
+
+                <article class="panel direction-card" data-reveal>
+                    <p class="project-card__eyebrow">Question</p>
+                    <h3>How data shapes behavior</h3>
+                    <p>I'm interested in when a model's later reasoning abilities are really downstream of earlier supervision choices rather than the RL recipe alone.</p>
+                </article>
+
+                <article class="panel direction-card" data-reveal>
+                    <p class="project-card__eyebrow">Bias</p>
+                    <h3>Real environments over toy ones</h3>
+                    <p>If we want agents that work outside demos, the evaluation environment has to expose actual tradeoffs instead of only surface polish.</p>
+                </article>
+            </div>
+
+            <div class="project-grid">
+                <a class="panel project-card" href="https://lucasdino.notion.site/Attempted-Neural-A-Guided-Search-on-ARC-AGI-171c748e5e4a801796f6d7e13f78714c?pvs=4" data-reveal>
+                    <div class="project-card__media">
+                        <img src="../../assets/thumbnails/arcprize_pcfg_thumbnail.jpg" alt="ARC-AGI thumbnail">
+                    </div>
+                    <div>
+                        <p class="project-card__eyebrow">Neurosymbolic Search</p>
+                        <h3 class="project-card__title">A* Neural Guided Search on ARC-AGI</h3>
+                        <p class="project-card__summary">Trained an image embedding model from scratch using synthetic data, then combined it with a probabilistic context-free grammar to guide search over ARC-AGI programs.</p>
+                        <div class="tag-row project-card__footer">
+                            <span class="tag">iBOT Variant</span>
+                            <span class="tag">Synthetic Data</span>
+                            <span class="tag">PCFG</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a class="panel project-card" href="https://lucasdino.notion.site/Philosophize-That-147c748e5e4a8054b857eee9e47bf62d?pvs=4" data-reveal>
+                    <div class="project-card__media">
+                        <img src="../../assets/thumbnails/philosophize_thumbnail.jpg" alt="Philosophize That thumbnail">
+                    </div>
+                    <div>
+                        <p class="project-card__eyebrow">Side Investigation</p>
+                        <h3 class="project-card__title">Philosophize That</h3>
+                        <p class="project-card__summary">Built a curated corpus of philosophical texts, isolated signal from correlated noise, and trained a document-embedding model to classify the philosophical basis of my own journal entries.</p>
+                        <div class="tag-row project-card__footer">
+                            <span class="tag">Embeddings</span>
+                            <span class="tag">Corpus Design</span>
+                            <span class="tag">Classification</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <p class="footer-note">Built to show the serious work without pretending the serious work is the whole story.</p>
+            <div class="footer-socials" aria-label="Social links">
+                <a href="https://www.linkedin.com/in/lucasdionisopoulos/" aria-label="LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.5 2h-17A1.5 1.5 0 0 0 2 3.5v17A1.5 1.5 0 0 0 3.5 22h17a1.5 1.5 0 0 0 1.5-1.5v-17A1.5 1.5 0 0 0 20.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 1 1 8.3 6.5a1.78 1.78 0 0 1-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0 0 13 14.19a.66.66 0 0 0 0 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 0 1 2.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg>
+                </a>
+                <a href="https://x.com/dinoacropolis" aria-label="X">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                </a>
+                <a href="https://github.com/lucasdino" aria-label="GitHub">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 17"><path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"/></svg>
+                </a>
             </div>
         </div>
-    </div>
+    </footer>
 </body>
 </html>

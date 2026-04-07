@@ -8,8 +8,6 @@ AI_DESIGNED PROMPT
 *this is the prompt I use for each model to allow it to design its own version of my website*
 
 
-Howdy!
-
 I need you to do something for me. We're currently looking at my website. My glorious website. I like it as it stands.
 
 But I'm curious about what we could do together. You're a great coder and have good design, and you can read my website / links and get a feel for who I am. The goal of this website is to be partially professional and show my ability off, but also partially show a bit of personality.
@@ -23,6 +21,8 @@ So your task is to make a full redesign of my website inside your folder. You ca
 You should redesign it as you see fit. Change fonts, colors, wording, layouts. Think about how you want Lucas + yourself to look like. What is your own personality? Make this a collaboration between us. It's still my website of course, but you are the artist now.
 
 It better not be the generic fallbacks that I see a lot of AI coding pages look like. AKA purple gradients, dark mode, looking like every B2B SaaS landing page from the last 2 years. And you better not just change some stylesheet elements.
+
+Also don't try to be cringe.
 
 The folder you have access to is:
 -->

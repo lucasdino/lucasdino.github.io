@@ -3,7 +3,7 @@ var PAD = 12;
 var CARET_PAD = 16;
 var CARET_HALF = 5;
 
-export function createSmartPopup(map) {
+function createSmartPopup(map) {
     var container = map.getContainer();
 
     var el = document.createElement('div');
@@ -105,3 +105,5 @@ export function createSmartPopup(map) {
         getActiveMarker: function() { return activeMarker; }
     };
 }
+
+window.createSmartPopup = createSmartPopup;

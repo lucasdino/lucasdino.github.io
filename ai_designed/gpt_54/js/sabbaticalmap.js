@@ -6,8 +6,8 @@ var map = L.map('travel_map', {
     maxBounds: [[-90, -150], [90, 180]],
     maxBoundsViscosity: 10
 });
-L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png', {
-    attribution: '&copy; <a href="https://stadiamaps.com/" target="_blank">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/" target="_blank">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a>',
+L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a>',
 }).addTo(map);
 
 
@@ -23,25 +23,26 @@ function createMarkerIcon(className, svgMarkup, visualSize) {
 
 var highlighted_marker = createMarkerIcon(
     'dark-donut-icon',
-    '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><circle cx="12" cy="12" r="7" fill="none" stroke="#D00909" stroke-width="6" /></svg>',
+    '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><circle cx="12" cy="12" r="7" fill="none" stroke="#BF5A32" stroke-width="6" /></svg>',
     24
 );
 var par_marker = createMarkerIcon(
     'donut-icon',
-    '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18"><circle cx="9" cy="9" r="6" fill="none" stroke="#EF9A9A" stroke-width="5" /></svg>',
+    '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18"><circle cx="9" cy="9" r="6" fill="none" stroke="#8FA89C" stroke-width="5" /></svg>',
     18
 );
 var sub_marker = createMarkerIcon(
     'muted-icon',
-    '<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"><circle cx="6" cy="6" r="3.75" fill="#EF9A9A" stroke="none" /></svg>',
+    '<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"><circle cx="6" cy="6" r="3.75" fill="#BF5A32" stroke="none" /></svg>',
     12
 );
 
 
 // Importing our map locations and setting vars
-import { mapLocations } from './maplocations.js';
-import { initLightbox, createStopNav } from './mapux.js';
-import { createSmartPopup } from './smartpopup.js';
+var mapLocations = window.mapLocations;
+var initLightbox = window.initLightbox;
+var createStopNav = window.createStopNav;
+var createSmartPopup = window.createSmartPopup;
 var singaporeLocation = [1.3595, 103.9895]
 var sfLocation = [37.75, 237.55]
 var initialMapView = { center: map.getCenter(), zoom: map.getZoom() };
@@ -114,7 +115,7 @@ var backButton = L.control({ position: 'topright' });
 backButton.onAdd = function () {
     var div = L.DomUtil.create('div', 'back-button');
     var button = L.DomUtil.create('button', 'back-to-map-btn', div);
-    button.innerHTML = "&#x2190; Back";
+    button.innerHTML = "&#x2190; Back to route";
     L.DomEvent.on(button, 'click', returnToMainMapView);
     return div;
 };
@@ -176,7 +177,7 @@ function addParentMarkers() {
     });
 
     if (latLngs.length > 1) {
-        var polyline = L.polyline(latLngs, { color: '#F8B6B6', opacity: 0.4, weight: 2, dashArray: '2, 4' }).addTo(map);
+        var polyline = L.polyline(latLngs, { color: '#C59B78', opacity: 0.55, weight: 2, dashArray: '3, 5' }).addTo(map);
         parentMarkers.addLayer(polyline);
     }
     parentMarkers.addTo(map);
@@ -202,7 +203,7 @@ function addSubMarkers(locations) {
     locations.forEach(function(location, index) {
         if (index >= locations.length - 1) return;
         var next = locations[index + 1];
-        var opts = { color: '#F8B6B6', opacity: 0, weight: 2 };
+        var opts = { color: '#C59B78', opacity: 0, weight: 2.2 };
         if (location.dashed) opts.dashArray = '2, 4';
         var segment = L.polyline([location.latLng, next.latLng], opts);
         subMarkers.addLayer(segment);
