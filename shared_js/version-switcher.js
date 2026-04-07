@@ -2,14 +2,14 @@
   const VERSIONS = [
     { id: "pages", label: "Original", isDefault: true },
     { id: "opus_46", label: "Claude Opus 4.6", headline: "", thoughts: "TBU!" },
-    { id: "gemini_31", label: "Gemini 3 CLI", headline: "Pretty underwhelming", thoughts: "Decently fun design but it really only changed styling and ran for <5 minutes despite me asking it to fully design the webpage." },
-    { id: "gpt_54_cli", label: "GPT 5.4", headline: "Impressive but cringe writing", thoughts: "Ran for ~30 minutes and used a ton of MCP calls to QA its work. Actually reworked the entire webpage. Looks clean despite odd wording -- overall impressive agentic ability." },
+    { id: "gemini_31_cli", label: "Gemini 3.1 (Pro)", headline: "Great designer, underwhelming agent", thoughts: "Really good design. Like should I just use this as my website now lol?! Issue is that I asked it to not just redesign but restructure the whole website -- which it didn't do. So as a designer? Excellent. As an instruction-following agent? May want to work on that Google." },
+    { id: "gpt_54_cli", label: "GPT 5.4 (xHigh)", headline: "Impressive but cringe writing", thoughts: "It actually took on the task to 'redo' the whole website. Started by reading some of my blogs then rebuilt the whole messaging + structure. Used tons of MCP calls to get screenshots and QA its work. Looks clean (despite some dumb phrases) -- overall really impressive agentic ability." },
   ];
 
   const AI_PREFIX = "ai_designed";
 
   const INFO_TEXT =
-    "<TBU ON CLAUDE + GEMINI> Want to see how good AI agents have gotten? I asked each to rebuild my website. One single prompt and let 'em cook.";
+    "Want to see how good AI coding has gotten? I asked each to rebuild my website. One single prompt and let 'em cook.";
 
   function versionPath(versionId) {
     const v = VERSIONS.find((x) => x.id === versionId);
