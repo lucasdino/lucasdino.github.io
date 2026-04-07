@@ -73,7 +73,7 @@ hr {
 }
 .meat {
   margin-top: 0;
-  padding: clamp(1.5rem, 3vw, 2.75rem) 24px 96px;
+  padding: clamp(1.5rem, 1vw, 2.75rem) 24px 96px;
 }
 p[data-attribute="heading"] {
   font-size: clamp(1.55rem, 2.2vw, 1.9rem);
@@ -320,13 +320,11 @@ a[data-attribute="mutedlink"] {
   padding: 0 0.08em;
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
-  transition: color 0.12s ease, background-color 0.12s ease, text-decoration-color 0.12s ease;
+  transition: color 0.08s ease, text-decoration-color 0.08s ease;
 }
 a[data-attribute="mutedlink"]:hover {
-  color: var(--subtle-white);
-  background-color: var(--midnight-red);
-  text-decoration-color: var(--midnight-red);
-  font-weight: 400;
+  color: var(--ooh-red-hot);
+  text-decoration-color: var(--ooh-red-hot);
 }
 
 
