@@ -1,6 +1,7 @@
 (function () {
   const VERSIONS = [
-    { id: "pages", label: "Original", isDefault: true },
+    { id: "pages", label: "Current Site", isDefault: true },
+    { id: "old_design", label: "Previous Design", headline: "Previous Version (Reference)", thoughts: "An earlier version of my website all models are provided with as a consistent checkpoint to rebuild." },
     { id: "opus_46", label: "Claude Opus 4.6 (Max)", headline: "Claude has taste", thoughts: "Super clean design but wasn't the most ambitious on doing a full rebuild of my website (despite me asking). Cost me ~$6 in API credits for this single request too! Anyway, Claude has taste." },
     { id: "sonnet_46", label: "Claude Sonnet 4.6 (Med)", headline: "Tasteful Opus 4.6 distillation", thoughts: "This isn't even their top model. This wasn't even highest thinking mode. Great design, but basically same feel + feedback as I have for Opus 4.6 (Max) -- just about 3x cheaper." },
     { id: "gpt_54_cli", label: "GPT 5.4 (xHigh)", headline: "Impressive but cringe writing", thoughts: "It actually took on the task to 'redo' the whole website. Started by reading some of my blogs then rebuilt the whole messaging + structure. Used tons of MCP calls to get screenshots and QA its work. Looks clean (despite some dumb phrases) -- overall really impressive agentic ability." },
