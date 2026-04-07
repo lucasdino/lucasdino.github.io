@@ -2,8 +2,9 @@
   const VERSIONS = [
     { id: "pages", label: "Original", isDefault: true },
     { id: "opus_46", label: "Claude Opus 4.6" },
-    { id: "gemini_31", label: "Gemini 3.1" },
+    { id: "gemini_31", label: "Gemini 3 CLI" },
     { id: "gpt_54", label: "GPT 5.4" },
+    { id: "gpt_54_cli", label: "GPT 5.4 CLI" },
   ];
 
   const AI_PREFIX = "ai_designed";
