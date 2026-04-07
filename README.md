@@ -4,7 +4,7 @@ Email: firstlast[at]gmail[dot]com :mailbox: </br>
 
 
 <!-- 
-AI_DESIGNED PROMPT 
+AI_DESIGN PROMPT 
 *this is the prompt I use for each model to allow it to design its own version of my website*
 
 
