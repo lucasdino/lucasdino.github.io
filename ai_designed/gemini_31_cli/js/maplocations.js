@@ -1,4 +1,4 @@
-window.mapLocations = {
+export const mapLocations = {
     "MidwayLHS": {
         parent: false,
         drawMarker: false,

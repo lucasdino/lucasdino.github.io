@@ -1,79 +1,154 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Lucas Dionisopoulos: UC San Diego ML student and researcher, former banker, builder of RL and LLM systems, and owner of a memorable sabbatical map.">
     <title>Lucas Dionisopoulos</title>
     <link rel="icon" href="/assets/dino/DinoIcon.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600;9..144,700&family=Kode+Mono:wght@400..700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="stylesheet.css">
-    <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "a31ef88eb6a94f49b864a41163ab806c"}'></script>
     <script src="/shared_js/version-switcher.js"></script>
 </head>
-<body>
-    <div class="topbar">
+<body class="page-home">
+    <header class="topbar">
         <a class="title" href="/index.html">Lucas Dionisopoulos</a>
         <a class="navpointer" href="/pages/professional.html">Professional</a>
         <a class="navpointer" href="/pages/research.html">Research</a>
         <a class="navpointer" href="/pages/personal.html">Personal</a>
         <a class="navpointer" href="/pages/contact.html">Contact</a>
-    </div>
+    </header>
 
-    <div class="meat">
-        <div class="headshot-container">
-            <div class="headshot-text">
-                <p>
-                    Hi - I'm Lucas and I'm from Nebraska.<br><br>
-                                        
-                    I'll spare you the details but here's my quick gist:
-                    <hr>
-                </p>                
-                <ul class="custom-list">
-                    <li>Studied finance at WashU in St. Louis</li>
-                    <li>Worked 2 years in investment banking after graduation at <a href="https://www.ftpartners.com/" data-attribute="mutedlink">FT Partners</a></li>
-                    <li>Realized I needed a career change...when better than in your early 20s? Motivation behind my pivot <a href="https://lucasdino.notion.site/Why-Pivot-7736665e93394c3886f78950ca66f7d2?pvs=4" data-attribute="mutedlink">here</a></li>
-                    <li>Took a year off to study math, machine learning, and computer science and apply to grad schools. Studied <a href="https://www.notion.so/lucasdino/What-I-Studied-on-my-Year-Off-271c748e5e4a80c6bc90d2b6e1edf9d6" data-attribute="mutedlink">a lot</a> but also had a bit of <a href="/pages/personal.html" data-attribute="mutedlink">fun</a></li>
-                    <li><p data-attribute="highlight">Currently:</p> At UCSD studying ML and doing research applying RL to LLMs. My current work is focused on building a corporate sim to use as a multi-turn RL environment for LLMs. Recently released <a href="/assets/files/llm_chess_neurips_forlm_2025.pdf" data-attribute="mutedlink">some work I led</a> (+ gave a talk @ NeurIPS) on how your fine-tuning data influences downstream reasoning in chess</li>
-                </ul>
-                <p>
-                    I promise I'm more of a person than this - feel free to reach out! 👋
-                </p>
-            </div>
-            <div class="headshot">
-                <img src="/assets/pics/lucasducas.png" data-attribute="headshot" alt="Free (and incredible quality) headshot I got taken at Stripe Sessions 2023">
-            </div>
-        </div>
-    </div>
-
-
-
-
-    <div class="footer-container">
-        <div class="footer-elements">
-            <div class="social-icons">
-                <div data-attribute="linkedin">
-                    <a href="https://www.linkedin.com/in/lucasdionisopoulos/" data-attribute="linkedin">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                            <path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/>
-                        </svg>
-                    </a>
+    <main class="page-shell">
+        <section class="panel hero-panel">
+            <div class="hero-grid">
+                <div class="hero-copy">
+                    <p class="eyebrow">Nebraska / finance / ML / research / side quests</p>
+                    <h1 class="display-title">Finance-trained. Research-minded. Still willing to redraw the map.</h1>
+                    <p class="lede">
+                        I studied finance at WashU, spent two years in investment banking at
+                        <a href="https://www.ftpartners.com/" target="_blank" rel="noreferrer" data-attribute="mutedlink">FT Partners</a>,
+                        then took a hard left into math, machine learning, and computer science. Now I am at UC San Diego studying ML, doing research on RL for LLMs, and building systems that are technical enough to be fun and practical enough to matter.
+                    </p>
+                    <div class="cta-row">
+                        <a class="button-link" href="professional.html">See selected work</a>
+                        <a class="button-link button-link--secondary" href="/assets/files/resume_redacted.pdf" target="_blank" rel="noreferrer">Open resume</a>
+                    </div>
+                    <div class="chip-row">
+                        <span class="chip">Current focus: multi-turn RL environments for LLMs</span>
+                        <span class="chip">Latest paper: reasoning in chess after SFT + RL</span>
+                        <span class="chip">Still from Nebraska</span>
+                    </div>
                 </div>
-                <div data-attribute="x-twitter">
-                    <a href="https://x.com/dinoacropolis" data-attribute="x-twitter">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-                        </svg>                
-                    </a>
-                </div> 
-                <div data-attribute="github">
-                    <a href="https://github.com/lucasdino" data-attribute="github">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 17">
-                            <path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"/>
-                        </svg>                
-                    </a>
-                </div> 
+                <aside class="portrait-panel">
+                    <div class="portrait-stamp">Field Notes / Spring 2026</div>
+                    <div class="portrait-frame">
+                        <img src="/assets/pics/lucasducas.png" alt="Lucas Dionisopoulos headshot" loading="eager">
+                    </div>
+                    <p class="photo-caption">Best accidental perk of conference season: a very solid free headshot.</p>
+                </aside>
             </div>
+        </section>
+
+        <section class="story-grid">
+            <article class="panel story-card story-card--warm">
+                <p class="eyebrow">Right now</p>
+                <h2 class="section-title">Building research with an operator&apos;s bias</h2>
+                <p class="body-copy">
+                    My current work sits at the intersection of RL, LLM behavior, evaluation, and tool-using environments. I like projects that survive contact with reality instead of just looking good on a benchmark table.
+                </p>
+            </article>
+            <article class="panel story-card story-card--olive">
+                <p class="eyebrow">The pivot</p>
+                <h2 class="section-title">I left a good path on purpose</h2>
+                <p class="body-copy">
+                    The move out of finance was deliberate, not dramatic. I took a year to get deeply technical, pressure-test the decision, and make sure I actually wanted the next decade to look different from the last one.
+                </p>
+                <a class="ghost-link" href="https://lucasdino.notion.site/Why-Pivot-7736665e93394c3886f78950ca66f7d2?pvs=4" target="_blank" rel="noreferrer">Read the longer version</a>
+            </article>
+            <article class="panel story-card story-card--blue">
+                <p class="eyebrow">The other half</p>
+                <h2 class="section-title">I am not trying to be a resume in human form</h2>
+                <p class="body-copy">
+                    There is research here, but also travel, weird projects, sketching, and a dinosaur or two. The site is supposed to show both competence and a pulse.
+                </p>
+            </article>
+        </section>
+
+        <section class="section-split">
+            <article class="panel section-stack">
+                <div class="section-header">
+                    <p class="eyebrow">Quick gist</p>
+                    <h2 class="section-title">The compressed timeline</h2>
+                </div>
+                <ul class="timeline-list">
+                    <li><strong>WashU in St. Louis.</strong> Studied finance and learned I liked hard problems more than neat narratives.</li>
+                    <li><strong>FT Partners.</strong> Two years in investment banking, which taught me pace, stamina, and how to be precise under pressure.</li>
+                    <li><strong>Sabbatical year.</strong> Studied linear algebra, probability, machine learning, and computer science while moving through long-term stays, hostels, and pet sits.</li>
+                    <li><strong>UC San Diego.</strong> Now focused on ML research and building work that connects model behavior to something more realistic than single-turn toy tasks.</li>
+                </ul>
+            </article>
+            <article class="panel section-stack">
+                <div class="section-header">
+                    <p class="eyebrow">What I optimize for</p>
+                    <h2 class="section-title">Technical depth, clear writing, low pretense</h2>
+                </div>
+                <ul class="dash-list">
+                    <li>I like building from first principles, then polishing until other people can actually use it.</li>
+                    <li>I care a lot about taste: what to build, what to cut, and what is just ornamental complexity.</li>
+                    <li>I am happiest when a project is both serious and a little bit alive.</li>
+                </ul>
+                <div class="info-band">
+                    <span class="info-pill">RL + LLMs</span>
+                    <span class="info-pill">Applied ML systems</span>
+                    <span class="info-pill">Writing for humans</span>
+                </div>
+            </article>
+        </section>
+
+        <section class="link-grid">
+            <a class="link-card" href="professional.html">
+                <p class="eyebrow">Professional</p>
+                <h2 class="link-card-title">Selected work</h2>
+                <p>Code, systems, projects, and the pieces that best show how I build.</p>
+                <span class="ghost-link">Go to work</span>
+            </a>
+            <a class="link-card" href="research.html">
+                <p class="eyebrow">Research</p>
+                <h2 class="link-card-title">Current questions</h2>
+                <p>LLM behavior, RL, and the kinds of environments that make model progress harder to fake.</p>
+                <span class="ghost-link">Go to research</span>
+            </a>
+            <a class="link-card" href="personal.html">
+                <p class="eyebrow">Personal</p>
+                <h2 class="link-card-title">Sabbatical atlas</h2>
+                <p>The year-off map, the fun parts, and some evidence that the pivot was lived rather than announced.</p>
+                <span class="ghost-link">Go to personal</span>
+            </a>
+            <a class="link-card" href="contact.html">
+                <p class="eyebrow">Contact</p>
+                <h2 class="link-card-title">Reach out</h2>
+                <p>Research, projects, writing, or a genuinely good reason to start a conversation.</p>
+                <span class="ghost-link">Go to contact</span>
+            </a>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p class="footer-note">Serious about the work. Not interested in pretending personality is separate from it.</p>
+        <div class="social-icons">
+            <a class="social-link" href="https://www.linkedin.com/in/lucasdionisopoulos/" target="_blank" rel="noreferrer" data-attribute="linkedin" aria-label="LinkedIn">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.5 2h-17A1.5 1.5 0 0 0 2 3.5v17A1.5 1.5 0 0 0 3.5 22h17a1.5 1.5 0 0 0 1.5-1.5v-17A1.5 1.5 0 0 0 20.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 1 1 8.3 6.5a1.78 1.78 0 0 1-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0 0 13 14.19a.66.66 0 0 0 0 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 0 1 2.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg>
+            </a>
+            <a class="social-link" href="https://x.com/dinoacropolis" target="_blank" rel="noreferrer" data-attribute="x-twitter" aria-label="X">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a class="social-link" href="https://github.com/lucasdino" target="_blank" rel="noreferrer" data-attribute="github" aria-label="GitHub">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 17"><path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"/></svg>
+            </a>
         </div>
-    </div>
+    </footer>
 </body>
 </html>

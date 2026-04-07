@@ -1,10 +1,9 @@
 (function () {
   const VERSIONS = [
     { id: "pages", label: "Original", isDefault: true },
-    { id: "opus_46", label: "Claude Opus 4.6" },
-    { id: "gemini_31", label: "Gemini 3 CLI" },
-    { id: "gpt_54", label: "GPT 5.4" },
-    { id: "gpt_54_cli", label: "GPT 5.4 CLI" },
+    { id: "opus_46", label: "Claude Opus 4.6", headline: "", thoughts: "TBU!" },
+    { id: "gemini_31", label: "Gemini 3 CLI", headline: "Pretty underwhelming", thoughts: "Decently fun design but it really only changed styling and ran for <5 minutes despite me asking it to fully design the webpage." },
+    { id: "gpt_54_cli", label: "GPT 5.4", headline: "Impressive but cringe writing", thoughts: "Ran for ~30 minutes and used a ton of MCP calls to QA its work. Actually reworked the entire webpage. Looks clean despite odd wording -- overall impressive agentic ability." },
   ];
 
   const AI_PREFIX = "ai_designed";
@@ -117,6 +116,36 @@
       }
       .version-dropdown a:hover { background: rgba(226,13,13,0.06); color: var(--ooh-red-hot); }
       .version-dropdown a.active { color: var(--ooh-red-hot); font-weight: 500; }
+      .version-dropdown a { position: relative; }
+      .thought-bubble {
+        display: none;
+        position: absolute;
+        right: calc(100% + 10px);
+        top: 50%;
+        transform: translateY(-50%);
+        background: #fff;
+        border-left: 3px solid var(--ooh-red-hot);
+        border-radius: 3px;
+        padding: 8px 12px;
+        font-family: "Montserrat", sans-serif;
+        font-size: 8pt;
+        font-style: italic;
+        color: #555;
+        line-height: 1.45;
+        width: 210px;
+        white-space: normal;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+        pointer-events: none;
+        z-index: 10000;
+      }
+      .thought-bubble .tb-headline {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 8.5pt;
+        color: #333;
+        margin-bottom: 4px;
+      }
+      .version-dropdown a:hover .thought-bubble { display: block; }
     `;
     document.head.appendChild(style);
   }
@@ -150,6 +179,22 @@
       a.href = buildUrl(v.id, ctx.page);
       a.textContent = v.label;
       if (v.id === ctx.version) a.classList.add("active");
+      if (v.headline || v.thoughts) {
+        const bubble = document.createElement("span");
+        bubble.className = "thought-bubble";
+        if (v.headline) {
+          const h = document.createElement("div");
+          h.className = "tb-headline";
+          h.textContent = v.headline;
+          bubble.appendChild(h);
+        }
+        if (v.thoughts) {
+          const t = document.createElement("span");
+          t.textContent = v.thoughts;
+          bubble.appendChild(t);
+        }
+        a.appendChild(bubble);
+      }
       dropdown.appendChild(a);
     });
 

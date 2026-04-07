@@ -1,4 +1,4 @@
-function initLightbox() {
+export function initLightbox() {
     var overlay = document.createElement('div');
     overlay.className = 'map-lightbox';
     overlay.innerHTML = '<img>';
@@ -22,7 +22,7 @@ function initLightbox() {
     };
 }
 
-function createStopNav(map, popupCallbacks) {
+export function createStopNav(map, popupCallbacks) {
     var stops = [];
     var idx = -1;
     var control = null;
@@ -91,6 +91,3 @@ function createStopNav(map, popupCallbacks) {
         }
     };
 }
-
-window.initLightbox = initLightbox;
-window.createStopNav = createStopNav;

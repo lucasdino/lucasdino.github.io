@@ -22,6 +22,8 @@ You should redesign it as you see fit. Change fonts, colors, wording, layouts. T
 
 It better not be the generic fallbacks that I see a lot of AI coding pages look like. AKA purple gradients, dark mode, looking like every B2B SaaS landing page from the last 2 years. And you better not just change some stylesheet elements.
 
+You should take advantage of tools you have to QA / test your build as well.
+
 Also don't try to be cringe.
 
 The folder you have access to is:

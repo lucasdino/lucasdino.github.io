@@ -1,77 +1,151 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Lucas Dionisopoulos</title>
-        <link rel="icon" href="/assets/dino/DinoIcon.ico" type="image/x-icon">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Monoton&family=Kode+Mono:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="stylesheet.css">
-        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
-        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "a31ef88eb6a94f49b864a41163ab806c"}'></script>
-        <script src="/shared_js/version-switcher.js"></script>
-    </head>
-    <body>
-        <div class="topbar">
-            <a class="title" href="/index.html" data-attribute="honk-name">Lucas Dionisopoulos</a>
-            <a class="navpointer" href="/pages/professional.html">Professional</a>
-            <a class="navpointer" href="/pages/research.html">Research</a>
-            <a class="navpointer" attribute="active_page" href="/pages/personal.html" data-attribute="honk-nav">Personal</a>
-            <a class="navpointer" href="/pages/contact.html">Contact</a>
-        </div>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="The personal side of Lucas Dionisopoulos: a sabbatical atlas, side quests, travel notes, and the year spent studying machine learning on the move.">
+    <title>Lucas Dionisopoulos | Personal</title>
+    <link rel="icon" href="/assets/dino/DinoIcon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600;9..144,700&family=Kode+Mono:wght@400..700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="stylesheet.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="/shared_js/version-switcher.js"></script>
+</head>
+<body class="page-personal">
+    <header class="topbar">
+        <a class="title" href="/index.html">Lucas Dionisopoulos</a>
+        <a class="navpointer" href="/pages/professional.html">Professional</a>
+        <a class="navpointer" href="/pages/research.html">Research</a>
+        <a class="navpointer" attribute="active_page" href="/pages/personal.html">Personal</a>
+        <a class="navpointer" href="/pages/contact.html">Contact</a>
+    </header>
 
-        <div class="meat">
-            <h1 class="personal-page-heading">Sabbatical - Click Around!</h1>
+    <main class="page-shell">
+        <section class="panel hero-panel">
+            <div class="section-stack">
+                <p class="eyebrow">Personal</p>
+                <h1 class="page-title">The sabbatical was not a vacation with better branding.</h1>
+                <p class="lede">
+                    I took a year off to find out whether the pivot into ML was real. That meant studying hard, applying to grad school, moving between long-term stays, and choosing a slightly unreasonable amount of motion over sitting still.
+                </p>
+                <div class="travel-stats">
+                    <article class="stat-card">
+                        <p class="stat-value">153</p>
+                        <p class="stat-label">Days on the road</p>
+                    </article>
+                    <article class="stat-card">
+                        <p class="stat-value">22</p>
+                        <p class="stat-label">Flights home</p>
+                    </article>
+                    <article class="stat-card">
+                        <p class="stat-value">1</p>
+                        <p class="stat-label">Backpack</p>
+                    </article>
+                    <article class="stat-card">
+                        <p class="stat-value">A lot</p>
+                        <p class="stat-label">Of studying</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="panel map-panel">
+            <div class="map-panel-head">
+                <div class="section-stack">
+                    <p class="eyebrow">Sabbatical atlas</p>
+                    <h2 class="section-title">Click around the map.</h2>
+                </div>
+                <p class="section-note">The travel was real. The work was too.</p>
+            </div>
             <div id="map_container">
                 <div id="map_interactive_container">
-                    <div id="travel_map">    
-                        <script type="module" src="/pages/js/sabbaticalmap.js"></script>
-                    </div>
+                    <div id="travel_map"></div>
                 </div>
                 <div id="map_text_container">
                     <div id="map_text">
-                        <p>When I finished banking, I wanted to lock in and study ML to see if this was what I really wanted to pursue.</p>
-                        <p>
-                        I considered my options: study at home in Wisconsin <em>or</em> study abroad in long-term Airbnbs and pet sits
-                        (<i>with a bit of leisure ofc</i>).
-                        </p>
-                        <p><em>One of these paths seemed more fun…</em></p><br>
-
-                        <p class="aside">Note: I also did a lot of <a href="https://www.notion.so/lucasdino/What-I-Studied-on-my-Year-Off-271c748e5e4a80c6bc90d2b6e1edf9d6" data-attribute="mutedlink">work</a>.</p>
+                        <p>I left banking because I wanted to get seriously technical and see if this next chapter actually fit.</p>
+                        <p>Studying from Wisconsin would have worked. Studying from a rotating set of hostels, Airbnbs, pet sits, libraries, and airport floors sounded more memorable.</p>
+                        <p><em>One of those options clearly had more energy.</em></p>
+                        <p class="aside">The less romantic version is that I also did a lot of focused work. The study log is <a href="https://www.notion.so/lucasdino/What-I-Studied-on-my-Year-Off-271c748e5e4a80c6bc90d2b6e1edf9d6" target="_blank" rel="noreferrer" data-attribute="mutedlink">here</a>.</p>
+                    </div>
+                    <div class="legend-grid">
+                        <article class="mini-card">
+                            <p class="mini-label">Best outcome</p>
+                            <h3 class="mini-title">The pivot held up</h3>
+                            <p class="mini-copy">I came back more certain, more technical, and with a much better read on what kind of work actually energizes me.</p>
+                        </article>
+                        <article class="mini-card">
+                            <p class="mini-label">Secondary outcome</p>
+                            <h3 class="mini-title">The stories got better</h3>
+                            <p class="mini-copy">This is what happens when you combine grad applications, Greek mountains, Australian hostels, and a stubborn need to keep moving.</p>
+                        </article>
                     </div>
                 </div>
             </div>
-            <br>
-            <h1 class="personal-page-heading">Other Cool Stuff</h1>
-            <a class="listline listline--professional" href="https://leelounsbury.com/john-muir-trail-2025-09/">
-            <div class="listline-thumb"><img src="/assets/thumbnails/jmt_2025.jpg" alt=""></div>
-            <div class="listline-body">
-                <div class="listline-title">JMT 2025</div>
-                <div class="listline-summary">
-                Some neat pics from a thwarted JMT attempt (<i>wildfires...</i>)
-                </div>
-            </div>
-            </a>
-            <a class="listline listline--professional" href="https://www.notion.so/lucasdino/Clean-Our-Green-271c748e5e4a800d8b54de1c0886d2b5">
-            <div class="listline-thumb"><img src="/assets/thumbnails/clean_our_green.jpg" alt=""></div>
-            <div class="listline-body">
-                <div class="listline-title">Clean Our Green</div>
-                <div class="listline-summary">
-                Started a project in college to clean up a ton of St. Louis parks 🧤🌿
-                </div>
-            </div>
-            </a>
-            <br>
+            <script type="module" src="js/sabbaticalmap.js"></script>
+        </section>
 
+        <section class="travel-highlights">
+            <article class="travel-note">
+                <p class="mini-label">Field note 01</p>
+                <h2 class="mini-title">The sabbatical worked because it had constraints</h2>
+                <p>I kept the travel cheap, the routine disciplined, and the goal unambiguous: get technical enough to know whether this new direction deserved the bet.</p>
+            </article>
+            <article class="travel-note">
+                <p class="mini-label">Field note 02</p>
+                <h2 class="mini-title">The work and the fun were not separate lanes</h2>
+                <p>Studying hard by day and then wandering a new city, hiking a mountain, or meeting a few wild people at night made the whole year feel sharper rather than split.</p>
+            </article>
+            <article class="travel-note">
+                <p class="mini-label">Field note 03</p>
+                <h2 class="mini-title">Good life design is still design</h2>
+                <p>I learned a lot about how little I actually need, what environments make me productive, and which kinds of discomfort are worth choosing on purpose.</p>
+            </article>
+        </section>
 
-        <div class="footer-container">
+        <section class="panel section-stack">
+            <div class="section-header">
+                <p class="eyebrow">Other cool stuff</p>
+                <h2 class="section-title">A few side quests worth keeping</h2>
+            </div>
+            <div class="travel-highlights">
+                <a class="link-card" href="https://leelounsbury.com/john-muir-trail-2025-09/" target="_blank" rel="noreferrer">
+                    <p class="kicker">Mountains</p>
+                    <h3 class="link-card-title">JMT 2025</h3>
+                    <p>Some very good photos from a thwarted John Muir Trail attempt. Wildfires won that round.</p>
+                </a>
+                <a class="link-card" href="https://www.notion.so/lucasdino/Clean-Our-Green-271c748e5e4a800d8b54de1c0886d2b5" target="_blank" rel="noreferrer">
+                    <p class="kicker">College</p>
+                    <h3 class="link-card-title">Clean Our Green</h3>
+                    <p>A project I started in college to clean up St. Louis parks. Practical, low-friction civic work is underrated.</p>
+                </a>
+                <a class="link-card" href="https://www.notion.so/lucasdino/What-I-Studied-on-my-Year-Off-271c748e5e4a80c6bc90d2b6e1edf9d6" target="_blank" rel="noreferrer">
+                    <p class="kicker">Receipts</p>
+                    <h3 class="link-card-title">What I studied on the year off</h3>
+                    <p>The less glamorous side of the sabbatical: a lot of math, ML, CS, and trying to build an actual technical base instead of a cosmetic one.</p>
+                </a>
+            </div>
+        </section>
+
+        <section class="panel playful-strip">
+            <div class="section-stack">
+                <p class="eyebrow">One unnecessary flourish</p>
+                <h2 class="section-title">A site about me was always going to sneak a dinosaur in somewhere.</h2>
+            </div>
             <div class="dino-container">
-                <div class="dino-run"></div>    <!-- Create Running Dino -->
-                <div class="meteor"></div>      <!-- Create Meteor -->
-                <script type="module" src="/pages/js/dinorun.js"></script>
+                <div class="dino-run"></div>
+                <div class="meteor"></div>
             </div>
-        </div>
-    </body>
+            <script type="module" src="js/dinorun.js"></script>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p class="footer-note">The personal page gets the map and the dinosaur. That seems fair.</p>
+    </footer>
+</body>
 </html>
