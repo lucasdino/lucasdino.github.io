@@ -24,7 +24,7 @@ It better not be the generic fallbacks that I see a lot of AI coding pages look 
 
 You should take advantage of tools you have to QA / test your build as well.
 
-Also don't try to be cringe.
+Also don't try to be cringe. And remember you should be doing more than just changing a stylesheet -- redo the whole website.
 
 The folder you have access to is:
 -->

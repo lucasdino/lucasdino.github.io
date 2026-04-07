@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Lucas Dionisopoulos — Personal</title>
+    <link rel="icon" href="/assets/dino/DinoIcon.ico" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@300;400;500;600;700&family=Kode+Mono:wght@400..700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="stylesheet.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "a31ef88eb6a94f49b864a41163ab806c"}'></script>
+    <script src="/shared_js/version-switcher.js"></script>
+</head>
+<body>
+    <div class="topbar">
+        <a class="title" href="/index.html">Lucas Dionisopoulos</a>
+        <a class="navpointer" href="/pages/professional.html">Professional</a>
+        <a class="navpointer" href="/pages/research.html">Research</a>
+        <a class="navpointer" attribute="active_page" href="/pages/personal.html">Personal</a>
+        <a class="navpointer" href="/pages/contact.html">Contact</a>
+    </div>
+
+    <div class="meat">
+        <h1 class="personal-page-heading">The Sabbatical — Click Around</h1>
+        <div id="map_container">
+            <div id="map_interactive_container">
+                <div id="travel_map">
+                    <script type="module" src="/pages/js/sabbaticalmap.js"></script>
+                </div>
+            </div>
+            <div id="map_text_container">
+                <div id="map_text">
+                    <p>When I finished banking, I wanted to lock in and study ML to see if this was what I really wanted.</p>
+                    <p>
+                        I considered my options: study at home in Wisconsin <em>or</em> study abroad in long-term Airbnbs and pet sits
+                        (<i>with a bit of leisure ofc</i>).
+                    </p>
+                    <p><em>One of these seemed more fun…</em></p><br>
+                    <p class="aside">I also did a lot of <a href="https://www.notion.so/lucasdino/What-I-Studied-on-my-Year-Off-271c748e5e4a80c6bc90d2b6e1edf9d6" data-attribute="mutedlink">work</a>, I promise.</p>
+                </div>
+            </div>
+        </div>
+
+        <br>
+        <h1 class="personal-page-heading">Other Things</h1>
+
+        <a class="listline listline--professional" href="https://leelounsbury.com/john-muir-trail-2025-09/">
+            <div class="listline-thumb"><img src="/assets/thumbnails/jmt_2025.jpg" alt="JMT 2025"></div>
+            <div class="listline-body">
+                <div class="listline-title">JMT 2025</div>
+                <div class="listline-summary">
+                    Photos from a thwarted JMT attempt. (<i>Wildfires, man.</i>)
+                </div>
+            </div>
+        </a>
+
+        <a class="listline listline--professional" href="https://www.notion.so/lucasdino/Clean-Our-Green-271c748e5e4a800d8b54de1c0886d2b5">
+            <div class="listline-thumb"><img src="/assets/thumbnails/clean_our_green.jpg" alt="Clean Our Green"></div>
+            <div class="listline-body">
+                <div class="listline-title">Clean Our Green</div>
+                <div class="listline-summary">
+                    Started a project in college to clean up parks around St. Louis. 🧤🌿
+                </div>
+            </div>
+        </a>
+        <br>
+    </div>
+
+    <div class="footer-container">
+        <div class="dino-container">
+            <div class="dino-run"></div>
+            <div class="meteor"></div>
+            <script type="module" src="/pages/js/dinorun.js"></script>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,7 +1,8 @@
 (function () {
   const VERSIONS = [
     { id: "pages", label: "Original", isDefault: true },
-    { id: "opus_46", label: "Claude Opus 4.6", headline: "", thoughts: "TBU!" },
+    { id: "opus_46", label: "Claude Opus 4.6", headline: "Waiting for off hours...", thoughts: "TBU! They nuke Claude's ability during peak hours so I want to do this at an odd hour." },
+    { id: "sonnet_46", label: "Claude Sonnet 4.6 (Med)", headline: "Claude has taste", thoughts: "This isn't even their top model. This wasn't even highest thinking mode. Sure, it didn't really restructure the website, but it looks so nice. Claude is just a great model." },
     { id: "gemini_31_cli", label: "Gemini 3.1 (Pro)", headline: "Great designer, underwhelming agent", thoughts: "Really good design. Like should I just use this as my website now lol?! Issue is that I asked it to not just redesign but restructure the whole website -- which it didn't do. So as a designer? Excellent. As an instruction-following agent? May want to work on that Google." },
     { id: "gpt_54_cli", label: "GPT 5.4 (xHigh)", headline: "Impressive but cringe writing", thoughts: "It actually took on the task to 'redo' the whole website. Started by reading some of my blogs then rebuilt the whole messaging + structure. Used tons of MCP calls to get screenshots and QA its work. Looks clean (despite some dumb phrases) -- overall really impressive agentic ability." },
   ];
