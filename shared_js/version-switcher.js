@@ -3,14 +3,14 @@
     { id: "pages", label: "Current Site", style: "professional", isDefault: true },
     { id: "old_design", label: "Prior Version (Reference)", style: "professional", headline: "Earlier version of my site", thoughts: "An earlier version of my website all models are provided with as a consistent checkpoint to rebuild." },
     { id: "opus_47_cli", label: "Claude Opus 4.7 (xHigh)", style: "professional", headline: "Tasteful w/ a full redesign", thoughts: "Seriously an improvement on Opus 4.6 -- tasteful design but it actually took on the task of redoing the entire webpage. Lots of elements I like about this! Also, great agentic ability in digging into each link to source various information for each summary. Total API cost: ~$6." },
-    { id: "opus_47_cli_whimsical", label: "Claude Opus 4.7 (xHigh)", style: "whimsical", headline: "TBU", thoughts: "TBU" },
+    { id: "opus_47_cli_whimsy", label: "Claude Opus 4.7 (xHigh)", style: "whimsical", favorite: true, headline: "King Claudius", thoughts: "YUP. This is insane. SO GOOD. Totally took on the creative ask and delivered. Small details are just 🤌🏼. Cannot believe this was a one-shot, so impressive (though it did mess up the map...can't be perfect :) )." },
     { id: "opus_46", label: "Claude Opus 4.6 (Max)", style: "professional", headline: "Claude has taste", thoughts: "Super clean design but wasn't the most ambitious on doing a full rebuild of my website (despite me asking). Cost me ~$6 in API credits for this single request too! Anyway, Claude has taste.", archived: true },
     { id: "sonnet_46", label: "Claude Sonnet 4.6 (Med)", style: "professional", headline: "Solid Opus 4.6 distillation", thoughts: "This isn't even their top model. This wasn't even highest thinking mode. Great design, but basically same feel + feedback as I have for Opus 4.6 (Max) -- just about 3x cheaper.", archived: true },
     { id: "gpt_55_cli", label: "GPT 5.5 (xHigh)", style: "professional", headline: "OpenAI crushed with 5.5", thoughts: "Very similar thoughts on 5.4 (strong agentic ability, actually undertook a full redesign, result is super clean). Still a lot of cringe-writing. But it really took on the ask, used tons of tool calls to QA (w/ Playwright). Best agentic ability IMO." },
-    { id: "gpt_55_cli_whimsy", label: "GPT 5.5 (xHigh)", style: "whimsical", headline: "TBU", thoughts: "TBU" },
+    { id: "gpt_55_cli_whimsy", label: "GPT 5.5 (xHigh)", style: "whimsical", headline: "Honestly? Disappointed", thoughts: "It's not horrible but it's just kinga ugly and lame. I gave it so much freedom and it put forth this? It's a good model sure but this is objectively boring given where its ability is." },
     { id: "gpt_54_cli", label: "GPT 5.4 (xHigh)", style: "professional", headline: "Impressive but cringe writing", thoughts: "It actually took on the task to 'redo' the whole website. Started by reading some of my blogs then rebuilt the whole messaging + structure. Used tons of MCP calls to get screenshots and QA its work. Looks clean (despite some dumb phrases) -- overall really impressive agentic ability.", archived: true },
     { id: "gemini_31_cli", label: "Gemini 3.1 (Pro)", style: "professional", headline: "Great designer, underwhelming agent", thoughts: "Fun and unique design. Issue is that I asked it to not just redesign but restructure the whole website -- which it didn't do. So as a designer? Excellent. As an instruction-following agent? May want to work on that." },
-    { id: "gemini_31_cli_whimsical", label: "Gemini 3.1 (Pro)", style: "whimsical", headline: "TBU", thoughts: "TBU" },
+    { id: "gemini_31_cli_whimsy", label: "Gemini 3.1 (Pro)", style: "whimsical", headline: "Kinda fun 🦖", thoughts: "Like it's fun but not that interesting. Just restyled of my old website, didn't think for that long. I like the vibe, but a bit underwhelming." },
   ];
 
   const AI_PREFIX = "ai_designed";
@@ -86,6 +86,13 @@
     a.href = buildUrl(version.id, page);
     a.textContent = styleIcon(version) + " " + version.label;
     if (version.id === currentVersion) a.classList.add("active");
+    if (version.favorite) {
+      a.classList.add("favorite-version");
+      const crown = document.createElement("span");
+      crown.className = "favorite-crown";
+      crown.textContent = "👑";
+      a.appendChild(crown);
+    }
 
     const bubble = buildThoughtBubble(version);
     if (bubble) a.appendChild(bubble);
@@ -176,6 +183,37 @@
       .version-dropdown a:hover { background: rgba(226,13,13,0.06); color: var(--ooh-red-hot); }
       .version-dropdown a.active { color: var(--ooh-red-hot); font-weight: 500; }
       .version-dropdown a { position: relative; }
+      .version-dropdown a.favorite-version {
+        margin: 5px 6px;
+        padding: 8px 12px;
+        color: #4a3300;
+        background:
+          radial-gradient(circle at top left, rgba(255, 223, 120, 0.55), transparent 42%),
+          linear-gradient(180deg, rgba(255, 249, 225, 0.95), rgba(255, 255, 255, 0.88));
+        border: 1px solid rgba(214, 158, 46, 0.48);
+        border-radius: 4px;
+        box-shadow: 0 2px 10px rgba(214, 158, 46, 0.18), inset 0 0 0 1px rgba(255, 255, 255, 0.72);
+        font-weight: 600;
+      }
+      .version-dropdown a.favorite-version:hover,
+      .version-dropdown a.favorite-version.active {
+        color: #8a5100;
+        background:
+          radial-gradient(circle at top left, rgba(255, 214, 102, 0.68), transparent 44%),
+          linear-gradient(180deg, rgba(255, 244, 202, 0.98), rgba(255, 255, 255, 0.92));
+        border-color: rgba(214, 158, 46, 0.78);
+        box-shadow: 0 3px 12px rgba(214, 158, 46, 0.24), inset 0 0 0 1px rgba(255, 255, 255, 0.82);
+      }
+      .favorite-crown {
+        position: absolute;
+        top: -10px;
+        left: -9px;
+        transform: rotate(-22deg);
+        font-size: 15px;
+        line-height: 1;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.22);
+        pointer-events: none;
+      }
       .archive-entry {
         position: relative;
         border-top: 1px solid #e0e0e0;

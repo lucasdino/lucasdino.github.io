@@ -28,7 +28,7 @@ export const mapLocations = {
         zoomLevel: 6,
         markerLocation: [43, -88.4],
         center: [41, -95],
-        parentBlurb: "Kickin' if off with a family renunion! Left with only a backpack and no return date.",
+        parentBlurb: "Kickin' it off with a family reunion! Left with only a backpack and no return date.",
         parentPhoto: "",
         locations: [
             { name: "Delafield", mark: true, dashed: false, latLng: [43.0599, -88.4042], photo: "/assets/pics/sabbatical/backpack.jpg", blurb: "Pictured is everything I carried with me for the next 5 months.</p><p class='popup-blurb'>Kept it to just the basics but have gear for hiking, the beach, and potential cold weather...so it added up."},
@@ -83,7 +83,7 @@ export const mapLocations = {
             { name: "Dubrovnik", mark: true, dashed: false, latLng: [42.6412, 18.1100], photo: "/assets/pics/sabbatical/dubrovnikcastlecourt.jpg", blurb: "Had 12 hours in Dubrovnik to explore King's Landing.</p><p class='popup-blurb'>This has to be one of the coolest basketball courts I have ever seen."},
             { name: "Ploce", mark: false, dashed: false, latLng: [43.0452, 17.4856], photo: "", blurb: ""},
             { name: "Split", mark: false, dashed: false, latLng: [43.5171, 16.5216], photo: "", blurb: ""},
-            { name: "Sibenik", mark: true, dashed: false, latLng: [43.7374, 15.8898], photo: "/assets/pics/sabbatical/lindsaysibenik.jpg", blurb: "Day trip to Sibenik - super cool walking around the old town and castles.</p><p class='popup-blurb'>Lindsay is vegan and has several food allergies, which is like expert difficulty to accomodate in small-town Croatia. I decided to share this diet for the week because 1) cool experience and 2) we'll make sure we both get enough food.</p><p class='popup-blurb'>We found a vegan sushi restaurant (they exist?) in Sibenik - I was at a caloric defecit so this meal really did something special."},
+            { name: "Sibenik", mark: true, dashed: false, latLng: [43.7374, 15.8898], photo: "/assets/pics/sabbatical/lindsaysibenik.jpg", blurb: "Day trip to Sibenik - super cool walking around the old town and castles.</p><p class='popup-blurb'>Lindsay is vegan and has several food allergies, which is like expert difficulty to accommodate in small-town Croatia. I decided to share this diet for the week because 1) cool experience and 2) we'll make sure we both get enough food.</p><p class='popup-blurb'>We found a vegan sushi restaurant (they exist?) in Sibenik - I was at a caloric deficit so this meal really did something special."},
             { name: "Tisno", mark: true, dashed: false, latLng: [43.7990, 15.6415], photo: "/assets/pics/sabbatical/disconinjas.jpg", blurb: "Boom. 7 days of house music at a beach venue in Croatia? Incredible.</p><p class='popup-blurb'>Too many British people though."},
             { name: "Jezera", mark: false, dashed: false, latLng: [43.7850, 15.6414], photo: "", blurb: ""},
             { name: "Kaprije", mark: true, dashed: false, latLng: [43.6884, 15.7090], photo: "/assets/pics/sabbatical/luka.jpg", blurb: "Favorite memory from Croatia.</p><p class='popup-blurb'>We rented an AirBnB from a guy named Marijan. Marijan was the man. He gifted us his home-canned sardines (my one dietary break). So we chatted with him each day and he offered to take us on his boat with his wife (Kate) and son (Luka) - we happily accepted. We spent the afternoon on the boat, played water polo, and went to Kaprije for dinner.</p><p class='popup-blurb'>And look at Luka...made for the sea."},
