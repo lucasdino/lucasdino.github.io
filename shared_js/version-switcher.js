@@ -2,16 +2,18 @@
   const VERSIONS = [
     { id: "pages", label: "Current Site", isDefault: true },
     { id: "old_design", label: "Prior Version (Reference)", headline: "Earlier version of my site", thoughts: "An earlier version of my website all models are provided with as a consistent checkpoint to rebuild." },
-    { id: "opus_46", label: "Claude Opus 4.6 (Max)", headline: "Claude has taste", thoughts: "Super clean design but wasn't the most ambitious on doing a full rebuild of my website (despite me asking). Cost me ~$6 in API credits for this single request too! Anyway, Claude has taste." },
-    { id: "sonnet_46", label: "Claude Sonnet 4.6 (Med)", headline: "Tasteful Opus 4.6 distillation", thoughts: "This isn't even their top model. This wasn't even highest thinking mode. Great design, but basically same feel + feedback as I have for Opus 4.6 (Max) -- just about 3x cheaper." },
-    { id: "gpt_54_cli", label: "GPT 5.4 (xHigh)", headline: "Impressive but cringe writing", thoughts: "It actually took on the task to 'redo' the whole website. Started by reading some of my blogs then rebuilt the whole messaging + structure. Used tons of MCP calls to get screenshots and QA its work. Looks clean (despite some dumb phrases) -- overall really impressive agentic ability." },
+    { id: "opus_47", label: "Claude Opus 4.7 (xHigh)", headline: "Tasteful w/ a full redesign", thoughts: "Seriously an improvement on Opus 4.6 -- tasteful design but it actually took on the task of redoing the entire webpage. Lots of elements I like about this! Also, great agentic ability in digging into each link to source various information for each summary. Total API cost: ~$6." },
+    { id: "opus_46", label: "Claude Opus 4.6 (Max)", headline: "Claude has taste", thoughts: "Super clean design but wasn't the most ambitious on doing a full rebuild of my website (despite me asking). Cost me ~$6 in API credits for this single request too! Anyway, Claude has taste.", archived: true },
+    { id: "sonnet_46", label: "Claude Sonnet 4.6 (Med)", headline: "Solid Opus 4.6 distillation", thoughts: "This isn't even their top model. This wasn't even highest thinking mode. Great design, but basically same feel + feedback as I have for Opus 4.6 (Max) -- just about 3x cheaper.", archived: true },
+    { id: "gpt_55_cli", label: "GPT 5.5 (xHigh)", headline: "TBU", thoughts: "TBU" },
+    { id: "gpt_54_cli", label: "GPT 5.4 (xHigh)", headline: "Impressive but cringe writing", thoughts: "It actually took on the task to 'redo' the whole website. Started by reading some of my blogs then rebuilt the whole messaging + structure. Used tons of MCP calls to get screenshots and QA its work. Looks clean (despite some dumb phrases) -- overall really impressive agentic ability.", archived: true },
     { id: "gemini_31_cli", label: "Gemini 3.1 (Pro)", headline: "Great designer, underwhelming agent", thoughts: "Fun and unique design. Issue is that I asked it to not just redesign but restructure the whole website -- which it didn't do. So as a designer? Excellent. As an instruction-following agent? May want to work on that." },
   ];
 
   const AI_PREFIX = "ai_designed";
 
   const INFO_TEXT =
-    "Want to see how good AI coding has gotten? I asked each to rebuild my website. One single prompt and let 'em cook.";
+    "Want to see how good AI coding has become? I asked each to rebuild my website. One single prompt and let 'em cook.";
 
   function versionPath(versionId) {
     const v = VERSIONS.find((x) => x.id === versionId);
@@ -41,6 +43,37 @@
       return page === "index.html" ? "/index.html" : "/pages/" + page;
     }
     return "/" + AI_PREFIX + "/" + versionId + "/" + page;
+  }
+
+  function buildThoughtBubble(version) {
+    if (!version.headline && !version.thoughts) return null;
+
+    const bubble = document.createElement("span");
+    bubble.className = "thought-bubble";
+    if (version.headline) {
+      const h = document.createElement("div");
+      h.className = "tb-headline";
+      h.textContent = version.headline;
+      bubble.appendChild(h);
+    }
+    if (version.thoughts) {
+      const t = document.createElement("span");
+      t.textContent = version.thoughts;
+      bubble.appendChild(t);
+    }
+    return bubble;
+  }
+
+  function buildVersionLink(version, page, currentVersion) {
+    const a = document.createElement("a");
+    a.href = buildUrl(version.id, page);
+    a.textContent = version.label;
+    if (version.id === currentVersion) a.classList.add("active");
+
+    const bubble = buildThoughtBubble(version);
+    if (bubble) a.appendChild(bubble);
+
+    return a;
   }
 
   function fixNavLinks(versionId) {
@@ -119,6 +152,46 @@
       .version-dropdown a:hover { background: rgba(226,13,13,0.06); color: var(--ooh-red-hot); }
       .version-dropdown a.active { color: var(--ooh-red-hot); font-weight: 500; }
       .version-dropdown a { position: relative; }
+      .archive-entry {
+        position: relative;
+        border-top: 1px solid #e0e0e0;
+      }
+      .archive-toggle {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        font-family: "Kode Mono", monospace;
+        font-size: 0.85vw;
+        text-align: left;
+        color: #333;
+        background: var(--subtle-white);
+        border: 0;
+        padding: 7px 12px;
+        cursor: pointer;
+        white-space: nowrap;
+      }
+      .archive-toggle:hover,
+      .archive-entry.open .archive-toggle,
+      .archive-toggle.active {
+        background: rgba(226,13,13,0.06);
+        color: var(--ooh-red-hot);
+      }
+      .archive-menu {
+        display: none;
+        position: absolute;
+        top: -1px;
+        right: calc(100% + 8px);
+        background: var(--subtle-white);
+        border: 1.5px solid #ccc;
+        border-radius: 4px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+        z-index: 10001;
+        min-width: 220px;
+      }
+      .archive-entry.open .archive-menu { display: block; }
+      .archive-menu a { font-size: 0.82vw; }
       .thought-bubble {
         display: none;
         position: absolute;
@@ -176,29 +249,44 @@
     info.textContent = INFO_TEXT;
     dropdown.appendChild(info);
 
-    VERSIONS.forEach((v) => {
-      const a = document.createElement("a");
-      a.href = buildUrl(v.id, ctx.page);
-      a.textContent = v.label;
-      if (v.id === ctx.version) a.classList.add("active");
-      if (v.headline || v.thoughts) {
-        const bubble = document.createElement("span");
-        bubble.className = "thought-bubble";
-        if (v.headline) {
-          const h = document.createElement("div");
-          h.className = "tb-headline";
-          h.textContent = v.headline;
-          bubble.appendChild(h);
-        }
-        if (v.thoughts) {
-          const t = document.createElement("span");
-          t.textContent = v.thoughts;
-          bubble.appendChild(t);
-        }
-        a.appendChild(bubble);
-      }
-      dropdown.appendChild(a);
+    const mainVersions = VERSIONS.filter((v) => !v.archived);
+    const archivedVersions = VERSIONS.filter((v) => v.archived);
+
+    mainVersions.forEach((v) => {
+      dropdown.appendChild(buildVersionLink(v, ctx.page, ctx.version));
     });
+
+    if (archivedVersions.length) {
+      const archiveEntry = document.createElement("div");
+      archiveEntry.className = "archive-entry";
+
+      const archiveToggle = document.createElement("button");
+      archiveToggle.type = "button";
+      archiveToggle.className = "archive-toggle";
+      archiveToggle.innerHTML = '<span>Archive</span><span class="arrow">&#9656;</span>';
+
+      const archiveMenu = document.createElement("div");
+      archiveMenu.className = "archive-menu";
+
+      const currentIsArchived = archivedVersions.some((v) => v.id === ctx.version);
+      if (currentIsArchived) {
+        archiveEntry.classList.add("open");
+        archiveToggle.classList.add("active");
+      }
+
+      archivedVersions.forEach((v) => {
+        archiveMenu.appendChild(buildVersionLink(v, ctx.page, ctx.version));
+      });
+
+      archiveToggle.addEventListener("click", (e) => {
+        e.stopPropagation();
+        archiveEntry.classList.toggle("open");
+      });
+
+      archiveEntry.appendChild(archiveToggle);
+      archiveEntry.appendChild(archiveMenu);
+      dropdown.appendChild(archiveEntry);
+    }
 
     wrapper.appendChild(btn);
     wrapper.appendChild(dropdown);
@@ -208,7 +296,14 @@
       e.stopPropagation();
       dropdown.classList.toggle("open");
     });
-    document.addEventListener("click", () => dropdown.classList.remove("open"));
+    document.addEventListener("click", () => {
+      dropdown.classList.remove("open");
+      const archiveEntry = dropdown.querySelector(".archive-entry");
+      const archiveToggle = dropdown.querySelector(".archive-toggle");
+      if (archiveEntry && archiveToggle && !archiveToggle.classList.contains("active")) {
+        archiveEntry.classList.remove("open");
+      }
+    });
   }
 
   if (document.readyState === "loading") {
