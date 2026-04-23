@@ -1,19 +1,36 @@
 (function () {
   const VERSIONS = [
-    { id: "pages", label: "Current Site", isDefault: true },
-    { id: "old_design", label: "Prior Version (Reference)", headline: "Earlier version of my site", thoughts: "An earlier version of my website all models are provided with as a consistent checkpoint to rebuild." },
-    { id: "opus_47", label: "Claude Opus 4.7 (xHigh)", headline: "Tasteful w/ a full redesign", thoughts: "Seriously an improvement on Opus 4.6 -- tasteful design but it actually took on the task of redoing the entire webpage. Lots of elements I like about this! Also, great agentic ability in digging into each link to source various information for each summary. Total API cost: ~$6." },
-    { id: "opus_46", label: "Claude Opus 4.6 (Max)", headline: "Claude has taste", thoughts: "Super clean design but wasn't the most ambitious on doing a full rebuild of my website (despite me asking). Cost me ~$6 in API credits for this single request too! Anyway, Claude has taste.", archived: true },
-    { id: "sonnet_46", label: "Claude Sonnet 4.6 (Med)", headline: "Solid Opus 4.6 distillation", thoughts: "This isn't even their top model. This wasn't even highest thinking mode. Great design, but basically same feel + feedback as I have for Opus 4.6 (Max) -- just about 3x cheaper.", archived: true },
-    { id: "gpt_55_cli", label: "GPT 5.5 (xHigh)", headline: "TBU", thoughts: "TBU" },
-    { id: "gpt_54_cli", label: "GPT 5.4 (xHigh)", headline: "Impressive but cringe writing", thoughts: "It actually took on the task to 'redo' the whole website. Started by reading some of my blogs then rebuilt the whole messaging + structure. Used tons of MCP calls to get screenshots and QA its work. Looks clean (despite some dumb phrases) -- overall really impressive agentic ability.", archived: true },
-    { id: "gemini_31_cli", label: "Gemini 3.1 (Pro)", headline: "Great designer, underwhelming agent", thoughts: "Fun and unique design. Issue is that I asked it to not just redesign but restructure the whole website -- which it didn't do. So as a designer? Excellent. As an instruction-following agent? May want to work on that." },
+    { id: "pages", label: "Current Site", style: "professional", isDefault: true },
+    { id: "old_design", label: "Prior Version (Reference)", style: "professional", headline: "Earlier version of my site", thoughts: "An earlier version of my website all models are provided with as a consistent checkpoint to rebuild." },
+    { id: "opus_47_cli", label: "Claude Opus 4.7 (xHigh)", style: "professional", headline: "Tasteful w/ a full redesign", thoughts: "Seriously an improvement on Opus 4.6 -- tasteful design but it actually took on the task of redoing the entire webpage. Lots of elements I like about this! Also, great agentic ability in digging into each link to source various information for each summary. Total API cost: ~$6." },
+    { id: "opus_47_cli_whimsical", label: "Claude Opus 4.7 (xHigh)", style: "whimsical", headline: "TBU", thoughts: "TBU" },
+    { id: "opus_46", label: "Claude Opus 4.6 (Max)", style: "professional", headline: "Claude has taste", thoughts: "Super clean design but wasn't the most ambitious on doing a full rebuild of my website (despite me asking). Cost me ~$6 in API credits for this single request too! Anyway, Claude has taste.", archived: true },
+    { id: "sonnet_46", label: "Claude Sonnet 4.6 (Med)", style: "professional", headline: "Solid Opus 4.6 distillation", thoughts: "This isn't even their top model. This wasn't even highest thinking mode. Great design, but basically same feel + feedback as I have for Opus 4.6 (Max) -- just about 3x cheaper.", archived: true },
+    { id: "gpt_55_cli", label: "GPT 5.5 (xHigh)", style: "professional", headline: "OpenAI crushed with 5.5", thoughts: "Very similar thoughts on 5.4 (strong agentic ability, actually undertook a full redesign, result is super clean). Still a lot of cringe-writing. But it really took on the ask, used tons of tool calls to QA (w/ Playwright). Best agentic ability IMO." },
+    { id: "gpt_55_cli_whimsy", label: "GPT 5.5 (xHigh)", style: "whimsical", headline: "TBU", thoughts: "TBU" },
+    { id: "gpt_54_cli", label: "GPT 5.4 (xHigh)", style: "professional", headline: "Impressive but cringe writing", thoughts: "It actually took on the task to 'redo' the whole website. Started by reading some of my blogs then rebuilt the whole messaging + structure. Used tons of MCP calls to get screenshots and QA its work. Looks clean (despite some dumb phrases) -- overall really impressive agentic ability.", archived: true },
+    { id: "gemini_31_cli", label: "Gemini 3.1 (Pro)", style: "professional", headline: "Great designer, underwhelming agent", thoughts: "Fun and unique design. Issue is that I asked it to not just redesign but restructure the whole website -- which it didn't do. So as a designer? Excellent. As an instruction-following agent? May want to work on that." },
+    { id: "gemini_31_cli_whimsical", label: "Gemini 3.1 (Pro)", style: "whimsical", headline: "TBU", thoughts: "TBU" },
   ];
 
   const AI_PREFIX = "ai_designed";
 
   const INFO_TEXT =
     "Want to see how good AI coding has become? I asked each to rebuild my website. One single prompt and let 'em cook.";
+
+  const STYLE_ICONS = {
+    professional: "💼",
+    whimsical: "✨",
+  };
+
+  const STYLE_LABELS = {
+    professional: "professional",
+    whimsical: "whimsical",
+  };
+
+  function styleIcon(version) {
+    return STYLE_ICONS[version.style] || STYLE_ICONS.professional;
+  }
 
   function versionPath(versionId) {
     const v = VERSIONS.find((x) => x.id === versionId);
@@ -67,7 +84,7 @@
   function buildVersionLink(version, page, currentVersion) {
     const a = document.createElement("a");
     a.href = buildUrl(version.id, page);
-    a.textContent = version.label;
+    a.textContent = styleIcon(version) + " " + version.label;
     if (version.id === currentVersion) a.classList.add("active");
 
     const bubble = buildThoughtBubble(version);
@@ -136,9 +153,16 @@
         font-family: "Montserrat", sans-serif;
         font-size: 9pt;
         color: #555;
-        padding: 10px 12px;
+        padding: 10px 12px 8px;
         border-bottom: 1px solid #e0e0e0;
         line-height: 1.4;
+      }
+      .version-dropdown .vd-legend {
+        display: flex;
+        gap: 10px;
+        margin-top: 6px;
+        font-size: 8pt;
+        color: #666;
       }
       .version-dropdown a {
         display: block;
@@ -246,7 +270,18 @@
 
     const info = document.createElement("div");
     info.className = "vd-info";
-    info.textContent = INFO_TEXT;
+    const infoText = document.createElement("div");
+    infoText.textContent = INFO_TEXT;
+    info.appendChild(infoText);
+
+    const legend = document.createElement("div");
+    legend.className = "vd-legend";
+    Object.keys(STYLE_LABELS).forEach((style) => {
+      const item = document.createElement("span");
+      item.textContent = STYLE_ICONS[style] + " " + STYLE_LABELS[style];
+      legend.appendChild(item);
+    });
+    info.appendChild(legend);
     dropdown.appendChild(info);
 
     const mainVersions = VERSIONS.filter((v) => !v.archived);

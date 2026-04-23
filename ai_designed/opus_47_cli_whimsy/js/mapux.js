@@ -1,7 +1,7 @@
 export function initLightbox() {
     var overlay = document.createElement('div');
     overlay.className = 'map-lightbox';
-    overlay.innerHTML = '<img alt="">';
+    overlay.innerHTML = '<img>';
     document.body.appendChild(overlay);
     var img = overlay.querySelector('img');
 

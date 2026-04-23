@@ -1,77 +1,101 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Lucas Dionisopoulos</title>
-        <link rel="icon" href="/assets/dino/DinoIcon.ico" type="image/x-icon">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Monoton&family=Kode+Mono:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="./stylesheet.css">
-        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
-        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "a31ef88eb6a94f49b864a41163ab806c"}'></script>
-        <script src="/shared_js/version-switcher.js"></script>
-    </head>
-    <body>
-        <div class="topbar">
-            <a class="title" href="./index.html" data-attribute="honk-name">Lucas Dionisopoulos</a>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Personal - Lucas Dionisopoulos</title>
+    <link rel="icon" href="/assets/dino/DinoIcon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,500..800,50,1&family=IBM+Plex+Sans:wght@400;500;600;700&family=Kode+Mono:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./stylesheet.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="/shared_js/version-switcher.js"></script>
+</head>
+<body class="personal-page">
+    <header class="topbar">
+        <a class="title" href="./index.html">Lucas Dionisopoulos</a>
+        <nav class="site-nav" aria-label="Primary">
             <a class="navpointer" href="./professional.html">Professional</a>
             <a class="navpointer" href="./research.html">Research</a>
-            <a class="navpointer" attribute="active_page" href="./personal.html" data-attribute="honk-nav">Personal</a>
+            <a class="navpointer" attribute="active_page" aria-current="page" href="./personal.html">Personal</a>
             <a class="navpointer" href="./contact.html">Contact</a>
-        </div>
+        </nav>
+    </header>
 
-        <div class="meat">
-            <h1 class="personal-page-heading">Sabbatical - Click Around!</h1>
+    <main class="page-shell personal-shell">
+        <section class="page-intro" aria-labelledby="personal-title">
+            <div>
+                <p class="eyebrow">Sabbatical atlas</p>
+                <h1 id="personal-title">A year off, but not exactly off.</h1>
+            </div>
+            <p class="intro-note">
+                After banking, I studied ML hard enough to justify studying it somewhere more interesting than home. The result: long-term Airbnbs, pet sits, grad school applications, and a map that got out of hand.
+            </p>
+        </section>
+
+        <section class="map-stage" aria-label="Interactive sabbatical map">
+            <div class="map-copy">
+                <span class="stamp">153 days / 22 flights</span>
+                <h2>Click a route, then hover the stops.</h2>
+                <p>
+                    The trip is half travelogue, half accountability log: study blocks in libraries, awkward transit, family history, and a few excellent decisions that were probably only excellent in retrospect.
+                </p>
+                <p class="aside">There was also a lot of <a href="https://www.notion.so/lucasdino/What-I-Studied-on-my-Year-Off-271c748e5e4a80c6bc90d2b6e1edf9d6">work</a>.</p>
+            </div>
             <div id="map_container">
                 <div id="map_interactive_container">
-                    <div id="travel_map">    
-                        <script type="module" src="./js/sabbaticalmap.js"></script>
-                    </div>
+                    <div id="travel_map"></div>
                 </div>
-                <div id="map_text_container">
-                    <div id="map_text">
-                        <p>When I finished banking, I wanted to lock in and study ML to see if this was what I really wanted to pursue.</p>
-                        <p>
-                        I considered my options: study at home in Wisconsin <em>or</em> study abroad in long-term Airbnbs and pet sits
-                        (<i>with a bit of leisure ofc</i>).
-                        </p>
-                        <p><em>One of these paths seemed more fun…</em></p><br>
+            </div>
+        </section>
 
-                        <p class="aside">Note: I also did a lot of <a href="https://www.notion.so/lucasdino/What-I-Studied-on-my-Year-Off-271c748e5e4a80c6bc90d2b6e1edf9d6" data-attribute="mutedlink">work</a>.</p>
-                    </div>
-                </div>
+        <section class="personal-grid" aria-labelledby="other-title">
+            <div class="section-heading">
+                <p class="eyebrow">Other useful evidence</p>
+                <h2 id="other-title">There is life outside the GPU queue.</h2>
             </div>
-            <br>
-            <h1 class="personal-page-heading">Other Cool Stuff</h1>
-            <a class="listline listline--professional" href="https://leelounsbury.com/john-muir-trail-2025-09/">
-            <div class="listline-thumb"><img src="/assets/thumbnails/jmt_2025.jpg" alt=""></div>
-            <div class="listline-body">
-                <div class="listline-title">JMT 2025</div>
-                <div class="listline-summary">
-                Some neat pics from a thwarted JMT attempt (<i>wildfires...</i>)
+            <a class="personal-card wide" href="https://leelounsbury.com/john-muir-trail-2025-09/">
+                <img src="/assets/thumbnails/jmt_2025.jpg" alt="John Muir Trail landscape thumbnail">
+                <div>
+                    <span class="project-tag">Hiking</span>
+                    <h3>JMT 2025</h3>
+                    <p>Photos from a John Muir Trail attempt cut short by wildfires.</p>
                 </div>
-            </div>
             </a>
-            <a class="listline listline--professional" href="https://www.notion.so/lucasdino/Clean-Our-Green-271c748e5e4a800d8b54de1c0886d2b5">
-            <div class="listline-thumb"><img src="/assets/thumbnails/clean_our_green.jpg" alt=""></div>
-            <div class="listline-body">
-                <div class="listline-title">Clean Our Green</div>
-                <div class="listline-summary">
-                Started a project in college to clean up a ton of St. Louis parks 🧤🌿
+            <a class="personal-card" href="https://www.notion.so/lucasdino/Clean-Our-Green-271c748e5e4a800d8b54de1c0886d2b5">
+                <img src="/assets/thumbnails/clean_our_green.jpg" alt="Clean Our Green cleanup project thumbnail">
+                <div>
+                    <span class="project-tag">Community</span>
+                    <h3>Clean Our Green</h3>
+                    <p>A college project that cleaned up a lot of St. Louis parks.</p>
                 </div>
-            </div>
             </a>
-            <br>
+            <a class="personal-card" href="https://lucasdino.notion.site/NebraskaCore-294c748e5e4a8027bc27e226f0332706">
+                <img src="/assets/thumbnails/nebraskacore_thumbnail.jpg" alt="NebraskaCore thumbnail">
+                <div>
+                    <span class="project-tag">Origin story</span>
+                    <h3>NebraskaCore</h3>
+                    <p>A small archive of the Midwest parts that still show up.</p>
+                </div>
+            </a>
+        </section>
+    </main>
 
-
-        <div class="footer-container">
-            <div class="dino-container">
-                <div class="dino-run"></div>    <!-- Create Running Dino -->
-                <div class="meteor"></div>      <!-- Create Meteor -->
-                <script type="module" src="./js/dinorun.js"></script>
-            </div>
+    <footer class="site-footer dino-footer">
+        <div class="dino-container" aria-hidden="true">
+            <div class="dino-run"></div>
+            <div class="meteor"></div>
         </div>
-    </body>
+        <div class="social-icons" aria-label="Social links">
+            <a href="https://www.linkedin.com/in/lucasdionisopoulos/" aria-label="LinkedIn" data-attribute="linkedin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg></a>
+            <a href="https://x.com/dinoacropolis" aria-label="X / Twitter" data-attribute="x-twitter"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+            <a href="https://github.com/lucasdino" aria-label="GitHub" data-attribute="github"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 17"><path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 01-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 010 8c0-4.42 3.58-8 8-8Z"/></svg></a>
+        </div>
+    </footer>
+    <script type="module" src="./js/sabbaticalmap.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="module" src="./js/dinorun.js"></script>
+</body>
 </html>

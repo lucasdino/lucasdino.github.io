@@ -6,7 +6,7 @@ var map = L.map('travel_map', {
     maxBounds: [[-90, -150], [90, 180]],
     maxBoundsViscosity: 10
 });
-L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png', {
+L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png', {
     attribution: '&copy; <a href="https://stadiamaps.com/" target="_blank">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/" target="_blank">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a>',
 }).addTo(map);
 
@@ -23,17 +23,17 @@ function createMarkerIcon(className, svgMarkup, visualSize) {
 
 var highlighted_marker = createMarkerIcon(
     'dark-donut-icon',
-    '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><circle cx="12" cy="12" r="7" fill="none" stroke="#B83A2E" stroke-width="6" /></svg>',
+    '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><circle cx="12" cy="12" r="7" fill="none" stroke="#D00909" stroke-width="6" /></svg>',
     24
 );
 var par_marker = createMarkerIcon(
     'donut-icon',
-    '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18"><circle cx="9" cy="9" r="6" fill="none" stroke="#28624C" stroke-width="5" /></svg>',
+    '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18"><circle cx="9" cy="9" r="6" fill="none" stroke="#EF9A9A" stroke-width="5" /></svg>',
     18
 );
 var sub_marker = createMarkerIcon(
     'muted-icon',
-    '<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"><circle cx="6" cy="6" r="3.75" fill="#B83A2E" stroke="none" /></svg>',
+    '<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"><circle cx="6" cy="6" r="3.75" fill="#EF9A9A" stroke="none" /></svg>',
     12
 );
 
@@ -176,7 +176,7 @@ function addParentMarkers() {
     });
 
     if (latLngs.length > 1) {
-        var polyline = L.polyline(latLngs, { color: '#1E6091', opacity: 0.55, weight: 2, dashArray: '2, 4' }).addTo(map);
+        var polyline = L.polyline(latLngs, { color: '#F8B6B6', opacity: 0.4, weight: 2, dashArray: '2, 4' }).addTo(map);
         parentMarkers.addLayer(polyline);
     }
     parentMarkers.addTo(map);
@@ -202,13 +202,13 @@ function addSubMarkers(locations) {
     locations.forEach(function(location, index) {
         if (index >= locations.length - 1) return;
         var next = locations[index + 1];
-        var opts = { color: '#1E6091', opacity: 0, weight: 2 };
+        var opts = { color: '#F8B6B6', opacity: 0, weight: 2 };
         if (location.dashed) opts.dashArray = '2, 4';
         var segment = L.polyline([location.latLng, next.latLng], opts);
         subMarkers.addLayer(segment);
         setTimeout(function() {
             if (gen !== revealGeneration) return;
-            segment.setStyle({ opacity: 0.55 });
+            segment.setStyle({ opacity: 0.4 });
         }, index * LINE_DELAY);
     });
 
