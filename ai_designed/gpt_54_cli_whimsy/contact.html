@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lucas Dionisopoulos | Signal</title>
+  <link rel="icon" href="/assets/dino/DinoIcon.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;700&family=Syne:wght@500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./stylesheet.css">
+  <script src="/shared_js/version-switcher.js"></script>
+  <script src="./js/whimsy.js" defer></script>
+</head>
+<body data-page="contact">
+  <canvas id="backgroundCanvas" aria-hidden="true"></canvas>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <a class="title" href="./index.html">Lucas // Dinoacropolis</a>
+    <nav class="nav-cluster" aria-label="Site navigation">
+      <a class="navpointer" href="./index.html">Temple</a>
+      <a class="navpointer" href="./professional.html">Arsenal</a>
+      <a class="navpointer" href="./research.html">Oracle</a>
+      <a class="navpointer" href="./personal.html">Odyssey</a>
+      <a class="navpointer" attribute="active_page" href="./contact.html">Signal</a>
+    </nav>
+  </header>
+
+  <main class="page-shell">
+    <section class="signal-stage">
+      <div class="signal-copy reveal">
+        <p class="eyebrow">Signal</p>
+        <h1>Say hi.</h1>
+        <p>
+          Research, weird projects, good travel stories, job opportunities, or genuinely strong opinions about
+          gyros, RL environments, and why the safest route through life is usually the least interesting one.
+        </p>
+        <div class="action-row">
+          <a class="signal-email" href="mailto:lucasdionisopoulos@gmail.com">lucasdionisopoulos@gmail.com</a>
+          <button class="copy-button" type="button" data-copy-value="lucasdionisopoulos@gmail.com">Copy email</button>
+        </div>
+        <div class="status-note" id="copyStatus" aria-live="polite">Or keep it simple: firstlast [at] gmail [dot] com.</div>
+      </div>
+
+      <div class="signal-card cut-panel reveal" data-tilt>
+        <div class="signal-block">
+          <p class="section-tag">Best doors</p>
+          <div class="social-stack">
+            <a class="social-link" href="https://github.com/lucasdino">GitHub</a>
+            <a class="social-link" href="https://www.linkedin.com/in/lucasdionisopoulos/">LinkedIn</a>
+            <a class="social-link" href="https://x.com/dinoacropolis">X / Twitter</a>
+            <a class="social-link" href="/assets/files/resume_redacted.pdf">Resume</a>
+          </div>
+        </div>
+
+        <div class="signal-block">
+          <p class="section-tag">Good reasons to reach out</p>
+          <ul class="availability-list">
+            <li>Research conversations about RL for LLMs, reasoning, evaluation, or synthetic environments.</li>
+            <li>Interesting build ideas involving agents, graphics, simulation, or robotics.</li>
+            <li>Work opportunities that do not require me to pretend personality is a bug.</li>
+            <li>Travel recommendations if you have a place that deserves a return flight.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

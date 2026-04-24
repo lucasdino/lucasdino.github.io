@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lucas Dionisopoulos | Arsenal</title>
+  <link rel="icon" href="/assets/dino/DinoIcon.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;700&family=Syne:wght@500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./stylesheet.css">
+  <script src="/shared_js/version-switcher.js"></script>
+  <script src="./js/whimsy.js" defer></script>
+</head>
+<body data-page="professional">
+  <canvas id="backgroundCanvas" aria-hidden="true"></canvas>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <a class="title" href="./index.html">Lucas // Dinoacropolis</a>
+    <nav class="nav-cluster" aria-label="Site navigation">
+      <a class="navpointer" href="./index.html">Temple</a>
+      <a class="navpointer" attribute="active_page" href="./professional.html">Arsenal</a>
+      <a class="navpointer" href="./research.html">Oracle</a>
+      <a class="navpointer" href="./personal.html">Odyssey</a>
+      <a class="navpointer" href="./contact.html">Signal</a>
+    </nav>
+  </header>
+
+  <main class="page-shell">
+    <section class="page-intro reveal">
+      <p class="eyebrow">Arsenal</p>
+      <h1>Builds With Teeth</h1>
+      <p>
+        I like projects with enough moving parts to become a real system: RL environments, 3D tools, robotics stacks,
+        experiments from scratch, and the occasional beautifully unnecessary side quest.
+      </p>
+      <div class="action-row">
+        <a class="action-link" href="/assets/files/resume_redacted.pdf">Open resume</a>
+        <a class="ghost-link" href="https://github.com/lucasdino">GitHub</a>
+      </div>
+      <div class="filter-bar" aria-label="Project filter">
+        <button class="filter-button is-active" type="button" data-filter-group="projects" data-filter="all">All</button>
+        <button class="filter-button" type="button" data-filter-group="projects" data-filter="rl">RL</button>
+        <button class="filter-button" type="button" data-filter-group="projects" data-filter="agents">Agents</button>
+        <button class="filter-button" type="button" data-filter-group="projects" data-filter="robotics">Robotics</button>
+        <button class="filter-button" type="button" data-filter-group="projects" data-filter="scratch">From scratch</button>
+        <button class="filter-button" type="button" data-filter-group="projects" data-filter="applied">Applied</button>
+      </div>
+    </section>
+
+    <section class="project-grid">
+      <article class="project-poster reveal" data-tilt data-filter-item="projects" data-tags="rl scratch">
+        <div class="project-media">
+          <img src="/assets/thumbnails/breakout_rainbow.gif" alt="RL Benchmarking Gym preview">
+        </div>
+        <div class="project-copy">
+          <span class="project-index">01 // RL Benchmarking Gym</span>
+          <h2>A clean RL sandbox built to be pushed around</h2>
+          <p>
+            I built a hackable RL gym from scratch so I could implement, compare, and ablate algorithms from baseline
+            to stronger contemporary methods without fighting somebody else's abstractions.
+          </p>
+          <div class="project-tags">
+            <span class="project-tag">Python</span>
+            <span class="project-tag">RL</span>
+            <span class="project-tag">Experiment infra</span>
+          </div>
+          <a class="project-link" href="https://lucasdino.notion.site/RL-Benchmarking-300c748e5e4a80cb9a42e3d8be2f7c58?source=copy_link">Open breakdown</a>
+        </div>
+      </article>
+
+      <article class="project-poster reveal" data-tilt data-filter-item="projects" data-tags="agents applied">
+        <div class="project-media">
+          <img src="/assets/thumbnails/dungeoncoder_overview.gif" alt="Dungeon Coder preview">
+        </div>
+        <div class="project-copy">
+          <span class="project-index">02 // Dungeon Coder</span>
+          <h2>Prompt a dungeon, generate assets, then walk around inside it</h2>
+          <p>
+            Full-stack web app that combines image generation, image-to-3D pipelines, and classical dungeon-generation logic
+            so a prompt can turn into a navigable environment or printable asset set.
+          </p>
+          <div class="project-tags">
+            <span class="project-tag">React</span>
+            <span class="project-tag">Three.js</span>
+            <span class="project-tag">CV models</span>
+          </div>
+          <a class="project-link" href="https://lucasdino.notion.site/Dungeon-Coder-20dc748e5e4a802cb281ce01fe6272b7?source=copy_link">Open breakdown</a>
+        </div>
+      </article>
+
+      <article class="project-poster reveal" data-tilt data-filter-item="projects" data-tags="robotics scratch">
+        <div class="project-media">
+          <img src="/assets/thumbnails/ekfslam_webster.gif" alt="Rover autonomy preview">
+        </div>
+        <div class="project-copy">
+          <span class="project-index">03 // 4-Wheel Rover Autonomy</span>
+          <h2>Vision, EKF-SLAM, and planning on an uncalibrated rover</h2>
+          <p>
+            I built an autonomy stack for a differential-drive rover with uncalibrated hardware, implementing the perception,
+            SLAM, and path-planning pieces myself instead of treating the robot like a black box.
+          </p>
+          <div class="project-tags">
+            <span class="project-tag">ROS2</span>
+            <span class="project-tag">OpenCV</span>
+            <span class="project-tag">Robotics</span>
+          </div>
+          <a class="project-link" href="https://lucasdino.notion.site/4-Wheel-Rover-Autonomous-Control-31ec748e5e4a8081a7c7ec3951d27317?source=copy_link">Open breakdown</a>
+        </div>
+      </article>
+
+      <article class="project-poster reveal" data-tilt data-filter-item="projects" data-tags="rl scratch">
+        <div class="project-media">
+          <img src="/assets/thumbnails/rldriver_originaltrack.gif" alt="RL Driver game preview">
+        </div>
+        <div class="project-copy">
+          <span class="project-index">04 // Reinforcement Learning Driver</span>
+          <h2>Built a racing game, then taught an agent to stop embarrassing itself in it</h2>
+          <p>
+            I made the environment in Pygame, instrumented it for learning, and trained a Double Q-learning agent to drive
+            the track instead of repeatedly making the same confident mistake.
+          </p>
+          <div class="project-tags">
+            <span class="project-tag">Pygame</span>
+            <span class="project-tag">RL</span>
+            <span class="project-tag">Simulation</span>
+          </div>
+          <a class="project-link" href="https://lucasdino.notion.site/Teaching-AI-to-Drive-my-Custom-Racing-Game-214e45ce19704294bd365308a77c68b4?pvs=4">Open breakdown</a>
+        </div>
+      </article>
+
+      <article class="project-poster reveal" data-tilt data-filter-item="projects" data-tags="applied">
+        <div class="project-media">
+          <img src="/assets/thumbnails/anomalydetection_thumbnail.jpg" alt="Anomaly detection thumbnail">
+        </div>
+        <div class="project-copy">
+          <span class="project-index">05 // Real-Time Anomaly Detection</span>
+          <h2>Interpretable detection over noisy time-series data</h2>
+          <p>
+            Applied machine learning work for a San Diego healthtech company, focused on real-time monitoring and an approach
+            that could still be reasoned about by people who needed to trust it.
+          </p>
+          <div class="project-tags">
+            <span class="project-tag">Kernel methods</span>
+            <span class="project-tag">Time series</span>
+            <span class="project-tag">Production-ish</span>
+          </div>
+          <a class="project-link" href="https://lucasdino.notion.site/Anomaly-Detection-12bc748e5e4a807e8c7afff86b16d975?pvs=4">Open breakdown</a>
+        </div>
+      </article>
+
+      <article class="project-poster reveal" data-tilt data-filter-item="projects" data-tags="scratch">
+        <div class="project-media">
+          <img src="/assets/thumbnails/recreating_word2vec.jpg" alt="Recreating Word2Vec thumbnail">
+        </div>
+        <div class="project-copy">
+          <span class="project-index">06 // Recreating Word2Vec</span>
+          <h2>Tokenizer to cleaned Wikipedia to learned embeddings</h2>
+          <p>
+            Rebuilt the pipeline end to end so the representation learning story was tangible all the way down, not just
+            a hand-wave over a finished library.
+          </p>
+          <div class="project-tags">
+            <span class="project-tag">NLP</span>
+            <span class="project-tag">Training</span>
+            <span class="project-tag">From scratch</span>
+          </div>
+          <a class="project-link" href="https://lucasdino.notion.site/Recreating-Word2Vec-25c1e86e08f14087a49c027a85bd5198">Open breakdown</a>
+        </div>
+      </article>
+    </section>
+
+    <section class="section-band">
+      <p class="page-kicker reveal">Writing that earned a place on the wall</p>
+      <div class="writing-ribbon cut-panel reveal">
+        <div class="essay-list">
+          <a class="essay-link" href="https://lucasdino.notion.site/Why-Pivot-7736665e93394c3886f78950ca66f7d2?pvs=4">Why Pivot?</a>
+          <a class="essay-link" href="https://lucasdino.notion.site/My-Honest-Working-Hours-as-an-Investment-Banking-Analyst-03845324522a4b7785f6b752cf8b0da2?pvs=4">Banking hours, actually tracked</a>
+          <a class="essay-link" href="https://lucasdino.notion.site/What-is-a-SoTA-Transformer-Model-90d21f0a142349629a416ecce45cd671?pvs=4">From Attention to Llama 3</a>
+          <a class="essay-link" href="https://lucasdino.notion.site/Nvidia-s-Multi-Trillion-Dollar-Moat-Explained-187c748e5e4a803dbd35dfeea250913a?pvs=4">Nvidia's moat, explained</a>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

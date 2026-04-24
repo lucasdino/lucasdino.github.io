@@ -1,44 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Lucas Dionisopoulos - Radio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lucas Dionisopoulos | Signal Booth</title>
   <link rel="icon" href="/assets/dino/DinoIcon.ico" type="image/x-icon">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Kode+Mono:wght@400..700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;700;800&family=Kode+Mono:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./stylesheet.css">
-  <script defer src="/shared_js/version-switcher.js"></script>
-  <script defer src="./js/whimsy.js"></script>
 </head>
-<body data-page="radio">
-  <canvas id="signal-canvas" aria-hidden="true"></canvas>
-  <div class="grain" aria-hidden="true"></div>
+<body data-page="contact">
+  <canvas id="signalCanvas" aria-hidden="true"></canvas>
+  <div class="paper-noise" aria-hidden="true"></div>
+
   <header class="topbar">
-    <a class="title" href="./index.html">Lucas Dionisopoulos</a>
-    <a class="navpointer" href="./index.html">Signal</a>
-    <a class="navpointer" href="./professional.html">Artifacts</a>
-    <a class="navpointer" href="./research.html">Lab</a>
-    <a class="navpointer" href="./personal.html">Atlas</a>
-    <a class="navpointer" attribute="active_page" href="./contact.html">Radio</a>
+    <a class="title" href="./index.html">Lucas D.</a>
+    <nav class="navlinks" aria-label="Site navigation">
+      <a class="navpointer" href="./index.html">Station</a>
+      <a class="navpointer" href="./professional.html">Arcade</a>
+      <a class="navpointer" href="./research.html">Reactor</a>
+      <a class="navpointer" href="./personal.html">Atlas</a>
+      <a class="navpointer" attribute="active_page" href="./contact.html">Signal</a>
+    </nav>
+    <label class="version-switcher">
+      <span>Version</span>
+      <select id="versionSelect" aria-label="Choose page version">
+        <option>Loading versions</option>
+      </select>
+    </label>
   </header>
 
   <main class="site-shell contact-shell">
-    <section class="radio-panel tilt-card">
-      <div class="radio-lights" aria-hidden="true"><span></span><span></span><span></span></div>
-      <p class="eyebrow">Transmission channel open</p>
-      <h1>Send a signal.</h1>
-      <p class="lede">firstlast[at]gmail[dot]com</p>
-      <div class="social-row">
-        <a href="https://www.linkedin.com/in/lucasdionisopoulos/">LinkedIn</a>
-        <a href="https://x.com/dinoacropolis">X / Twitter</a>
-        <a href="https://github.com/lucasdino">GitHub</a>
+    <section class="signal-booth">
+      <div class="signal-copy">
+        <p class="eyebrow">Signal booth</p>
+        <h1>Send a flare into the research fog.</h1>
+        <p>
+          I am easiest to reach on LinkedIn or email. I also leave occasional traces on GitHub and X.
+        </p>
+        <p class="email-code">lucasdionisopoulos [at] gmail [dot] com</p>
       </div>
-      <div class="wave-meter" aria-hidden="true">
-        <span style="--h:32%"></span><span style="--h:74%"></span><span style="--h:48%"></span><span style="--h:91%"></span><span style="--h:56%"></span><span style="--h:82%"></span><span style="--h:38%"></span><span style="--h:68%"></span>
+
+      <div class="signal-panel" aria-label="Contact links">
+        <a class="signal-link tilt-card" href="mailto:lucasdionisopoulos@gmail.com">
+          <span>Mail</span>
+          <p>lucasdionisopoulos@gmail.com</p>
+        </a>
+        <a class="signal-link tilt-card" href="https://www.linkedin.com/in/lucasdionisopoulos/">
+          <span>LinkedIn</span>
+          <p>professional-shaped pings</p>
+        </a>
+        <a class="signal-link tilt-card" href="https://github.com/lucasdino">
+          <span>GitHub</span>
+          <p>code, experiments, public artifacts</p>
+        </a>
+        <a class="signal-link tilt-card" href="https://x.com/dinoacropolis">
+          <span>X</span>
+          <p>dispatches from dinoacropolis</p>
+        </a>
       </div>
     </section>
   </main>
+
+  <footer class="site-footer">
+    <div class="footer-runway" aria-hidden="true">
+      <div class="dino-run"></div>
+      <div class="meteor"></div>
+    </div>
+    <div class="footer-links">
+      <a href="https://github.com/lucasdino">GitHub</a>
+      <a href="https://x.com/dinoacropolis">X</a>
+      <a href="https://www.linkedin.com/in/lucasdionisopoulos/">LinkedIn</a>
+    </div>
+  </footer>
+
+  <script src="./js/whimsy.js"></script>
 </body>
 </html>

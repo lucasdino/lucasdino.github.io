@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lucas Dionisopoulos | Odyssey</title>
+  <link rel="icon" href="/assets/dino/DinoIcon.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;700&family=Syne:wght@500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./stylesheet.css">
+  <script src="/shared_js/version-switcher.js"></script>
+  <script src="./js/whimsy.js" defer></script>
+  <script type="module" src="./js/odyssey.js"></script>
+</head>
+<body data-page="personal">
+  <canvas id="backgroundCanvas" aria-hidden="true"></canvas>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <a class="title" href="./index.html">Lucas // Dinoacropolis</a>
+    <nav class="nav-cluster" aria-label="Site navigation">
+      <a class="navpointer" href="./index.html">Temple</a>
+      <a class="navpointer" href="./professional.html">Arsenal</a>
+      <a class="navpointer" href="./research.html">Oracle</a>
+      <a class="navpointer" attribute="active_page" href="./personal.html">Odyssey</a>
+      <a class="navpointer" href="./contact.html">Signal</a>
+    </nav>
+  </header>
+
+  <main class="page-shell">
+    <section class="page-intro reveal">
+      <p class="eyebrow">Odyssey / 153 days / 22 flights</p>
+      <h1>One backpack. No return date.</h1>
+      <p>
+        I took the study year on the road instead: hostels, pet sits, long-term Airbnbs, ferry rides,
+        mountain trails, and a few situations that were just barely a good idea. This page turns the trip notes
+        into something closer to a memory machine.
+      </p>
+      <div class="odyssey-rail reveal" id="odysseyChapterRail" aria-label="Trip chapters"></div>
+    </section>
+
+    <section class="odyssey-shell">
+      <div class="odyssey-stage cut-panel reveal">
+        <div class="memory-photo">
+          <img id="odysseyPhoto" src="/assets/pics/sabbatical/olympus.jpg" alt="Selected travel memory">
+          <span class="memory-badge" id="odysseyMood">Loading chapter</span>
+        </div>
+
+        <div class="memory-copy">
+          <p class="section-tag" id="odysseyLabel">Act 01</p>
+          <h2 id="odysseyTitle">Loading odyssey</h2>
+          <p id="odysseyBlurb">Give the script a second. It is unpacking the trip.</p>
+          <div class="memory-facts" id="odysseyFacts"></div>
+        </div>
+
+        <div class="stop-list" id="odysseyStops" aria-label="Notable stops"></div>
+
+        <div class="stop-detail cut-panel" id="odysseyDetail">
+          <p class="memory-counter" id="odysseyCounter">Stop 0 / 0</p>
+          <h2 id="odysseyStopTitle">No stop selected yet</h2>
+          <p id="odysseyStopBody">Choose a chapter and one of its stops to open a memory.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-band">
+      <p class="page-kicker reveal">Other things that deserved a shelf</p>
+      <div class="bonus-grid">
+        <a class="bonus-link reveal" data-tilt href="https://leelounsbury.com/john-muir-trail-2025-09/">
+          <img src="/assets/thumbnails/jmt_2025.jpg" alt="John Muir Trail photo">
+          <div class="bonus-copy">
+            <h2>JMT 2025</h2>
+            <p>Photos from a thwarted John Muir Trail attempt. Wildfires won that round.</p>
+          </div>
+        </a>
+
+        <a class="bonus-link reveal" data-tilt href="https://www.notion.so/lucasdino/Clean-Our-Green-271c748e5e4a800d8b54de1c0886d2b5">
+          <img src="/assets/thumbnails/clean_our_green.jpg" alt="Clean Our Green thumbnail">
+          <div class="bonus-copy">
+            <h2>Clean Our Green</h2>
+            <p>A college project to clean up St. Louis parks because it seemed worth doing instead of merely talking about.</p>
+          </div>
+        </a>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

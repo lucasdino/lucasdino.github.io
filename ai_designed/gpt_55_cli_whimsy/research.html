@@ -1,62 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Lucas Dionisopoulos - Lab</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lucas Dionisopoulos | Research Reactor</title>
   <link rel="icon" href="/assets/dino/DinoIcon.ico" type="image/x-icon">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Kode+Mono:wght@400..700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;700;800&family=Kode+Mono:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./stylesheet.css">
-  <script defer src="/shared_js/version-switcher.js"></script>
-  <script defer src="./js/whimsy.js"></script>
 </head>
-<body data-page="lab">
-  <canvas id="signal-canvas" aria-hidden="true"></canvas>
-  <div class="grain" aria-hidden="true"></div>
+<body data-page="research">
+  <canvas id="signalCanvas" aria-hidden="true"></canvas>
+  <div class="paper-noise" aria-hidden="true"></div>
+
   <header class="topbar">
-    <a class="title" href="./index.html">Lucas Dionisopoulos</a>
-    <a class="navpointer" href="./index.html">Signal</a>
-    <a class="navpointer" href="./professional.html">Artifacts</a>
-    <a class="navpointer" attribute="active_page" href="./research.html">Lab</a>
-    <a class="navpointer" href="./personal.html">Atlas</a>
-    <a class="navpointer" href="./contact.html">Radio</a>
+    <a class="title" href="./index.html">Lucas D.</a>
+    <nav class="navlinks" aria-label="Site navigation">
+      <a class="navpointer" href="./index.html">Station</a>
+      <a class="navpointer" href="./professional.html">Arcade</a>
+      <a class="navpointer" attribute="active_page" href="./research.html">Reactor</a>
+      <a class="navpointer" href="./personal.html">Atlas</a>
+      <a class="navpointer" href="./contact.html">Signal</a>
+    </nav>
+    <label class="version-switcher">
+      <span>Version</span>
+      <select id="versionSelect" aria-label="Choose page version">
+        <option>Loading versions</option>
+      </select>
+    </label>
   </header>
 
   <main class="site-shell">
-    <section class="page-intro split">
-      <div>
-        <p class="eyebrow">Research bench currently warm</p>
-        <h1>Reinforcement learning, language models, and environments with teeth.</h1>
-        <p class="lede">At <a href="https://pearls-lab.github.io/">PEARLS Lab</a>, Lucas is building a corporate simulation for multi-turn RL: market dynamics, semi-optimal competition, tool costs, finance tasks, data analysis, and strategy under friction.</p>
+    <section class="page-intro reactor-intro">
+      <p class="eyebrow">Research reactor</p>
+      <h1>Reasoning, reward, and little synthetic economies.</h1>
+      <p>
+        I work on reinforcement learning for language models with the PEARLS Lab at UCSD.
+        My current project builds a corporate simulation for multi-turn RL, tool calling, finance,
+        data analysis, and strategic interaction.
+      </p>
+      <a class="command-link" href="https://pearls-lab.github.io/">PEARLS Lab</a>
+    </section>
+
+    <section class="reactor-core" aria-label="Research focus">
+      <div class="reactor-copy">
+        <p class="section-tag">Core question</p>
+        <h2>What kind of reasoning does data teach before reward ever touches the model?</h2>
+        <p>
+          The chess work studies how supervised fine-tuning data shapes what a model can discover later
+          through reinforcement learning, both in quantitative strength and qualitative reasoning traces.
+        </p>
       </div>
-      <div class="oscilloscope tilt-card" aria-hidden="true">
-        <svg viewBox="0 0 360 180">
-          <path class="scope-grid" d="M0 30H360M0 60H360M0 90H360M0 120H360M0 150H360M60 0V180M120 0V180M180 0V180M240 0V180M300 0V180"/>
-          <path class="scope-wave" d="M0 92 C20 35, 42 150, 65 90 S110 58, 132 92 S178 145, 204 86 S248 23, 276 92 S322 146, 360 80"/>
-        </svg>
+      <a class="core-visual tilt-card" href="https://arxiv.org/abs/2604.05134">
+        <img src="/assets/thumbnails/llmchess_takeaway.jpg" alt="Chess reasoning paper takeaway">
+        <span class="core-badge">NeurIPS 2025 FoRLM Oral</span>
+      </a>
+      <div class="reactor-orbits" aria-hidden="true">
+        <span>SFT</span>
+        <span>RL</span>
+        <span>Chess</span>
+        <span>Data</span>
       </div>
     </section>
 
-    <section class="research-stack">
-      <a class="paper-card featured tilt-card" href="https://arxiv.org/abs/2604.05134">
-        <img src="/assets/thumbnails/llmchess_takeaway.jpg" alt="">
+    <section class="research-list" aria-label="Research and technical writing">
+      <a class="research-card tilt-card" href="https://arxiv.org/abs/2604.05134">
+        <img src="/assets/thumbnails/llmchess_takeaway.jpg" alt="LLM chess paper">
         <div>
-          <span class="badge">NeurIPS 2025 FoRLM Oral</span>
+          <span class="mini-label">Lead author</span>
           <h2>Reasoning Through Chess</h2>
-          <p><strong>Lead author.</strong> How reasoning evolves from data through SFT and RL. A 7B model surpassed open-source reasoning models in chess, then the work studied how data changed post-RL reasoning quality.</p>
+          <p>How reasoning evolves from data through fine-tuning and reinforcement learning. Under review for ICML 2026.</p>
         </div>
       </a>
-      <a class="paper-card tilt-card" href="https://lucasdino.notion.site/Attempted-Neural-A-Guided-Search-on-ARC-AGI-171c748e5e4a801796f6d7e13f78714c?pvs=4">
-        <img src="/assets/thumbnails/arcprize_pcfg_thumbnail.jpg" alt="">
-        <div><h2>A* Neural Guided Search on ARC-AGI</h2><p>Modified iBOT embeddings, synthetic data generation, and PCFG search for a neurosymbolic ARC-AGI attempt.</p></div>
+      <a class="research-card tilt-card" href="https://lucasdino.notion.site/Attempted-Neural-A-Guided-Search-on-ARC-AGI-171c748e5e4a801796f6d7e13f78714c?pvs=4">
+        <img src="/assets/thumbnails/arcprize_pcfg_thumbnail.jpg" alt="ARC-AGI program search thumbnail">
+        <div>
+          <span class="mini-label">Neurosymbolic</span>
+          <h2>A* Neural Guided Search on ARC-AGI</h2>
+          <p>Image embeddings, synthetic data, and probabilistic grammars for program search on ARC-style tasks.</p>
+        </div>
       </a>
-      <a class="paper-card tilt-card" href="https://lucasdino.notion.site/Philosophize-That-147c748e5e4a8054b857eee9e47bf62d?pvs=4">
-        <img src="/assets/thumbnails/philosophize_thumbnail.jpg" alt="">
-        <div><h2>Philosophize That</h2><p>A corpus of philosophical texts and document embeddings used to classify the philosophical basis of personal journal entries.</p></div>
+      <a class="research-card tilt-card" href="https://lucasdino.notion.site/Philosophize-That-147c748e5e4a8054b857eee9e47bf62d?pvs=4">
+        <img src="/assets/thumbnails/philosophize_thumbnail.jpg" alt="Philosophize That thumbnail">
+        <div>
+          <span class="mini-label">Embeddings</span>
+          <h2>Philosophize That</h2>
+          <p>A corpus of philosophical texts, document embeddings, and a classifier for the basis of journal entries.</p>
+        </div>
       </a>
     </section>
   </main>
+
+  <footer class="site-footer">
+    <div class="footer-runway" aria-hidden="true">
+      <div class="dino-run"></div>
+      <div class="meteor"></div>
+    </div>
+    <div class="footer-links">
+      <a href="https://github.com/lucasdino">GitHub</a>
+      <a href="https://x.com/dinoacropolis">X</a>
+      <a href="https://www.linkedin.com/in/lucasdionisopoulos/">LinkedIn</a>
+    </div>
+  </footer>
+
+  <script src="./js/whimsy.js"></script>
 </body>
 </html>

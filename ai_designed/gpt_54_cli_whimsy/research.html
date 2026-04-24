@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lucas Dionisopoulos | Oracle</title>
+  <link rel="icon" href="/assets/dino/DinoIcon.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;700&family=Syne:wght@500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./stylesheet.css">
+  <script src="/shared_js/version-switcher.js"></script>
+  <script src="./js/whimsy.js" defer></script>
+</head>
+<body data-page="research">
+  <canvas id="backgroundCanvas" aria-hidden="true"></canvas>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <a class="title" href="./index.html">Lucas // Dinoacropolis</a>
+    <nav class="nav-cluster" aria-label="Site navigation">
+      <a class="navpointer" href="./index.html">Temple</a>
+      <a class="navpointer" href="./professional.html">Arsenal</a>
+      <a class="navpointer" attribute="active_page" href="./research.html">Oracle</a>
+      <a class="navpointer" href="./personal.html">Odyssey</a>
+      <a class="navpointer" href="./contact.html">Signal</a>
+    </nav>
+  </header>
+
+  <main class="page-shell">
+    <section class="page-intro reveal">
+      <p class="eyebrow">Oracle</p>
+      <h1>Reasoning after the benchmark</h1>
+      <p>
+        I care about what models learn, what they only imitate, and what changes once reinforcement learning enters the room.
+        Right now I am working with <a href="https://pearls-lab.github.io/">PEARLS Lab</a> on RL for LLMs and building a corporate
+        simulation environment for long-horizon tool use, finance tasks, and strategy under actual tradeoffs.
+      </p>
+    </section>
+
+    <section class="research-hero">
+      <article class="research-feature cut-panel reveal" data-tilt>
+        <div class="feature-media">
+          <img src="/assets/thumbnails/llmchess_takeaway.jpg" alt="Reasoning through chess research thumbnail">
+        </div>
+        <div class="feature-copy">
+          <p class="section-tag">Featured paper</p>
+          <h2>Reasoning Through Chess</h2>
+          <p>
+            Lead author on work showing how the composition of fine-tuning data changes downstream reasoning after RL.
+            The project outperformed strong open-source reasoning baselines in chess on a 7B model and focused on how
+            different SFT data regimes shape post-RL behavior, stability, and faithfulness.
+          </p>
+          <div class="feature-actions">
+            <a class="action-link" href="https://arxiv.org/abs/2604.05134">Read the paper</a>
+            <a class="ghost-link" href="/assets/files/llm_chess_neurips_forlm_2025.pdf">Workshop PDF</a>
+          </div>
+          <div class="chip-row">
+            <span class="meta-chip">NeurIPS 2025 FoRLM Workshop oral</span>
+            <span class="meta-chip">Under review for ICML 2026</span>
+          </div>
+        </div>
+      </article>
+
+      <div class="cut-panel research-column reveal" data-tilt>
+        <span class="column-label">Current build</span>
+        <h2>Corporate simulation for multi-turn RL</h2>
+        <p>
+          The goal is to create an environment where a model has to act like it is embedded in a real organization:
+          market dynamics, competition, tool use with costs, data analysis, strategy decisions, and enough friction
+          that long-horizon behavior actually matters.
+        </p>
+      </div>
+    </section>
+
+    <section class="section-band">
+      <p class="page-kicker reveal">What the lab board currently looks like</p>
+      <div class="research-columns">
+        <article class="research-column cut-panel reveal" data-tilt>
+          <span class="column-label">Now</span>
+          <h2>Environment design with consequence</h2>
+          <p>
+            I am interested in tasks that punish shallow cleverness. That means actions should cost something, state should persist,
+            and the model should have to live with its earlier decisions instead of getting infinite clean retries.
+          </p>
+        </article>
+
+        <article class="research-column cut-panel reveal" data-tilt>
+          <span class="column-label">Recently</span>
+          <h2>Fine-tuning data as a hidden steering wheel</h2>
+          <p>
+            The chess work made one thing hard to ignore: the data distribution you use before RL can change what later reasoning looks like,
+            even when headline task performance seems similar from far away.
+          </p>
+        </article>
+
+        <article class="research-column cut-panel reveal" data-tilt>
+          <span class="column-label">Side quests</span>
+          <h2>ARC-AGI and philosophical classification</h2>
+          <p>
+            I have also worked on neurosymbolic search for ARC-AGI and a project called Philosophize That, which used document-level
+            embeddings to classify the philosophical basis of my own journal writing.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-band open-questions">
+      <p class="page-kicker reveal">Questions worth keeping sharp</p>
+
+      <article class="question-strip cut-panel reveal" data-tilt>
+        <strong>What kinds of SFT data survive RL without collapsing into performative reasoning?</strong>
+        <p>The qualitative texture of reasoning changes. I want to understand which changes are genuine skill and which are theater.</p>
+      </article>
+
+      <article class="question-strip cut-panel reveal" data-tilt>
+        <strong>How do you make tool use costly enough that a model has to strategize instead of spam?</strong>
+        <p>If tools are free, you mostly benchmark patience. If tools have costs, you start to benchmark judgment.</p>
+      </article>
+
+      <article class="question-strip cut-panel reveal" data-tilt>
+        <strong>What makes a synthetic corporate task feel enough like real work to matter?</strong>
+        <p>The interesting part is not cosmetic realism. It is persistent incentives, partial information, competition, and awkward tradeoffs.</p>
+      </article>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lucas Dionisopoulos | Temple</title>
+  <link rel="icon" href="/assets/dino/DinoIcon.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;700&family=Syne:wght@500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./stylesheet.css">
+  <script src="/shared_js/version-switcher.js"></script>
+  <script src="./js/whimsy.js" defer></script>
+</head>
+<body data-page="home">
+  <canvas id="backgroundCanvas" aria-hidden="true"></canvas>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <a class="title" href="./index.html">Lucas // Dinoacropolis</a>
+    <nav class="nav-cluster" aria-label="Site navigation">
+      <a class="navpointer" attribute="active_page" href="./index.html">Temple</a>
+      <a class="navpointer" href="./professional.html">Arsenal</a>
+      <a class="navpointer" href="./research.html">Oracle</a>
+      <a class="navpointer" href="./personal.html">Odyssey</a>
+      <a class="navpointer" href="./contact.html">Signal</a>
+    </nav>
+  </header>
+
+  <main class="page-shell">
+    <section class="hero-grid">
+      <div class="hero-copy reveal">
+        <p class="eyebrow">Nebraska raised. Finance scarred. Now building machine-learning worlds.</p>
+        <h1 class="hero-title">
+          <span>Lucas</span>
+          <span>Dionisopoulos</span>
+        </h1>
+        <p class="hero-lede">
+          I studied finance at WashU, spent two years in fintech banking, then quit to do the thing that actually had a pulse:
+          teach myself the math, code, and ML I wanted to live inside. Now I am at UCSD doing research on RL for LLMs,
+          building synthetic environments, and making side projects that refuse to stay polite.
+        </p>
+        <div class="action-row">
+          <a class="action-link" href="./research.html">Open the current research</a>
+          <a class="ghost-link" href="./professional.html">See the builds</a>
+        </div>
+        <div class="chip-row">
+          <span class="meta-chip">UCSD ML</span>
+          <span class="meta-chip">RL + LLMs</span>
+          <span class="meta-chip">Ex-FT Partners</span>
+          <span class="meta-chip">One-backpack sabbatical veteran</span>
+        </div>
+      </div>
+
+      <div class="hero-collage">
+        <figure class="portrait-tile cut-panel reveal" data-tilt>
+          <img src="/assets/pics/lucasducas.png" alt="Lucas Dionisopoulos portrait">
+          <figcaption class="portrait-badge">Not optimized for blandness</figcaption>
+        </figure>
+
+        <section class="stat-tile cut-panel reveal" data-tilt>
+          <div class="mini-stat">
+            <span class="mini-stat-label">The trip</span>
+            <strong>153 days</strong>
+          </div>
+          <div class="mini-stat">
+            <span class="mini-stat-label">Flights</span>
+            <strong>22</strong>
+          </div>
+          <div class="mini-stat">
+            <span class="mini-stat-label">Current obsession</span>
+            <strong>Corporate RL sims</strong>
+          </div>
+        </section>
+
+        <section class="story-tile cut-panel reveal" data-tilt>
+          <p class="section-tag">Trajectory</p>
+          <ul class="story-list">
+            <li>Finance degree, then investment banking at FT Partners.</li>
+            <li>Quit early enough to change my life while the mold was still wet.</li>
+            <li>Took a study sabbatical through hostels, Airbnbs, pet sits, and hiking trails.</li>
+            <li>Now researching how models reason, fail, and change after RL.</li>
+          </ul>
+        </section>
+
+        <section class="quote-tile cut-panel reveal" data-tilt>
+          <p>
+            Lately I have been building a corporate simulation to give language models something messier and more realistic
+            than one-shot benchmark theater.
+          </p>
+          <span>Current lab life, compressed</span>
+        </section>
+      </div>
+    </section>
+
+    <section class="fact-band reveal" aria-label="Fast facts">
+      <div class="fact-track">
+        <span>
+          Nebraska core // WashU finance // FT Partners // taught myself the pivot // 153 days abroad //
+          22 flights // NeurIPS oral // corporate-sim RL environments // Greece, Colombia, Australia //
+          projects with actual moving parts // still a person somehow //
+        </span>
+        <span>
+          Nebraska core // WashU finance // FT Partners // taught myself the pivot // 153 days abroad //
+          22 flights // NeurIPS oral // corporate-sim RL environments // Greece, Colombia, Australia //
+          projects with actual moving parts // still a person somehow //
+        </span>
+      </div>
+    </section>
+
+    <section class="section-band">
+      <p class="page-kicker reveal">Four wings, same weird museum</p>
+      <div class="portal-grid">
+        <a class="portal-link reveal" data-tilt href="./professional.html">
+          <div class="portal-media">
+            <img src="/assets/thumbnails/dungeoncoder_overview.gif" alt="Dungeon Coder preview">
+          </div>
+          <div class="portal-body">
+            <h2>Arsenal</h2>
+            <p>Projects with engines, agents, robotics, RL, and enough wiring behind the walls to stay interesting.</p>
+          </div>
+        </a>
+
+        <a class="portal-link reveal" data-tilt href="./research.html">
+          <div class="portal-media">
+            <img src="/assets/thumbnails/llmchess_takeaway.jpg" alt="Chess reasoning research thumbnail">
+          </div>
+          <div class="portal-body">
+            <h2>Oracle</h2>
+            <p>Research on reasoning, RL, and what fine-tuning data does to a model once the reward signal arrives.</p>
+          </div>
+        </a>
+
+        <a class="portal-link reveal" data-tilt href="./personal.html">
+          <div class="portal-media">
+            <img src="/assets/pics/sabbatical/olympus.jpg" alt="Lucas on Mount Olympus during his sabbatical">
+          </div>
+          <div class="portal-body">
+            <h2>Odyssey</h2>
+            <p>The travel chapter, rebuilt as a memory machine instead of a tidy vacation recap.</p>
+          </div>
+        </a>
+
+        <a class="portal-link reveal" data-tilt href="./contact.html">
+          <div class="portal-media">
+            <img src="/assets/thumbnails/nebraskacore_thumbnail.jpg" alt="Frosted Nebraska grass">
+          </div>
+          <div class="portal-body">
+            <h2>Signal</h2>
+            <p>How to reach me if you want to talk research, projects, travel stories, or good bad ideas.</p>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <section class="section-band">
+      <p class="page-kicker reveal">The path so far</p>
+      <div class="trajectory-grid">
+        <article class="trajectory-step cut-panel reveal" data-tilt>
+          <strong>01 // Nebraska to WashU</strong>
+          <p>I grew up in Nebraska, studied finance in St. Louis, and got very good at understanding incentives, markets, and polished narratives.</p>
+        </article>
+
+        <article class="trajectory-step cut-panel reveal" data-tilt>
+          <strong>02 // Banking phase</strong>
+          <p>Two years at FT Partners gave me reps in fintech, spreadsheets, and pressure. It also made the pivot impossible to ignore.</p>
+        </article>
+
+        <article class="trajectory-step cut-panel reveal" data-tilt>
+          <strong>03 // Self-directed year</strong>
+          <p>I left, studied math and ML full time, applied to grad school, and did it while living out of a backpack across several countries.</p>
+        </article>
+
+        <article class="trajectory-step cut-panel reveal" data-tilt>
+          <strong>04 // UCSD and beyond</strong>
+          <p>Now I am focused on RL for LLMs, corporate simulations, reasoning behavior, and building work that actually says something.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

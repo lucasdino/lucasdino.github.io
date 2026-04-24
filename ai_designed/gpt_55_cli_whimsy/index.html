@@ -1,88 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Lucas Dionisopoulos</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lucas Dionisopoulos | Field Station</title>
   <link rel="icon" href="/assets/dino/DinoIcon.ico" type="image/x-icon">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Kode+Mono:wght@400..700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;700;800&family=Kode+Mono:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./stylesheet.css">
-  <script defer src="/shared_js/version-switcher.js"></script>
-  <script defer src="./js/whimsy.js"></script>
 </head>
 <body data-page="home">
-  <canvas id="signal-canvas" aria-hidden="true"></canvas>
-  <div class="grain" aria-hidden="true"></div>
+  <canvas id="signalCanvas" aria-hidden="true"></canvas>
+  <div class="paper-noise" aria-hidden="true"></div>
 
   <header class="topbar">
-    <a class="title" href="./index.html">Lucas Dionisopoulos</a>
-    <a class="navpointer" attribute="active_page" href="./index.html">Signal</a>
-    <a class="navpointer" href="./professional.html">Artifacts</a>
-    <a class="navpointer" href="./research.html">Lab</a>
-    <a class="navpointer" href="./personal.html">Atlas</a>
-    <a class="navpointer" href="./contact.html">Radio</a>
+    <a class="title" href="./index.html">Lucas D.</a>
+    <nav class="navlinks" aria-label="Site navigation">
+      <a class="navpointer" attribute="active_page" href="./index.html">Station</a>
+      <a class="navpointer" href="./professional.html">Arcade</a>
+      <a class="navpointer" href="./research.html">Reactor</a>
+      <a class="navpointer" href="./personal.html">Atlas</a>
+      <a class="navpointer" href="./contact.html">Signal</a>
+    </nav>
+    <label class="version-switcher">
+      <span>Version</span>
+      <select id="versionSelect" aria-label="Choose page version">
+        <option>Loading versions</option>
+      </select>
+    </label>
   </header>
 
-  <main class="site-shell">
+  <main class="site-shell home-shell">
     <section class="hero-grid">
       <div class="hero-copy">
-        <p class="eyebrow">Nebraska frequency / UCSD orbit / ML oddities</p>
-        <h1>Lucas builds strange little machines for reasoning.</h1>
-        <p class="lede">Former finance analyst, current ML grad student, lab creature in the best possible sense. I study reinforcement learning for language models, build tools that simulate messy worlds, and occasionally disappear across the globe with one backpack.</p>
-        <div class="cta-row">
-          <a class="button-link" href="./research.html">Enter the lab</a>
-          <a class="button-link ghost" href="./personal.html">Open the atlas</a>
+        <p class="eyebrow">Field notes from a Nebraska-born ML troublemaker</p>
+        <h1 class="hero-title"><span>Lucas</span><span>Dionisopoulos</span></h1>
+        <p class="hero-lede">
+          I study machine learning at UCSD, build reinforcement-learning environments for language models,
+          and keep trying to make rigorous things feel a little less sterile.
+        </p>
+        <div class="hero-actions" aria-label="Primary links">
+          <a class="command-link" href="./research.html">Open the reactor</a>
+          <a class="command-link secondary" href="./professional.html">Insert code cartridge</a>
         </div>
       </div>
 
-      <aside class="identity-stack tilt-card">
-        <div class="id-card">
-          <img src="/assets/pics/lucasducas.png" alt="Lucas Dionisopoulos">
-          <div>
-            <span>Current Mode</span>
-            <strong>UCSD ML + PEARLS Lab</strong>
-          </div>
-        </div>
-        <div class="radar">
-          <span></span><span></span><span></span><span></span>
-          <div class="radar-dot d1"></div>
-          <div class="radar-dot d2"></div>
-          <div class="radar-dot d3"></div>
-        </div>
-      </aside>
+      <div class="portrait-orbit" aria-label="Portrait and quick facts">
+        <div class="orbit-ring ring-one"></div>
+        <div class="orbit-ring ring-two"></div>
+        <img src="/assets/pics/lucasducas.png" alt="Lucas Dionisopoulos" class="portrait">
+        <span class="orbit-chip chip-one">UCSD ML</span>
+        <span class="orbit-chip chip-two">RL + LLMs</span>
+        <span class="orbit-chip chip-three">ex-banking</span>
+        <span class="orbit-chip chip-four">dino mode</span>
+      </div>
     </section>
 
-    <section class="transmission-board" aria-label="Lucas summary">
-      <article class="signal-card tilt-card">
-        <span class="card-index">01</span>
-        <h2>Pivoted Hard</h2>
-        <p>Finance at WashU, two years in investment banking at <a href="https://www.ftpartners.com/">FT Partners</a>, then a deliberate jump into math, ML, and computer science.</p>
-      </article>
-      <article class="signal-card tilt-card">
-        <span class="card-index">02</span>
-        <h2>Researching RL</h2>
-        <p>Building a corporate simulation for multi-turn RL environments where LLMs have to reason, use tools, pay costs, and compete.</p>
-      </article>
-      <article class="signal-card tilt-card">
-        <span class="card-index">03</span>
-        <h2>Chess Reasoning</h2>
-        <p>Led work on how fine-tuning data changes downstream reasoning in chess, with a NeurIPS FoRLM oral and an <a href="https://arxiv.org/abs/2604.05134">arXiv paper</a>.</p>
-      </article>
-      <article class="signal-card tilt-card">
-        <span class="card-index">04</span>
-        <h2>Not Just CV Lines</h2>
-        <p>Round-the-world sabbatical, dino sprites, park cleanup, mountain hikes, and enough side projects to make the browser sweat.</p>
-      </article>
+    <section class="manifesto-strip" aria-label="Current coordinates">
+      <div>
+        <span class="strip-kicker">Currently</span>
+        <p>Building a corporate simulation for multi-turn RL, tool use, finance tasks, and strategic LLM behavior.</p>
+      </div>
+      <div>
+        <span class="strip-kicker">Recently</span>
+        <p>Led chess-reasoning work on how fine-tuning data changes downstream reasoning after RL.</p>
+      </div>
+      <div>
+        <span class="strip-kicker">Previously</span>
+        <p>Finance at WashU, investment banking at FT Partners, then a year of math, ML, CS, and long-haul weirdness.</p>
+      </div>
     </section>
 
-    <section class="portal-strip">
-      <a href="./professional.html" style="--accent:#70f0ff">Code Vault</a>
-      <a href="./research.html" style="--accent:#f8ff62">Research Bunker</a>
-      <a href="./personal.html" style="--accent:#ff6bb5">Travel Atlas</a>
-      <a href="./contact.html" style="--accent:#8cff7a">Contact Radio</a>
+    <section class="timeline-rig" aria-label="Path so far">
+      <p class="section-tag">Pivot machine</p>
+      <ol class="timeline">
+        <li class="tilt-card">
+          <span class="timecode">01</span>
+          <h2>WashU finance</h2>
+          <p>Learned markets, incentives, and how people narrate risk when money is on the table.</p>
+        </li>
+        <li class="tilt-card">
+          <span class="timecode">02</span>
+          <h2>FT Partners</h2>
+          <p>Two years of fintech investment banking, intense spreadsheets, and a growing urge to build the machine instead.</p>
+        </li>
+        <li class="tilt-card">
+          <span class="timecode">03</span>
+          <h2>The study year</h2>
+          <p>Math, machine learning, computer science, grad applications, and a backpack that did too much.</p>
+        </li>
+        <li class="tilt-card">
+          <span class="timecode">04</span>
+          <h2>UCSD research</h2>
+          <p>Reinforcement learning for LLMs, reasoning, synthetic worlds, and experiments with teeth.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section class="portal-grid" aria-label="Explore the site">
+      <a class="portal tilt-card" href="./professional.html">
+        <img src="/assets/thumbnails/dungeoncoder_overview.gif" alt="Dungeon Coder project preview">
+        <span>Code Arcade</span>
+        <p>Projects, demos, rover autonomy, RL games, model training, and useful chaos.</p>
+      </a>
+      <a class="portal tilt-card" href="./research.html">
+        <img src="/assets/thumbnails/llmchess_takeaway.jpg" alt="Chess reasoning thumbnail">
+        <span>Research Reactor</span>
+        <p>LLMs, chess, fine-tuning, reinforcement learning, and corporate simulations.</p>
+      </a>
+      <a class="portal tilt-card" href="./personal.html">
+        <img src="/assets/pics/sabbatical/olympus.jpg" alt="Mount Olympus from Lucas's sabbatical">
+        <span>Sabbatical Atlas</span>
+        <p>A travel map recast as a memory machine: 153 days, 22 flights, many strange routes.</p>
+      </a>
+      <a class="portal tilt-card" href="./contact.html">
+        <img src="/assets/thumbnails/nebraskacore_thumbnail.jpg" alt="Nebraska landscape thumbnail">
+        <span>Signal Booth</span>
+        <p>Find the socials, send a note, or launch a flare into the Lucas-shaped internet.</p>
+      </a>
     </section>
   </main>
+
+  <footer class="site-footer">
+    <div class="footer-runway" aria-hidden="true">
+      <div class="dino-run"></div>
+      <div class="meteor"></div>
+    </div>
+    <div class="footer-links">
+      <a href="https://github.com/lucasdino">GitHub</a>
+      <a href="https://x.com/dinoacropolis">X</a>
+      <a href="https://www.linkedin.com/in/lucasdionisopoulos/">LinkedIn</a>
+    </div>
+  </footer>
+
+  <script src="./js/whimsy.js"></script>
 </body>
 </html>

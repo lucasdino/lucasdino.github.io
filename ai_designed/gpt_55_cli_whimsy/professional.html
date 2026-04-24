@@ -1,70 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Lucas Dionisopoulos - Artifacts</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lucas Dionisopoulos | Code Arcade</title>
   <link rel="icon" href="/assets/dino/DinoIcon.ico" type="image/x-icon">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Kode+Mono:wght@400..700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;700;800&family=Kode+Mono:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./stylesheet.css">
-  <script defer src="/shared_js/version-switcher.js"></script>
-  <script defer src="./js/whimsy.js"></script>
 </head>
-<body data-page="artifacts">
-  <canvas id="signal-canvas" aria-hidden="true"></canvas>
-  <div class="grain" aria-hidden="true"></div>
+<body data-page="professional">
+  <canvas id="signalCanvas" aria-hidden="true"></canvas>
+  <div class="paper-noise" aria-hidden="true"></div>
+
   <header class="topbar">
-    <a class="title" href="./index.html">Lucas Dionisopoulos</a>
-    <a class="navpointer" href="./index.html">Signal</a>
-    <a class="navpointer" attribute="active_page" href="./professional.html">Artifacts</a>
-    <a class="navpointer" href="./research.html">Lab</a>
-    <a class="navpointer" href="./personal.html">Atlas</a>
-    <a class="navpointer" href="./contact.html">Radio</a>
+    <a class="title" href="./index.html">Lucas D.</a>
+    <nav class="navlinks" aria-label="Site navigation">
+      <a class="navpointer" href="./index.html">Station</a>
+      <a class="navpointer" attribute="active_page" href="./professional.html">Arcade</a>
+      <a class="navpointer" href="./research.html">Reactor</a>
+      <a class="navpointer" href="./personal.html">Atlas</a>
+      <a class="navpointer" href="./contact.html">Signal</a>
+    </nav>
+    <label class="version-switcher">
+      <span>Version</span>
+      <select id="versionSelect" aria-label="Choose page version">
+        <option>Loading versions</option>
+      </select>
+    </label>
   </header>
 
   <main class="site-shell">
-    <section class="page-intro">
-      <p class="eyebrow">A vault of things that escaped the notebook</p>
-      <h1>Code artifacts, playable systems, and useful contraptions.</h1>
-      <p class="lede">Less corporate portfolio wall, more evidence locker. Each tile opens the original writeup or demo notes.</p>
-      <a class="button-link small" href="/assets/files/resume_redacted.pdf">Resume dossier</a>
+    <section class="page-intro arcade-intro">
+      <p class="eyebrow">The code arcade</p>
+      <h1>Insert coin. Receive strange machinery.</h1>
+      <p>
+        A wall of projects from reinforcement learning gyms to 3D dungeon generation, rover autonomy,
+        time-series anomaly detection, and embedding models trained from scratch.
+      </p>
+      <a class="command-link" href="/assets/files/resume_redacted.pdf">Resume cartridge</a>
     </section>
 
-    <section class="artifact-grid">
-      <a class="artifact-card tall tilt-card" href="https://lucasdino.notion.site/RL-Benchmarking-300c748e5e4a80cb9a42e3d8be2f7c58?source=copy_link">
-        <img src="/assets/thumbnails/breakout_rainbow.gif" alt="">
-        <div><span>RL</span><h2>RL Benchmarking Gym</h2><p>A clean, hackable RL gym engine built from scratch for baselines, ablations, and algorithm spelunking.</p></div>
+    <section class="project-stage" data-project-stage>
+      <div class="stage-screen">
+        <img id="spotlightImage" src="/assets/thumbnails/breakout_rainbow.gif" alt="Project spotlight">
+        <div class="scanline" aria-hidden="true"></div>
+      </div>
+      <div class="stage-copy">
+        <p class="section-tag">Now playing</p>
+        <h2 id="spotlightTitle">RL Benchmarking Gym</h2>
+        <p id="spotlightText">A clean, hackable RL engine built from scratch for implementing and ablating algorithms from baseline to state of the art.</p>
+      </div>
+    </section>
+
+    <section class="cartridge-grid" aria-label="Projects">
+      <a class="cartridge tilt-card" href="https://lucasdino.notion.site/RL-Benchmarking-300c748e5e4a80cb9a42e3d8be2f7c58?source=copy_link" data-image="/assets/thumbnails/breakout_rainbow.gif" data-title="RL Benchmarking Gym" data-summary="A clean, hackable RL engine built from scratch for implementing and ablating algorithms from baseline to state of the art.">
+        <img src="/assets/thumbnails/breakout_rainbow.gif" alt="Breakout RL benchmark">
+        <span class="cart-label">RL Benchmarking Gym</span>
+        <p>From-scratch engine for RL algorithm experiments.</p>
       </a>
-      <a class="artifact-card wide tilt-card" href="https://lucasdino.notion.site/Dungeon-Coder-20dc748e5e4a802cb281ce01fe6272b7?source=copy_link">
-        <img src="/assets/thumbnails/dungeoncoder_overview.gif" alt="">
-        <div><span>React + Three.js</span><h2>Dungeon Coder</h2><p>Prompt-to-3D dungeon tooling with image generation, image-to-asset models, classical generation, and LLM agents.</p></div>
+      <a class="cartridge tilt-card" href="https://lucasdino.notion.site/Dungeon-Coder-20dc748e5e4a802cb281ce01fe6272b7?source=copy_link" data-image="/assets/thumbnails/dungeoncoder_overview.gif" data-title="Dungeon Coder" data-summary="A full-stack app that turns prompts into custom assets, interactive 3D dungeons, and printable objects using React, Three.js, and self-hosted CV models.">
+        <img src="/assets/thumbnails/dungeoncoder_overview.gif" alt="Dungeon Coder overview">
+        <span class="cart-label">Dungeon Coder</span>
+        <p>Prompt-to-assets, prompt-to-dungeons, 3D chaos.</p>
       </a>
-      <a class="artifact-card tilt-card" href="https://lucasdino.notion.site/4-Wheel-Rover-Autonomous-Control-31ec748e5e4a8081a7c7ec3951d27317?source=copy_link">
-        <img src="/assets/thumbnails/ekfslam_webster.gif" alt="">
-        <div><span>ROS2</span><h2>Rover Autonomy</h2><p>Vision, EKF-SLAM from scratch, and planning for an uncalibrated differential-drive rover.</p></div>
+      <a class="cartridge tilt-card" href="https://lucasdino.notion.site/4-Wheel-Rover-Autonomous-Control-31ec748e5e4a8081a7c7ec3951d27317?source=copy_link" data-image="/assets/thumbnails/ekfslam_webster.gif" data-title="SLAM-Based Autonomy" data-summary="Vision, EKF-SLAM from scratch, and path planning for an uncalibrated four-wheel differential-drive rover.">
+        <img src="/assets/thumbnails/ekfslam_webster.gif" alt="Rover SLAM demo">
+        <span class="cart-label">SLAM Rover</span>
+        <p>ROS2, OpenCV, mapping, and autonomous control.</p>
       </a>
-      <a class="artifact-card tilt-card" href="https://lucasdino.notion.site/Teaching-AI-to-Drive-my-Custom-Racing-Game-214e45ce19704294bd365308a77c68b4?pvs=4">
-        <img src="/assets/thumbnails/rldriver_originaltrack.gif" alt="">
-        <div><span>Game AI</span><h2>RL Driver</h2><p>A custom Pygame racer taught to drive with Double Q-learning.</p></div>
+      <a class="cartridge tilt-card" href="https://lucasdino.notion.site/Teaching-AI-to-Drive-my-Custom-Racing-Game-214e45ce19704294bd365308a77c68b4?pvs=4" data-image="/assets/thumbnails/rldriver_originaltrack.gif" data-title="Reinforcement Learning Driver" data-summary="A custom Pygame racing world and a Double Q-learning agent trained to drive it.">
+        <img src="/assets/thumbnails/rldriver_originaltrack.gif" alt="RL racing game">
+        <span class="cart-label">RL Driver</span>
+        <p>A tiny race track with an agent trying to survive it.</p>
       </a>
-      <a class="artifact-card tilt-card" href="https://lucasdino.notion.site/Anomaly-Detection-12bc748e5e4a807e8c7afff86b16d975?pvs=4">
-        <img src="/assets/thumbnails/anomalydetection_thumbnail.jpg" alt="">
-        <div><span>Healthtech</span><h2>Anomaly Detection</h2><p>Real-time interpretable anomaly detection over noisy time-series data.</p></div>
+      <a class="cartridge tilt-card" href="https://lucasdino.notion.site/Anomaly-Detection-12bc748e5e4a807e8c7afff86b16d975?pvs=4" data-image="/assets/thumbnails/anomalydetection_thumbnail.jpg" data-title="Anomaly Detection" data-summary="A real-time, interpretable anomaly detection system over noisy time-series data using kernel ridge regression.">
+        <img src="/assets/thumbnails/anomalydetection_thumbnail.jpg" alt="Anomaly detection chart">
+        <span class="cart-label">Anomaly Detection</span>
+        <p>Interpretable monitoring over noisy signals.</p>
       </a>
-      <a class="artifact-card tilt-card" href="https://lucasdino.notion.site/Recreating-Word2Vec-25c1e86e08f14087a49c027a85bd5198">
-        <img src="/assets/thumbnails/recreating_word2vec.jpg" alt="">
-        <div><span>NLP</span><h2>Recreating Word2Vec</h2><p>Tokenizer, Wikipedia cleaning, training loop, and vector arithmetic rebuilt from scratch.</p></div>
+      <a class="cartridge tilt-card" href="https://lucasdino.notion.site/Recreating-Word2Vec-25c1e86e08f14087a49c027a85bd5198" data-image="/assets/thumbnails/recreating_word2vec.jpg" data-title="Recreating Word2Vec" data-summary="Tokenizer, Wikipedia cleanup, training loop, and vector arithmetic rebuilt from the ground up.">
+        <img src="/assets/thumbnails/recreating_word2vec.jpg" alt="Word2Vec embedding preview">
+        <span class="cart-label">Word2Vec Rebuild</span>
+        <p>Embeddings the hard way, because sometimes that is the point.</p>
       </a>
     </section>
 
-    <section class="notebook-row">
+    <section class="receipt-wall" aria-label="Writing">
+      <p class="section-tag">Receipts from the notebook</p>
       <a href="https://lucasdino.notion.site/Why-Pivot-7736665e93394c3886f78950ca66f7d2?pvs=4">Why Pivot?</a>
-      <a href="https://lucasdino.notion.site/My-Honest-Working-Hours-as-an-Investment-Banking-Analyst-03845324522a4b7785f6b752cf8b0da2?pvs=4">Banking Hours</a>
-      <a href="https://lucasdino.notion.site/What-is-a-SoTA-Transformer-Model-90d21f0a142349629a416ecce45cd671?pvs=4">Transformer Tour</a>
-      <a href="https://lucasdino.notion.site/Nvidia-s-Multi-Trillion-Dollar-Moat-Explained-187c748e5e4a803dbd35dfeea250913a?pvs=4">Nvidia Moat</a>
+      <a href="https://lucasdino.notion.site/My-Honest-Working-Hours-as-an-Investment-Banking-Analyst-03845324522a4b7785f6b752cf8b0da2?pvs=4">My Hours as an Investment Banking Analyst</a>
+      <a href="https://lucasdino.notion.site/What-is-a-SoTA-Transformer-Model-90d21f0a142349629a416ecce45cd671?pvs=4">From Attention Is All You Need to Llama 3</a>
+      <a href="https://lucasdino.notion.site/Nvidia-s-Multi-Trillion-Dollar-Moat-Explained-187c748e5e4a803dbd35dfeea250913a?pvs=4">Nvidia's Multi-Trillion-Dollar Moat</a>
     </section>
   </main>
+
+  <footer class="site-footer">
+    <div class="footer-runway" aria-hidden="true">
+      <div class="dino-run"></div>
+      <div class="meteor"></div>
+    </div>
+    <div class="footer-links">
+      <a href="https://github.com/lucasdino">GitHub</a>
+      <a href="https://x.com/dinoacropolis">X</a>
+      <a href="https://www.linkedin.com/in/lucasdionisopoulos/">LinkedIn</a>
+    </div>
+  </footer>
+
+  <script src="./js/whimsy.js"></script>
 </body>
 </html>
