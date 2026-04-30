@@ -266,7 +266,7 @@ Research
 */
 .badge {
   display: inline-block;
-  margin-left: 8px;
+  margin: 6px 8px 0 0;
   padding: 2px 8px;
   border-radius: 999px;
   font-weight: 700;
@@ -275,12 +275,16 @@ Research
   color: #fff;
   vertical-align: baseline;
   box-shadow:
-    0 6px 14px rgba(227, 93, 64, 0.24),
+    0 6px 14px rgba(27, 21, 16, 0.14),
     inset 0 1px 0 rgba(255,255,255,0.18);
 }
 
 .badge--neurips {
-  background: linear-gradient(135deg, #f19a4a 0%, #e35d40 50%, #c84d34 100%);
+  background: linear-gradient(135deg, #7b2ff7 0%, #5f34d5 48%, #2f1f8f 100%);
+}
+
+.badge--icml {
+  background: linear-gradient(135deg, #ff5a5f 0%, #d7263d 52%, #9f1239 100%);
 }
 
 /* 
