@@ -76,7 +76,7 @@ span[data-attribute="highlight"] {
 }
 
 .single-page {
-  width: min(82vw, 1180px);
+  width: min(84vw, 1210px);
   margin: 0 auto;
   padding: 54px 0 128px;
 }
@@ -204,37 +204,58 @@ h3 {
 }
 
 .list-stack {
+  --listline-bleed: 1.190476%;
+
   display: flex;
   flex-direction: column;
 }
 
 .listline {
   position: relative;
+  z-index: 0;
   display: grid;
   grid-template-columns: minmax(128px, 24%) minmax(0, 1fr);
   gap: 18px;
   align-items: center;
-  padding: 10px 0;
+  padding: 10px var(--listline-bleed);
   color: var(--ink);
   text-decoration: none;
 }
 
 .listline + .listline {
-  border-top: 1px solid var(--line);
+  border-top: 0;
+}
+
+.listline + .listline::before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: var(--listline-bleed);
+  left: var(--listline-bleed);
+  height: 1px;
+  background: var(--line);
+}
+
+.listline > * {
+  position: relative;
+  z-index: 2;
 }
 
 .listline::after {
   content: "";
   position: absolute;
-  inset: 6px -14px;
-  z-index: -1;
+  inset: 0;
+  z-index: 0;
   border-radius: 8px;
   background: transparent;
-  transition: background 0.15s ease;
+  pointer-events: none;
+  transition: background 0.15s ease, box-shadow 0.15s ease;
 }
 
 .listline:hover::after {
-  background: var(--orange-wash);
+  background: rgba(28, 24, 19, 0.08);
+  box-shadow: inset 0 0 0 1px rgba(28, 24, 19, 0.02);
 }
 
 .listline-thumb {
@@ -253,6 +274,11 @@ h3 {
 
 .listline--research {
   grid-template-columns: minmax(190px, 30%) minmax(0, 1fr);
+}
+
+.listline:not(.listline--primary) {
+  grid-template-columns: minmax(110px, 18%) minmax(0, 1fr);
+  padding: 7px var(--listline-bleed);
 }
 
 .listline-thumb img {
@@ -305,7 +331,7 @@ h3 {
 
 .listline--primary {
   grid-template-columns: minmax(190px, 30%) minmax(0, 1fr);
-  padding: 14px 0;
+  padding: 14px var(--listline-bleed);
 }
 
 .listline--primary .listline-thumb {
@@ -326,24 +352,35 @@ h3 {
 }
 
 .listline--secondary {
-  padding: 8px 0;
+  padding: 7px var(--listline-bleed);
 }
 
-.listline--secondary .listline-thumb {
-  height: 76px;
+.listline:not(.listline--primary) .listline-thumb {
+  height: auto;
 }
 
-.listline--secondary .listline-thumb img {
-  max-height: 76px;
+.listline:not(.listline--primary) .listline-thumb img {
+  width: 88%;
+  height: auto;
+  max-height: none;
 }
 
 .listline--secondary .listline-title {
-  font-size: 0.98rem;
+  font-size: 0.92rem;
 }
 
 .listline--secondary .listline-summary {
-  font-size: 0.9rem;
-  line-height: 1.31;
+  font-size: 0.84rem;
+  line-height: 1.28;
+}
+
+.listline:not(.listline--primary) .listline-title {
+  font-size: 0.92rem;
+}
+
+.listline:not(.listline--primary) .listline-summary {
+  font-size: 0.84rem;
+  line-height: 1.28;
 }
 
 .badge {
@@ -358,6 +395,10 @@ h3 {
   vertical-align: baseline;
 }
 
+.badge-row {
+  display: block;
+}
+
 .badge--neurips {
   background: #5d3cab;
 }
@@ -369,7 +410,7 @@ h3 {
 .ducas-stage {
   position: fixed;
   top: 18px;
-  right: 28px;
+  right: 8px;
   z-index: 200;
   pointer-events: none;
 }
@@ -1108,47 +1149,139 @@ body.at-page-bottom .dino-track {
 @media (max-width: 640px) {
   body {
     font-size: 16px;
+    line-height: 1.58;
   }
 
   .single-page {
-    width: min(90vw, 560px);
-    padding-top: 46px;
+    width: min(92vw, 560px);
+    padding-top: 34px;
+    padding-bottom: 112px;
   }
 
   .hero-section {
-    min-height: 58vh;
-    padding-bottom: 44px;
+    min-height: auto;
+    justify-content: flex-start;
+    padding: 76px 0 42px;
   }
 
   .page-section {
-    padding: 44px 0 50px;
+    padding: 40px 0 46px;
+  }
+
+  .section-heading {
+    margin-bottom: 16px;
+  }
+
+  .section-intro {
+    margin-bottom: 18px;
   }
 
   h1 {
-    max-width: calc(100% - 88px);
-    font-size: 2.05rem;
+    max-width: 100%;
+    margin-bottom: 20px;
+    font-size: 1.92rem;
+    line-height: 1.16;
   }
 
   h2 {
-    font-size: 1.42rem;
+    font-size: 1.34rem;
   }
 
   h3 {
     font-size: 1.18rem;
   }
 
+  .custom-list {
+    margin-top: 14px;
+  }
+
+  .custom-list li {
+    margin-bottom: 10px;
+    padding-left: 20px;
+  }
+
   .ducas-stage {
-    top: 10px;
-    right: 12px;
+    top: 8px;
+    right: 8px;
   }
 
   .ducas-sprite {
-    width: 92px;
+    width: 74px;
+  }
+
+  .list-stack {
+    --listline-bleed: 0;
+  }
+
+  .listline,
+  .listline:not(.listline--primary),
+  .listline--secondary {
+    grid-template-columns: minmax(82px, 29%) minmax(0, 1fr);
+    gap: 12px;
+    align-items: flex-start;
+    padding: 12px 0;
+  }
+
+  .listline--primary {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 14px 0;
+  }
+
+  .listline-thumb,
+  .listline:not(.listline--primary) .listline-thumb,
+  .listline--primary .listline-thumb {
+    height: auto;
+    max-width: none;
+    justify-content: flex-start;
+  }
+
+  .listline-thumb img,
+  .listline:not(.listline--primary) .listline-thumb img {
+    width: 100%;
+    max-height: 88px;
+  }
+
+  .listline--primary .listline-thumb {
+    max-width: 280px;
+  }
+
+  .listline--primary .listline-thumb img {
+    max-height: 116px;
+  }
+
+  .listline-title,
+  .listline:not(.listline--primary) .listline-title {
+    font-size: 0.94rem;
+    line-height: 1.28;
+  }
+
+  .listline-summary,
+  .listline:not(.listline--primary) .listline-summary {
+    font-size: 0.84rem;
+    line-height: 1.34;
+  }
+
+  .badge {
+    margin: 7px 6px 0 0;
+    padding: 4px 7px;
+    font-size: 0.68rem;
+    line-height: 1.08;
   }
 
   #travel_map {
-    height: 380px;
-    min-height: 360px;
+    height: 320px;
+    min-height: 300px;
+  }
+
+  .smart-popup {
+    max-width: calc(100vw - 32px);
+  }
+
+  .popup-image {
+    max-width: min(76vw, 260px);
+    max-height: 42vh;
+    margin: 8px 0;
   }
 
   .email-alias {
@@ -1156,7 +1289,23 @@ body.at-page-bottom .dino-track {
   }
 
   .bottom-footer-inner {
-    width: min(90vw, 560px);
+    width: min(92vw, 560px);
+    gap: 12px;
+  }
+
+  .bottom-dino-footer .version-dropdown {
+    min-width: min(300px, calc(100vw - 20px));
+    max-width: calc(100vw - 20px);
+  }
+
+  .bottom-dino-footer .archive-menu {
+    right: 0;
+    bottom: calc(100% + 8px);
+    min-width: min(260px, calc(100vw - 24px));
+  }
+
+  .bottom-dino-footer .thought-bubble {
+    display: none !important;
   }
 }
 
