@@ -1,78 +1,234 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Lucas Dionisopoulos</title>
     <link rel="icon" href="/assets/dino/DinoIcon.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
     <link rel="stylesheet" href="/pages/stylesheet.css">
-    <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "a31ef88eb6a94f49b864a41163ab806c"}'></script>
-    <script src="/shared_js/version-switcher.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "a31ef88eb6a94f49b864a41163ab806c"}'></script>
+    <script defer src="/shared_js/version-switcher.js"></script>
+    <script defer src="/shared_js/ducas-sprite.js"></script>
 </head>
 <body>
-    <div class="topbar">
-        <a class="title" href="/index.html">Lucas Dionisopoulos</a>
-        <a class="navpointer" href="/pages/professional.html">Professional</a>
-        <a class="navpointer" href="/pages/research.html">Research</a>
-        <a class="navpointer" href="/pages/personal.html">Personal</a>
-        <a class="navpointer" href="/pages/contact.html">Contact</a>
+    <div class="ducas-stage" aria-hidden="true">
+        <div class="ducas-sprite"></div>
     </div>
 
-    <div class="meat">
-        <div class="headshot-container">
-            <div class="headshot-text">
-                <p>
-                    Hi - I'm Lucas and I'm from Nebraska.<br><br>
-                                        
-                    I'll spare you the details but here's my quick gist:
-                    <hr>
-                </p>                
+    <main class="single-page">
+        <section class="hero-section" data-sprite-mode="cameo">
+            <p class="kicker">Lucas Dionisopoulos</p>
+            <h1>Hey! I'm Lucas and I'm from Nebraska.</h1>
+            <div class="intro-copy">
+                <p>Here's my quick gist:</p>
                 <ul class="custom-list">
-                    <li>Studied finance in undergrad before working as an investment banker for 2 years</li> 
-                    <li><a href="https://lucasdino.notion.site/Why-Pivot-7736665e93394c3886f78950ca66f7d2?pvs=4" data-attribute="mutedlink">Knew</a> I wanted a career change...when better than in your early 20s? So I took a gap year where I mostly <a href="https://www.notion.so/lucasdino/What-I-Studied-on-my-Year-Off-271c748e5e4a80c6bc90d2b6e1edf9d6" data-attribute="mutedlink">studied</a> but also had a bit of <a href="/pages/personal.html" data-attribute="mutedlink">fun</a></li>
-                    <li>Worked on research in grad school @ UCSD. Primarily focused on RL for LLMs (w/ <a href="https://pearls-lab.github.io/" data-attribute="mutedlink">PEARLS Lab</a>) but also worked with <a href="https://cseweb.ucsd.edu/groups/progsys/" data-attribute="mutedlink">UCSD ProgSys</a>. Eventually gave a talk at a <a href="https://reasoning-workshop.github.io/schedule/" data-attribute="mutedlink">NeurIPS workshop</a> on reasoning and published work to <a href="https://arxiv.org/abs/2604.05134" data-attribute="mutedlink">ICML</a>
-                    <li><p data-attribute="highlight">Currently:</p> Jack of all trades @ <a href="https://www.hadrian.co/" data-attribute="mutedlink">Hadrian</a> (Special Projects)</li>
+                    <li>Initially studied finance (WashU) and worked as an investment banking for 2 years.</li>
+                    <li><a href="https://lucasdino.notion.site/Why-Pivot-7736665e93394c3886f78950ca66f7d2?pvs=4" data-attribute="mutedlink">Knew</a> I wanted a career change... so I took a gap year where I mostly <a href="https://www.notion.so/lucasdino/What-I-Studied-on-my-Year-Off-271c748e5e4a80c6bc90d2b6e1edf9d6" data-attribute="mutedlink">studied</a> (but also had a bit of <a href="#personal" data-attribute="mutedlink">fun</a>).</li>
+                    <li>Worked on research in grad school (UCSD) where I focused on RL for LLMs with <a href="https://pearls-lab.github.io/" data-attribute="mutedlink">PEARLS Lab</a>. Published work I led at <a href="https://arxiv.org/abs/2604.05134" data-attribute="mutedlink">ICML</a> (and gave a talk at a <a href="https://reasoning-workshop.github.io/schedule/" data-attribute="mutedlink">NeurIPS workshop</a> on reasoning).</li>
+                    <li><span data-attribute="highlight">Currently:</span> Jack of all trades at <a href="https://www.hadrian.co/" data-attribute="mutedlink">Hadrian</a> (Special Projects).</li>
                 </ul>
-                <p>
-                    If you're in LA and/or want to chat, you should reach out!
-                </p>
+                <p>If you're in LA / just want to chat - you should reach out!</p>
             </div>
-            <div class="headshot">
-                <img src="/assets/pics/lucasducas.png" data-attribute="headshot" alt="Free (and incredible quality) headshot I got taken at Stripe Sessions 2023">
+        </section>
+
+        <section id="blogs" class="page-section" data-sprite-mode="cameo">
+            <div class="section-heading">
+                <p class="kicker">Blogs</p>
+                <h2>Some Writing</h2>
             </div>
+            <ul class="custom-list">
+                <li><a href="https://lucasdino.notion.site/Why-Pivot-7736665e93394c3886f78950ca66f7d2?pvs=4" data-attribute="mutedlink">Why Pivot?</a> My motivation for leaving finance, taking a gap year to study ML, and starting grad school.</li>
+                <li><a href="https://lucasdino.notion.site/My-Honest-Working-Hours-as-an-Investment-Banking-Analyst-03845324522a4b7785f6b752cf8b0da2?pvs=4" data-attribute="mutedlink">My Hours as an Investment Banking Analyst.</a> I tracked hours during my 2 years in banking and made some neat charts.</li>
+                <li><a href="https://lucasdino.notion.site/What-is-a-SoTA-Transformer-Model-90d21f0a142349629a416ecce45cd671?pvs=4" data-attribute="mutedlink">From Attention is All You Need to Llama 3.</a> Technical overview of improvements to the decoder-only transformer used in Llama 3.</li>
+                <li><a href="https://lucasdino.notion.site/Nvidia-s-Multi-Trillion-Dollar-Moat-Explained-187c748e5e4a803dbd35dfeea250913a?pvs=4" data-attribute="mutedlink">Nvidia's Multi-Trillion Dollar Moat: Explained.</a> A technically approachable answer to this big question.</li>
+            </ul>
+        </section>
+
+        <section id="research" class="page-section" data-sprite-mode="beekeeping">
+            <div class="section-heading">
+                <p class="kicker">Research</p>
+                <h2>Some Research</h2>
+            </div>
+            <p class="section-intro">Primarily worked on RL + LLMs in <a href="https://pearls-lab.github.io/" data-attribute="mutedlink">PEARLS Lab</a>. Previously worked with <a href="https://cseweb.ucsd.edu/groups/progsys/" data-attribute="mutedlink">UCSD ProgSys</a>.</p>
+
+            <div class="list-stack">
+                <a class="listline listline--research listline--primary" href="https://arxiv.org/abs/2604.05134">
+                    <div class="listline-thumb"><img src="/assets/thumbnails/llmchess_takeaway.jpg" alt=""></div>
+                    <div class="listline-body">
+                        <div class="listline-title">
+                            How Reasoning Evolves from Post-Training Data: An Empirical Study Using Chess
+                            <span class="badge badge--neurips">NeurIPS 2025 FoRLM Workshop (Oral)</span>
+                            <span class="badge badge--icml">ICML 2026</span>
+                        </div>
+                        <div class="listline-summary"><b>Lead author.</b> Outperformed state-of-the-art open-source reasoning models in chess through SFT and RL on a 7B-parameter language model. The key focus of this work was to study how fine-tuning influenced post-RL reasoning using custom theoretically-inspired datasets.</div>
+                    </div>
+                </a>
+
+                <a class="listline listline--research listline--secondary" href="https://lucasdino.notion.site/Attempted-Neural-A-Guided-Search-on-ARC-AGI-171c748e5e4a801796f6d7e13f78714c?pvs=4">
+                    <div class="listline-thumb"><img src="/assets/thumbnails/arcprize_pcfg_thumbnail.jpg" alt=""></div>
+                    <div class="listline-body">
+                        <div class="listline-title">A* Neural Guided Search on ARC-AGI</div>
+                        <div class="listline-summary">Trained an image embedding model from scratch using a synthetic data generation pipeline to combine with a probabilistic context-free grammar in a neurosymbolic programming approach for ARC-AGI.</div>
+                    </div>
+                </a>
+
+                <a class="listline listline--research listline--secondary" href="https://lucasdino.notion.site/Philosophize-That-147c748e5e4a8054b857eee9e47bf62d?pvs=4">
+                    <div class="listline-thumb"><img src="/assets/thumbnails/philosophize_thumbnail.jpg" alt=""></div>
+                    <div class="listline-body">
+                        <div class="listline-title">Philosophize That</div>
+                        <div class="listline-summary">Created a corpus of philosophical texts using various techniques to isolate signal from correlated noise and trained a model using document-level embeddings to classify the philosophical basis of my own journal entries.</div>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <section id="technical-projects" class="page-section" data-sprite-mode="coding">
+            <div class="section-heading">
+                <p class="kicker">Projects</p>
+                <h2>Some Technical Projects</h2>
+            </div>
+
+            <div class="list-stack">
+                <a class="listline listline--professional" href="https://lucasdino.notion.site/RL-Benchmarking-300c748e5e4a80cb9a42e3d8be2f7c58?source=copy_link">
+                    <div class="listline-thumb"><img src="/assets/thumbnails/breakout_rainbow.gif" alt=""></div>
+                    <div class="listline-body">
+                        <div class="listline-title">RL Benchmarking Gym</div>
+                        <div class="listline-summary">Built a clean, hackable RL gym engine from scratch to implement and ablate algorithms from baseline to SoTA.</div>
+                    </div>
+                </a>
+
+                <a class="listline listline--professional" href="https://lucasdino.notion.site/Dungeon-Coder-20dc748e5e4a802cb281ce01fe6272b7?source=copy_link">
+                    <div class="listline-thumb"><img src="/assets/thumbnails/dungeoncoder_overview.gif" alt=""></div>
+                    <div class="listline-body">
+                        <div class="listline-title">Dungeon Coder</div>
+                        <div class="listline-summary">Full-stack webapp combining image generation and image-to-3D asset models to create custom assets you can place in interactive dungeons or 3D print. Includes a dungeon generator that turns a prompt into a 3D dungeon using classical algorithms plus LLM agents. Built with React, Three.js, and self-hosted CV models.</div>
+                    </div>
+                </a>
+
+                <a class="listline listline--professional" href="https://lucasdino.notion.site/4-Wheel-Rover-Autonomous-Control-31ec748e5e4a8081a7c7ec3951d27317?source=copy_link">
+                    <div class="listline-thumb"><img src="/assets/thumbnails/ekfslam_webster.gif" alt=""></div>
+                    <div class="listline-body">
+                        <div class="listline-title">SLAM-Based Autonomy for 4-Wheel Rover</div>
+                        <div class="listline-summary">Developed an autonomy stack for an uncalibrated 4-wheel differential-drive rover, implementing vision, EKF-SLAM from scratch, and path planning algorithms. Built with ROS2, OpenCV, and Python.</div>
+                    </div>
+                </a>
+
+                <a class="listline listline--professional" href="https://lucasdino.notion.site/Teaching-AI-to-Drive-my-Custom-Racing-Game-214e45ce19704294bd365308a77c68b4?pvs=4">
+                    <div class="listline-thumb"><img src="/assets/thumbnails/rldriver_originaltrack.gif" alt=""></div>
+                    <div class="listline-body">
+                        <div class="listline-title">Reinforcement Learning Driver</div>
+                        <div class="listline-summary">Created and optimized a racing game in Pygame and taught an RL agent to drive it using Double Q-learning.</div>
+                    </div>
+                </a>
+
+                <a class="listline listline--professional" href="https://lucasdino.notion.site/Anomaly-Detection-12bc748e5e4a807e8c7afff86b16d975?pvs=4">
+                    <div class="listline-thumb"><img src="/assets/thumbnails/anomalydetection_thumbnail.jpg" alt=""></div>
+                    <div class="listline-body">
+                        <div class="listline-title">Machine Learning Anomaly Detection</div>
+                        <div class="listline-summary">Developed a real-time, interpretable anomaly detection system over noisy time-series data using kernel ridge regression for a San Diego healthtech company.</div>
+                    </div>
+                </a>
+
+                <a class="listline listline--professional" href="https://lucasdino.notion.site/Recreating-Word2Vec-25c1e86e08f14087a49c027a85bd5198">
+                    <div class="listline-thumb"><img src="/assets/thumbnails/recreating_word2vec.jpg" alt=""></div>
+                    <div class="listline-body">
+                        <div class="listline-title">Recreating Word2Vec</div>
+                        <div class="listline-summary">Recreated Word2Vec vector arithmetic entirely from scratch, from building a tokenizer to cleaning English Wikipedia and training an embedding model.</div>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <section id="personal" class="page-section" data-sprite-mode="marshmallow">
+            <div class="section-heading section-heading--personal">
+                <p class="kicker">Personal</p>
+            </div>
+            <div id="map_container">
+                <div id="map_interactive_container">
+                    <div id="travel_map">
+                        <script type="module" src="/pages/js/sabbaticalmap.js"></script>
+                    </div>
+                </div>
+                <div id="map_text_container">
+                    <div id="map_text">
+                        <h3 class="map-heading">Sabbatical</h3>
+                        <p>When I finished banking, I wanted to lock in and study ML.</p>
+                        <p>I considered my options: study at home in Wisconsin <em>or</em> study abroad at long-term Airbnbs and pet sits.</p>
+                        <p><em>One of these paths seemed more fun.</em></p>
+                        <p class="aside">Note: I also did a lot of <a href="https://www.notion.so/lucasdino/What-I-Studied-on-my-Year-Off-271c748e5e4a80c6bc90d2b6e1edf9d6" data-attribute="mutedlink">work</a>.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="list-stack personal-links">
+                    <a class="listline listline--professional" href="https://leelounsbury.com/john-muir-trail-2025-09/">
+                        <div class="listline-thumb"><img src="/assets/thumbnails/jmt_2025.jpg" alt=""></div>
+                        <div class="listline-body">
+                            <div class="listline-title">JMT 2025</div>
+                            <div class="listline-summary">Neat pics from a JMT attempt that was thwarted by wildfires.</div>
+                        </div>
+                    </a>
+                    <a class="listline listline--professional" href="https://www.notion.so/lucasdino/Clean-Our-Green-271c748e5e4a800d8b54de1c0886d2b5">
+                        <div class="listline-thumb"><img src="/assets/thumbnails/clean_our_green.jpg" alt=""></div>
+                        <div class="listline-body">
+                            <div class="listline-title">Clean Our Green</div>
+                            <div class="listline-summary">Started a project in college to clean up a ton of St. Louis parks.</div>
+                        </div>
+                    </a>
+            </div>
+        </section>
+
+        <section id="contact" class="page-section contact-section" data-sprite-mode="tennis">
+            <div class="section-heading">
+                <p class="kicker">Contact</p>
+                <h2>Feel free to reach out!</h2>
+            </div>
+            <p class="email-alias">firstlast[at]gmail[dot]com</p>
+
+        </section>
+    </main>
+
+    <div class="bottom-progress-shell">
+        <div class="scroll-progress" aria-hidden="true">
+            <div class="scroll-progress__fill" id="scroll-progress-fill"></div>
         </div>
-    </div>
-
-
-
-
-    <div class="footer-container">
-        <div class="footer-elements">
-            <div class="social-icons">
+        <div class="dino-track" aria-hidden="true">
+            <div class="dino-run"></div>
+            <div class="meteor"></div>
+        </div>
+        <footer class="bottom-dino-footer">
+            <div class="bottom-footer-inner">
+                <div class="social-icons footer-socials" aria-label="Social links">
                 <div data-attribute="linkedin">
-                    <a href="https://www.linkedin.com/in/lucasdionisopoulos/" data-attribute="linkedin">
+                    <a href="https://www.linkedin.com/in/lucasdionisopoulos/" aria-label="LinkedIn">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                            <path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/>
+                            <path d="M20.5 2h-17A1.5 1.5 0 0 0 2 3.5v17A1.5 1.5 0 0 0 3.5 22h17a1.5 1.5 0 0 0 1.5-1.5v-17A1.5 1.5 0 0 0 20.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 1 1 8.3 6.5a1.78 1.78 0 0 1-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0 0 13 14.19a.66.66 0 0 0 0 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 0 1 2.7-1.4c1.55 0 3.36.86 3.36 3.66z"></path>
                         </svg>
                     </a>
                 </div>
                 <div data-attribute="x-twitter">
-                    <a href="https://x.com/dinoacropolis" data-attribute="x-twitter">
+                    <a href="https://x.com/dinoacropolis" aria-label="X / Twitter">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-                        </svg>                
+                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
+                        </svg>
                     </a>
-                </div> 
+                </div>
                 <div data-attribute="github">
-                    <a href="https://github.com/lucasdino" data-attribute="github">
+                    <a href="https://github.com/lucasdino" aria-label="GitHub">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 17">
-                            <path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"/>
-                        </svg>                
+                            <path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"></path>
+                        </svg>
                     </a>
-                </div> 
+                </div>
+                </div>
+                <div class="version-switcher-mount"></div>
             </div>
-        </div>
+        </footer>
     </div>
 </body>
 </html>

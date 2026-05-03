@@ -1,15 +1,43 @@
 (function () {
   const sprite = document.querySelector(".ducas-sprite");
-  if (!sprite) return;
+  const progressFill = document.getElementById("scroll-progress-fill");
+  const root = document.documentElement;
+  const body = document.body;
+
+  const bottomThreshold = 18;
+  const updateProgress = () => {
+    const scrollMax = Math.max(1, root.scrollHeight - window.innerHeight);
+    const progress = Math.min(1, Math.max(0, window.scrollY / scrollMax));
+    const bottomDistance = root.scrollHeight - (window.scrollY + window.innerHeight);
+
+    if (progressFill) progressFill.style.width = `${progress * 100}%`;
+    body.classList.toggle("at-page-bottom", bottomDistance <= bottomThreshold);
+  };
+
+  if (!sprite) {
+    window.addEventListener("scroll", updateProgress, { passive: true });
+    window.addEventListener("resize", updateProgress);
+    updateProgress();
+    return;
+  }
 
   const cols = 8;
   const rows = 9;
-  const snapMs = 170;
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   const cells = (row, frames) => frames.map((col) => ({ row, col }));
   const actions = {
     idle: { frames: cells(0, [0, 1, 2, 3, 4, 5]), frameMs: 220 },
+    cameo: {
+      frames: [
+        ...cells(0, [0, 1, 2, 3, 4, 5]),
+        ...cells(3, [0, 1, 2, 3]),
+        ...cells(4, [0, 2, 4]),
+        ...cells(7, [0, 1, 2, 3]),
+        ...cells(8, [0, 1, 2, 3, 4, 5]),
+      ],
+      frameMs: 260,
+    },
     walkRight: { frames: cells(1, [0, 1, 2, 3, 4, 5, 6, 7]), frameMs: 120 },
     walkLeft: { frames: cells(2, [0, 1, 2, 3, 4, 5, 6, 7]), frameMs: 120 },
     beekeeping: { frames: cells(3, [0, 1, 2, 3]), frameMs: 230 },
@@ -30,6 +58,8 @@
   let lastScrollY = window.scrollY;
   let scrollDirection = "down";
   let scrollTicking = false;
+  let isScrolling = false;
+  let scrollStopId = null;
 
   function setFrame(frame) {
     const x = (frame.col / (cols - 1)) * 100;
@@ -46,6 +76,7 @@
   function setMode(mode) {
     if (!actions[mode]) mode = "idle";
     if (mode === currentMode) return;
+
     currentMode = mode;
     frameIndex = 0;
     restartSnap();
@@ -63,7 +94,7 @@
       const sectionMiddle = sectionTop + section.offsetHeight / 2;
       const distance = Math.abs(sectionMiddle - viewportAnchor);
 
-      if (viewportAnchor >= sectionTop - 80 && distance < bestDistance) {
+      if (viewportAnchor >= sectionTop - 90 && distance < bestDistance) {
         bestDistance = distance;
         active = section;
       }
@@ -72,25 +103,39 @@
     return active;
   }
 
-  function modeFromScrollPosition() {
-    const bottomDistance = document.documentElement.scrollHeight - (window.scrollY + window.innerHeight);
-    if (bottomDistance < 120) return "marshmallow";
-
+  function sectionModeFromScrollPosition() {
     const activeSection = getActiveSection();
-    const sectionMode = activeSection ? activeSection.dataset.spriteMode : "scroll";
-    if (sectionMode === "scroll") {
+    return activeSection ? activeSection.dataset.spriteMode : "cameo";
+  }
+
+  function modeFromScrollPosition() {
+    if (isScrolling) {
       return scrollDirection === "up" ? "walkLeft" : "walkRight";
     }
-    return sectionMode;
+
+    return sectionModeFromScrollPosition();
+  }
+
+  function settleToSectionMode() {
+    isScrolling = false;
+    setMode(sectionModeFromScrollPosition());
   }
 
   function updateModeFromScroll() {
     const currentY = window.scrollY;
-    if (Math.abs(currentY - lastScrollY) > 2) {
+    const didMove = Math.abs(currentY - lastScrollY) > 2;
+
+    if (didMove) {
       scrollDirection = currentY > lastScrollY ? "down" : "up";
       lastScrollY = currentY;
+      isScrolling = true;
+
+      if (scrollStopId) window.clearTimeout(scrollStopId);
+      scrollStopId = window.setTimeout(settleToSectionMode, 180);
     }
+
     setMode(modeFromScrollPosition());
+    updateProgress();
     scrollTicking = false;
   }
 
@@ -109,16 +154,17 @@
 
   window.addEventListener("scroll", onScroll, { passive: true });
   window.addEventListener("resize", onScroll);
-  setMode(modeFromScrollPosition());
+  setMode(sectionModeFromScrollPosition());
+  updateProgress();
 
-  if (reducedMotion) {
+  if (!reducedMotion) {
+    animate();
+  } else {
     setFrame(actions[currentMode].frames[0]);
-    return;
   }
-
-  animate();
 
   window.addEventListener("pagehide", () => {
     if (timerId) window.clearTimeout(timerId);
+    if (scrollStopId) window.clearTimeout(scrollStopId);
   });
 }());

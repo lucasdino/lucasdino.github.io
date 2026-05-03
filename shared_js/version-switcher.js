@@ -289,11 +289,11 @@
   }
 
   function injectSwitcher() {
-    const topbar = document.querySelector(".topbar");
-    if (!topbar) return;
+    const mount = document.querySelector(".version-switcher-mount") || document.querySelector(".topbar");
+    if (!mount) return;
 
     const ctx = detectContext();
-    fixNavLinks(ctx.version);
+    if (document.querySelector(".topbar")) fixNavLinks(ctx.version);
 
     const currentLabel = VERSIONS.find((v) => v.id === ctx.version).label;
 
@@ -337,7 +337,7 @@
       const archiveToggle = document.createElement("button");
       archiveToggle.type = "button";
       archiveToggle.className = "archive-toggle";
-      archiveToggle.innerHTML = '<span>Archive</span><span class="arrow">&#9656;</span>';
+      archiveToggle.innerHTML = '<span>Archive</span><span class="arrow">&#9666;</span>';
 
       const archiveMenu = document.createElement("div");
       archiveMenu.className = "archive-menu";
@@ -364,7 +364,7 @@
 
     wrapper.appendChild(btn);
     wrapper.appendChild(dropdown);
-    topbar.appendChild(wrapper);
+    mount.appendChild(wrapper);
 
     btn.addEventListener("click", (e) => {
       e.stopPropagation();

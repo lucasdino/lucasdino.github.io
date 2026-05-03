@@ -271,5 +271,26 @@ function calculateEdgePoints() {
 }
 
 
-// Initial view
-addParentMarkers();
+function refreshMainMapView() {
+    map.invalidateSize({ pan: false });
+    if (subMarkers.getLayers().length > 0) return;
+    removeParentMarkers();
+    addParentMarkers();
+}
+
+function scheduleMainMapRefresh(delay) {
+    setTimeout(refreshMainMapView, delay);
+}
+
+requestAnimationFrame(function() { scheduleMainMapRefresh(0); });
+window.addEventListener('load', function() { scheduleMainMapRefresh(120); });
+window.addEventListener('resize', function() { scheduleMainMapRefresh(120); });
+
+if ('IntersectionObserver' in window) {
+    var mapObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) scheduleMainMapRefresh(80);
+        });
+    }, { threshold: 0.15 });
+    mapObserver.observe(document.getElementById('travel_map'));
+}
