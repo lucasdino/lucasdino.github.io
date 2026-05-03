@@ -1,5 +1,6 @@
 (function () {
   const sprite = document.querySelector(".ducas-sprite");
+  const stage = document.querySelector(".ducas-stage");
   const progressFill = document.getElementById("scroll-progress-fill");
   const root = document.documentElement;
   const body = document.body;
@@ -60,6 +61,19 @@
   let scrollTicking = false;
   let isScrolling = false;
   let scrollStopId = null;
+  let isDragging = false;
+  let didDrag = false;
+  let suppressNextClick = false;
+  let suppressClickId = null;
+  let dragPointerId = null;
+  let dragStartX = 0;
+  let dragStartY = 0;
+  let dragOffsetX = 0;
+  let dragOffsetY = 0;
+  let lastPointerX = 0;
+  let draggedLeft = 0;
+  let draggedTop = 0;
+  let hasUserPosition = false;
 
   function setFrame(frame) {
     const x = (frame.col / (cols - 1)) * 100;
@@ -79,8 +93,100 @@
 
     currentMode = mode;
     frameIndex = 0;
-    restartSnap();
+    if (!isDragging) restartSnap();
     setFrame(actions[currentMode].frames[0]);
+  }
+
+  function clampSpritePosition(left, top) {
+    const rect = stage.getBoundingClientRect();
+    const width = rect.width || sprite.offsetWidth;
+    const height = rect.height || sprite.offsetHeight;
+    const margin = 8;
+    const maxLeft = Math.max(margin, window.innerWidth - width - margin);
+    const maxTop = Math.max(margin, window.innerHeight - height - margin);
+
+    return {
+      left: Math.min(maxLeft, Math.max(margin, left)),
+      top: Math.min(maxTop, Math.max(margin, top)),
+    };
+  }
+
+  function moveDraggedSprite(left, top) {
+    const next = clampSpritePosition(left, top);
+    draggedLeft = next.left;
+    draggedTop = next.top;
+    stage.style.left = `${draggedLeft}px`;
+    stage.style.top = `${draggedTop}px`;
+    stage.style.right = "auto";
+    stage.style.bottom = "auto";
+    hasUserPosition = true;
+  }
+
+  function onPointerDown(event) {
+    if (!event.isPrimary || event.button > 0) return;
+
+    const rect = stage.getBoundingClientRect();
+    isDragging = true;
+    didDrag = false;
+    dragPointerId = event.pointerId;
+    dragStartX = event.clientX;
+    dragStartY = event.clientY;
+    dragOffsetX = event.clientX - rect.left;
+    dragOffsetY = event.clientY - rect.top;
+    lastPointerX = event.clientX;
+    draggedLeft = rect.left;
+    draggedTop = rect.top;
+
+    stage.classList.add("is-dragging");
+    sprite.setPointerCapture(event.pointerId);
+    event.preventDefault();
+  }
+
+  function onPointerMove(event) {
+    if (!isDragging || event.pointerId !== dragPointerId) return;
+
+    const deltaX = event.clientX - lastPointerX;
+    const totalDelta = Math.hypot(event.clientX - dragStartX, event.clientY - dragStartY);
+
+    if (Math.abs(deltaX) > 1) {
+      setMode(deltaX > 0 ? "walkRight" : "walkLeft");
+      lastPointerX = event.clientX;
+    }
+
+    if (totalDelta > 3) didDrag = true;
+    moveDraggedSprite(event.clientX - dragOffsetX, event.clientY - dragOffsetY);
+    event.preventDefault();
+  }
+
+  function onPointerUp(event) {
+    if (!isDragging || event.pointerId !== dragPointerId) return;
+
+    isDragging = false;
+    dragPointerId = null;
+    stage.classList.remove("is-dragging");
+    if (sprite.hasPointerCapture(event.pointerId)) {
+      sprite.releasePointerCapture(event.pointerId);
+    }
+    if (didDrag) {
+      suppressNextClick = true;
+      if (suppressClickId) window.clearTimeout(suppressClickId);
+      suppressClickId = window.setTimeout(() => {
+        suppressNextClick = false;
+        didDrag = false;
+      }, 120);
+    }
+    setMode(sectionModeFromScrollPosition());
+    event.preventDefault();
+  }
+
+  function onDocumentClick(event) {
+    if (!suppressNextClick) return;
+    suppressNextClick = false;
+    didDrag = false;
+    if (suppressClickId) window.clearTimeout(suppressClickId);
+    event.preventDefault();
+    event.stopPropagation();
+    if (event.stopImmediatePropagation) event.stopImmediatePropagation();
   }
 
   function getActiveSection() {
@@ -122,6 +228,12 @@
   }
 
   function updateModeFromScroll() {
+    if (isDragging) {
+      updateProgress();
+      scrollTicking = false;
+      return;
+    }
+
     const currentY = window.scrollY;
     const didMove = Math.abs(currentY - lastScrollY) > 2;
 
@@ -153,7 +265,15 @@
   }
 
   window.addEventListener("scroll", onScroll, { passive: true });
-  window.addEventListener("resize", onScroll);
+  window.addEventListener("resize", () => {
+    if (hasUserPosition) moveDraggedSprite(draggedLeft, draggedTop);
+    onScroll();
+  });
+  sprite.addEventListener("pointerdown", onPointerDown);
+  sprite.addEventListener("pointermove", onPointerMove);
+  sprite.addEventListener("pointerup", onPointerUp);
+  sprite.addEventListener("pointercancel", onPointerUp);
+  document.addEventListener("click", onDocumentClick, true);
   setMode(sectionModeFromScrollPosition());
   updateProgress();
 
@@ -166,5 +286,6 @@
   window.addEventListener("pagehide", () => {
     if (timerId) window.clearTimeout(timerId);
     if (scrollStopId) window.clearTimeout(scrollStopId);
+    if (suppressClickId) window.clearTimeout(suppressClickId);
   });
 }());

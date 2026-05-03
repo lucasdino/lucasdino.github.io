@@ -214,7 +214,7 @@ h3 {
   grid-template-columns: minmax(128px, 24%) minmax(0, 1fr);
   gap: 18px;
   align-items: center;
-  padding: 11px 0;
+  padding: 10px 0;
   color: var(--ink);
   text-decoration: none;
 }
@@ -288,7 +288,7 @@ h3 {
   color: var(--ink);
   font-size: 1rem;
   font-weight: 750;
-  line-height: 1.3;
+  line-height: 1.26;
   transition: color 0.12s ease;
 }
 
@@ -300,12 +300,12 @@ h3 {
   margin-top: 5px;
   color: var(--muted);
   font-size: 0.92rem;
-  line-height: 1.38;
+  line-height: 1.34;
 }
 
 .listline--primary {
   grid-template-columns: minmax(190px, 30%) minmax(0, 1fr);
-  padding: 16px 0;
+  padding: 14px 0;
 }
 
 .listline--primary .listline-thumb {
@@ -322,11 +322,11 @@ h3 {
 
 .listline--primary .listline-summary {
   font-size: 0.98rem;
-  line-height: 1.44;
+  line-height: 1.39;
 }
 
 .listline--secondary {
-  padding: 9px 0;
+  padding: 8px 0;
 }
 
 .listline--secondary .listline-thumb {
@@ -343,7 +343,7 @@ h3 {
 
 .listline--secondary .listline-summary {
   font-size: 0.9rem;
-  line-height: 1.34;
+  line-height: 1.31;
 }
 
 .badge {
@@ -374,8 +374,12 @@ h3 {
   pointer-events: none;
 }
 
+.ducas-stage.is-dragging {
+  z-index: 2147483000;
+}
+
 .ducas-sprite {
-  width: clamp(96px, 11vw, 154px);
+  width: clamp(106px, 12.1vw, 169px);
   aspect-ratio: 192 / 208;
   background-image: url("/assets/ducas/spritesheet.webp");
   background-position: 0 0;
@@ -383,7 +387,23 @@ h3 {
   background-size: 800% 900%;
   filter: drop-shadow(0 14px 18px rgba(28, 24, 19, 0.22));
   transform-origin: 55% 92%;
+  cursor: grab;
+  pointer-events: auto;
+  touch-action: none;
+  user-select: none;
+  transition: filter 160ms ease, transform 160ms ease;
   will-change: background-position, transform;
+}
+
+.ducas-sprite:hover {
+  filter: drop-shadow(0 18px 22px rgba(28, 24, 19, 0.28));
+  transform: translateY(-2px) scale(1.035);
+}
+
+.ducas-stage.is-dragging .ducas-sprite {
+  cursor: grabbing;
+  filter: drop-shadow(0 24px 30px rgba(28, 24, 19, 0.34));
+  transform: scale(1.055);
 }
 
 .ducas-sprite.is-snapping {
@@ -1123,7 +1143,7 @@ body.at-page-bottom .dino-track {
   }
 
   .ducas-sprite {
-    width: 84px;
+    width: 92px;
   }
 
   #travel_map {
