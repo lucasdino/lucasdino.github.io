@@ -133,6 +133,10 @@ span[data-attribute="highlight"] {
   line-height: 1.2;
 }
 
+.hero-name {
+  font-size: 1.5rem;
+}
+
 h1,
 h2,
 h3 {
