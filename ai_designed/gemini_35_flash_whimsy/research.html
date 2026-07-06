@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucas Dionisopoulos — The Laboratory</title>
+    <link rel="icon" href="/assets/dino/DinoIcon.ico" type="image/x-icon">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/ai_designed/gemini_35_flash_whimsy/stylesheet.css">
+    
+    <!-- Scripts -->
+    <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "a31ef88eb6a94f49b864a41163ab806c"}'></script>
+    <script src="/shared_js/version-switcher.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
+    <script src="/ai_designed/gemini_35_flash_whimsy/js/physics-portfolio.js" defer></script>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="topbar">
+        <a class="title" href="/ai_designed/old_design/index.html">Lucas Dionisopoulos</a>
+        <a class="navpointer" href="/ai_designed/old_design/professional.html">Professional</a>
+        <a class="navpointer" href="/ai_designed/old_design/research.html">Research</a>
+        <a class="navpointer" href="/ai_designed/old_design/personal.html">Personal</a>
+        <a class="navpointer" href="/ai_designed/old_design/contact.html">Contact</a>
+    </div>
+
+    <!-- Main Content Area -->
+    <main class="meat">
+        <h1 class="page-heading">The Laboratory</h1>
+        <p style="color: var(--text-muted); margin-bottom: 40px; font-family: 'JetBrains Mono', monospace; font-size: 0.95rem;">
+            // Researching Reinforcement Learning for Language Models at PEARLS Lab & UCSD ProgSys
+        </p>
+
+        <div class="research-container">
+            <!-- Paper 1 -->
+            <div class="physics-card paper-card">
+                <div class="paper-icon-side">
+                    <span class="beaker-icon">🧪</span>
+                    <div class="badge-row">
+                        <span class="badge badge--icml">ICML 2026</span>
+                        <span class="badge badge--neurips">NeurIPS FoRLM</span>
+                    </div>
+                </div>
+                <div class="paper-details">
+                    <h2 class="paper-title">How Reasoning Evolves from Post-Training Data: An Empirical Study Using Chess</h2>
+                    <div class="paper-authors">Lucas Dionisopoulos (Lead Author) • UCSD PEARLS Lab</div>
+                    <p class="paper-abstract">
+                        Investigated how fine-tuning influences downstream reasoning capabilities (both quantitative performance and qualitative structure) in a 7B parameter LLM using SFT and RL. Developed custom, theoretically inspired chess reasoning datasets to benchmark behavioral shifts during training.
+                    </p>
+                    <a href="https://arxiv.org/abs/2604.05134" target="_blank" class="paper-link">
+                        [ VIEW ON ARXIV ] ➔
+                    </a>
+                </div>
+            </div>
+
+            <!-- Paper 2 -->
+            <div class="physics-card paper-card">
+                <div class="paper-icon-side" style="border-color: rgba(255, 94, 188, 0.15);">
+                    <span class="beaker-icon" style="filter: drop-shadow(0 0 10px var(--neon-pink));">🧬</span>
+                    <div class="badge-row">
+                        <span class="badge" style="background: linear-gradient(135deg, #11998e, #38ef7d); box-shadow: 0 0 10px rgba(56, 239, 125, 0.3);">PCFG Search</span>
+                    </div>
+                </div>
+                <div class="paper-details">
+                    <h2 class="paper-title">A* Neural Guided Search on ARC-AGI</h2>
+                    <div class="paper-authors">Lucas Dionisopoulos • Neurosymbolic Systems</div>
+                    <p class="paper-abstract">
+                        Built a synthetic data generation pipeline to train a modified iBOT image embedding model from scratch. Integrated this network with a Probabilistic Context-Free Grammar (PCFG) to formulate a hybrid neurosymbolic search engine designed to solve tasks on the Abstraction and Reasoning Corpus (ARC).
+                    </p>
+                    <a href="https://lucasdino.notion.site/Attempted-Neural-A-Guided-Search-on-ARC-AGI-171c748e5e4a801796f6d7e13f78714c?pvs=4" target="_blank" class="paper-link" style="color: var(--neon-pink);">
+                        [ LAB NOTEBOOK ] ➔
+                    </a>
+                </div>
+            </div>
+
+            <!-- Paper 3 -->
+            <div class="physics-card paper-card">
+                <div class="paper-icon-side" style="border-color: rgba(255, 118, 59, 0.15);">
+                    <span class="beaker-icon" style="filter: drop-shadow(0 0 10px var(--neon-orange));">🔭</span>
+                    <div class="badge-row">
+                        <span class="badge" style="background: linear-gradient(135deg, #f12711, #f5af19); box-shadow: 0 0 10px rgba(245, 175, 25, 0.3);">NLP Embeddings</span>
+                    </div>
+                </div>
+                <div class="paper-details">
+                    <h2 class="paper-title">Philosophize That: Classification of Personal Thoughts</h2>
+                    <div class="paper-authors">Lucas Dionisopoulos • Philosophy & AI</div>
+                    <p class="paper-abstract">
+                        Created a custom corpus of philosophical texts using various filtering techniques to isolate semantic signal from noisy academic datasets. Trained an NLP classifier using document-level embeddings to identify the underlying philosophical school of thought behind personal journal entries.
+                    </p>
+                    <a href="https://lucasdino.notion.site/Philosophize-That-147c748e5e4a8054b857eee9e47bf62d?pvs=4" target="_blank" class="paper-link" style="color: var(--neon-orange);">
+                        [ LAB NOTEBOOK ] ➔
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Cosmic Footer -->
+    <footer class="footer-container">
+        <div>Cretaceous Kernel v3.5 • Gravity: Interactive • Made by Antigravity</div>
+    </footer>
+</body>
+</html>

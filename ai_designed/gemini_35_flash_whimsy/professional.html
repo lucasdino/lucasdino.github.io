@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucas Dionisopoulos — The Forge</title>
+    <link rel="icon" href="/assets/dino/DinoIcon.ico" type="image/x-icon">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/ai_designed/gemini_35_flash_whimsy/stylesheet.css">
+    
+    <!-- Scripts -->
+    <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "a31ef88eb6a94f49b864a41163ab806c"}'></script>
+    <script src="/shared_js/version-switcher.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
+    <script src="/ai_designed/gemini_35_flash_whimsy/js/physics-portfolio.js" defer></script>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="topbar">
+        <a class="title" href="/ai_designed/old_design/index.html">Lucas Dionisopoulos</a>
+        <a class="navpointer" href="/ai_designed/old_design/professional.html">Professional</a>
+        <a class="navpointer" href="/ai_designed/old_design/research.html">Research</a>
+        <a class="navpointer" href="/ai_designed/old_design/personal.html">Personal</a>
+        <a class="navpointer" href="/ai_designed/old_design/contact.html">Contact</a>
+    </div>
+
+    <!-- Main Content Area -->
+    <main class="meat">
+        <h1 class="page-heading">The Forge</h1>
+        <p style="color: var(--text-muted); margin-bottom: 40px; font-family: 'JetBrains Mono', monospace; font-size: 0.95rem;">
+            // Code cartridges and write-ups generated during study bunkers and grad labs
+        </p>
+
+        <div class="cartridges-grid">
+            <!-- Project 1 -->
+            <div class="physics-card cartridge" style="--neon-purple: var(--neon-pink);">
+                <div class="cartridge-label">
+                    <div class="cartridge-title">RL Benchmarking Gym</div>
+                    <div class="cartridge-tech">Python • PyTorch • Gym</div>
+                </div>
+                <div class="cartridge-thumb-container">
+                    <img src="/assets/thumbnails/breakout_rainbow.gif" alt="RL Breakout rainbow gif">
+                </div>
+                <p class="cartridge-summary">
+                    Built a clean, hackable Reinforcement Learning gym engine from scratch to implement and ablate algorithms from basic baseline models to State-of-the-Art.
+                </p>
+                <a href="https://lucasdino.notion.site/RL-Benchmarking-300c748e5e4a80cb9a42e3d8be2f7c58?source=copy_link" target="_blank" class="cartridge-link-btn">
+                    LOAD CARTRIDGE ➔
+                </a>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="physics-card cartridge" style="--neon-purple: var(--neon-blue);">
+                <div class="cartridge-label">
+                    <div class="cartridge-title">Dungeon Coder</div>
+                    <div class="cartridge-tech">React • Three.js • PyTorch</div>
+                </div>
+                <div class="cartridge-thumb-container">
+                    <img src="/assets/thumbnails/dungeoncoder_overview.gif" alt="Dungeon Coder overview 3D model generation">
+                </div>
+                <p class="cartridge-summary">
+                    Full-stack webapp combining multiple image generation and image-to-3D asset models to create custom assets for 3D dungeons or printing. Includes a procedurally generated dungeon generator using classical CS algorithms + LLM agents.
+                </p>
+                <a href="https://lucasdino.notion.site/Dungeon-Coder-20dc748e5e4a802cb281ce01fe6272b7?source=copy_link" target="_blank" class="cartridge-link-btn">
+                    LOAD CARTRIDGE ➔
+                </a>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="physics-card cartridge" style="--neon-purple: var(--neon-orange);">
+                <div class="cartridge-label">
+                    <div class="cartridge-title">SLAM 4-Wheel Rover</div>
+                    <div class="cartridge-tech">ROS2 • OpenCV • C++</div>
+                </div>
+                <div class="cartridge-thumb-container">
+                    <img src="/assets/thumbnails/ekfslam_webster.gif" alt="EKF SLAM trajectory tracking">
+                </div>
+                <p class="cartridge-summary">
+                    Developed a robust autonomy stack for an uncalibrated 4-wheel differential-drive rover, implementing computer vision guidance, Extended Kalman Filter SLAM (written from scratch), and dynamic path planning algorithms.
+                </p>
+                <a href="https://lucasdino.notion.site/4-Wheel-Rover-Autonomous-Control-31ec748e5e4a8081a7c7ec3951d27317?source=copy_link" target="_blank" class="cartridge-link-btn">
+                    LOAD CARTRIDGE ➔
+                </a>
+            </div>
+
+            <!-- Project 4 -->
+            <div class="physics-card cartridge" style="--neon-purple: var(--neon-green);">
+                <div class="cartridge-label">
+                    <div class="cartridge-title">RL Racing Driver</div>
+                    <div class="cartridge-tech">Pygame • PyTorch • Q-Learning</div>
+                </div>
+                <div class="cartridge-thumb-container">
+                    <img src="/assets/thumbnails/rldriver_originaltrack.gif" alt="Reinforcement learning car driver training">
+                </div>
+                <p class="cartridge-summary">
+                    Created and optimized a customizable racing game in Pygame, and trained an artificial intelligence driver agent to pilot the track using Double Q-learning.
+                </p>
+                <a href="https://lucasdino.notion.site/Teaching-AI-to-Drive-my-Custom-Racing-Game-214e45ce19704294bd365308a77c68b4?pvs=4" target="_blank" class="cartridge-link-btn">
+                    LOAD CARTRIDGE ➔
+                </a>
+            </div>
+
+            <!-- Project 5 -->
+            <div class="physics-card cartridge" style="--neon-purple: var(--neon-yellow);">
+                <div class="cartridge-label">
+                    <div class="cartridge-title">ML Anomaly Detection</div>
+                    <div class="cartridge-tech">Python • Scikit-learn • Regression</div>
+                </div>
+                <div class="cartridge-thumb-container">
+                    <img src="/assets/thumbnails/anomalydetection_thumbnail.jpg" alt="Noisy time series data plot">
+                </div>
+                <p class="cartridge-summary">
+                    Developed a real-time, highly interpretable anomaly detection system over noisy biomedical time-series data using kernel ridge regression for a San Diego healthtech company.
+                </p>
+                <a href="https://lucasdino.notion.site/Anomaly-Detection-12bc748e5e4a807e8c7afff86b16d975?pvs=4" target="_blank" class="cartridge-link-btn">
+                    LOAD CARTRIDGE ➔
+                </a>
+            </div>
+
+            <!-- Project 6 -->
+            <div class="physics-card cartridge" style="--neon-purple: var(--neon-blue);">
+                <div class="cartridge-label">
+                    <div class="cartridge-title">Recreating Word2Vec</div>
+                    <div class="cartridge-tech">Python • NumPy • NLP</div>
+                </div>
+                <div class="cartridge-thumb-container">
+                    <img src="/assets/thumbnails/recreating_word2vec.jpg" alt="Word vectors spatial cluster">
+                </div>
+                <p class="cartridge-summary">
+                    Recreated Word2Vec vector arithmetic entirely from scratch — from building a custom regex tokenizer to parsing and cleaning English Wikipedia and training a dense embedding model.
+                </p>
+                <a href="https://lucasdino.notion.site/Recreating-Word2Vec-25c1e86e08f14087a49c027a85bd5198" target="_blank" class="cartridge-link-btn">
+                    LOAD CARTRIDGE ➔
+                </a>
+            </div>
+        </div>
+
+        <h1 class="page-heading" style="font-size: 1.8rem; margin-top: 60px;">Blogs & Write-ups</h1>
+        <div class="vitals-grid">
+            <div class="physics-card">
+                <div class="vital-tag">Career pivot</div>
+                <h3>Why Pivot?</h3>
+                <p>A full breakdown of leaving the banking desk, packing up a backpack, taking a year to learn vector math, and applying to grad school.</p>
+                <a href="https://lucasdino.notion.site/Why-Pivot-7736665e93394c3886f78950ca66f7d2?pvs=4" target="_blank" class="cartridge-link-btn">READ BLOG ➔</a>
+            </div>
+            <div class="physics-card">
+                <div class="vital-tag">Data visualization</div>
+                <h3>IB Analyst Hours</h3>
+                <p>I tracked every hour I worked over my two years as an analyst in finance and made some neat, scary charts showing the reality of the grind.</p>
+                <a href="https://lucasdino.notion.site/My-Honest-Working-Hours-as-an-Investment-Banking-Analyst-03845324522a4b7785f6b752cf8b0da2?pvs=4" target="_blank" class="cartridge-link-btn">READ BLOG ➔</a>
+            </div>
+            <div class="physics-card">
+                <div class="vital-tag">Deep learning</div>
+                <h3>Attention to Llama 3</h3>
+                <p>A detailed technical review mapping improvements to the transformer decoder block, highlighting rope embedding, GQA, and SwiGLU activations.</p>
+                <a href="https://lucasdino.notion.site/What-is-a-SoTA-Transformer-Model-90d21f0a142349629a416ecce45cd671?pvs=4" target="_blank" class="cartridge-link-btn">READ BLOG ➔</a>
+            </div>
+            <div class="physics-card">
+                <div class="vital-tag">Hardware moat</div>
+                <h3>Nvidia's Trillion-Dollar Moat</h3>
+                <p>A look into CUDA, tensor core compiler optimization, interconnect bandwidth, and why AMD/Intel are playing catch up.</p>
+                <a href="https://lucasdino.notion.site/Nvidia-s-Multi-Trillion-Dollar-Moat-Explained-187c748e5e4a803dbd35dfeea250913a?pvs=4" target="_blank" class="cartridge-link-btn">READ BLOG ➔</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Cosmic Footer -->
+    <footer class="footer-container">
+        <div>Cretaceous Kernel v3.5 • Gravity: Interactive • Made by Antigravity</div>
+    </footer>
+</body>
+</html>

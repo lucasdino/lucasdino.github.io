@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucas Dionisopoulos — Professional Work</title>
+    <link rel="icon" href="/assets/dino/DinoIcon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..700,0..100,0..1;1,9..144,300..700,0..100,0..1&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&family=Kode+Mono:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./stylesheet.css">
+    <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "a31ef88eb6a94f49b864a41163ab806c"}'></script>
+    <script src="/shared_js/version-switcher.js"></script>
+</head>
+<body>
+    <nav class="topbar">
+        <a class="title" href="./index.html">Lucas Dionisopoulos<span class="dot">.</span></a>
+        <div class="nav-links">
+            <a class="navpointer" href="./index.html">About</a>
+            <a class="navpointer active" href="./professional.html">Professional</a>
+            <a class="navpointer" href="./research.html">Research</a>
+            <a class="navpointer" href="./personal.html">Personal</a>
+            <a class="navpointer" href="./contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <main class="meat container">
+        <header class="page-header">
+            <span class="mono-tag">Projects & Writings</span>
+            <h1>Engineering & Systems</h1>
+            <p>A selection of reinforcement learning engines, robotics path planners, custom web applications, and technical writing.</p>
+        </header>
+
+        <!-- Shelf 1: Agents & Systems -->
+        <section class="project-shelf">
+            <h2 class="shelf-title">Autonomous Agents & AI Systems</h2>
+            <div class="projects-grid">
+                <!-- Card 1: RL Benchmarking -->
+                <article class="project-card">
+                    <div class="project-thumbnail">
+                        <img src="/assets/thumbnails/breakout_rainbow.gif" alt="RL Benchmarking Gym breakout gameplay animation">
+                    </div>
+                    <div class="project-body">
+                        <div class="project-meta">
+                            <h3 class="project-title">
+                                <a href="https://lucasdino.notion.site/RL-Benchmarking-300c748e5e4a80cb9a42e3d8be2f7c58?source=copy_link" target="_blank">RL Benchmarking Gym</a>
+                            </h3>
+                            <p class="project-desc">
+                                Built a clean, hackable reinforcement learning gym engine from scratch to implement, audit, and ablate algorithms from simple DQN baselines to state-of-the-art policy gradient optimizations.
+                            </p>
+                        </div>
+                        <div class="project-footer">
+                            <div class="project-tags">
+                                <span class="tag">Python</span>
+                                <span class="tag">PyTorch</span>
+                                <span class="tag">Gymnasium</span>
+                                <span class="tag">Reinforcement Learning</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 2: Dungeon Coder -->
+                <article class="project-card">
+                    <div class="project-thumbnail">
+                        <img src="/assets/thumbnails/dungeoncoder_overview.gif" alt="Dungeon Coder gameplay overview animation">
+                    </div>
+                    <div class="project-body">
+                        <div class="project-meta">
+                            <h3 class="project-title">
+                                <a href="https://lucasdino.notion.site/Dungeon-Coder-20dc748e5e4a802cb281ce01fe6272b7?source=copy_link" target="_blank">Dungeon Coder</a>
+                            </h3>
+                            <p class="project-desc">
+                                Full-stack web application combining text-to-image and image-to-3D asset pipelines. Includes a classical dungeon generator that converts LLM agent prompts into interactive, walkable 3D environments.
+                            </p>
+                        </div>
+                        <div class="project-footer">
+                            <div class="project-tags">
+                                <span class="tag">React</span>
+                                <span class="tag">Three.js</span>
+                                <span class="tag">Node.js</span>
+                                <span class="tag">Generative AI</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 3: SLAM Rover -->
+                <article class="project-card">
+                    <div class="project-thumbnail">
+                        <img src="/assets/thumbnails/ekfslam_webster.gif" alt="EKF-SLAM mapping visualization simulation">
+                    </div>
+                    <div class="project-body">
+                        <div class="project-meta">
+                            <h3 class="project-title">
+                                <a href="https://lucasdino.notion.site/4-Wheel-Rover-Autonomous-Control-31ec748e5e4a8081a7c7ec3951d27317?source=copy_link" target="_blank">SLAM-Based Autonomy Rover</a>
+                            </h3>
+                            <p class="project-desc">
+                                Developed a ROS2 autonomy stack for an uncalibrated 4-wheel differential-drive rover. Implemented sensor calibration, Extended Kalman Filter SLAM (from scratch), and classical path planning algorithms.
+                            </p>
+                        </div>
+                        <div class="project-footer">
+                            <div class="project-tags">
+                                <span class="tag">ROS2</span>
+                                <span class="tag">OpenCV</span>
+                                <span class="tag">Python</span>
+                                <span class="tag">SLAM</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Shelf 2: Machine Learning & Math Foundations -->
+        <section class="project-shelf">
+            <h2 class="shelf-title">Foundational Machine Learning</h2>
+            <div class="projects-grid">
+                <!-- Card 4: RL Driver -->
+                <article class="project-card">
+                    <div class="project-thumbnail">
+                        <img src="/assets/thumbnails/rldriver_originaltrack.gif" alt="Pygame custom racing game training simulator animation">
+                    </div>
+                    <div class="project-body">
+                        <div class="project-meta">
+                            <h3 class="project-title">
+                                <a href="https://lucasdino.notion.site/Teaching-AI-to-Drive-my-Custom-Racing-Game-214e45ce19704294bd365308a77c68b4?pvs=4" target="_blank">Reinforcement Learning Driver</a>
+                            </h3>
+                            <p class="project-desc">
+                                Programmed a top-down custom racing game in Pygame from scratch and trained a reinforcement learning driver agent using Double Q-learning to navigate complex tracks without crashing.
+                            </p>
+                        </div>
+                        <div class="project-footer">
+                            <div class="project-tags">
+                                <span class="tag">Python</span>
+                                <span class="tag">Pygame</span>
+                                <span class="tag">Q-Learning</span>
+                                <span class="tag">Math Baselines</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 5: Anomaly Detection -->
+                <article class="project-card">
+                    <div class="project-thumbnail">
+                        <img src="/assets/thumbnails/anomalydetection_thumbnail.jpg" alt="Timeseries mathematical anomaly detection chart">
+                    </div>
+                    <div class="project-body">
+                        <div class="project-meta">
+                            <h3 class="project-title">
+                                <a href="https://lucasdino.notion.site/Anomaly-Detection-12bc748e5e4a807e8c7afff86b16d975?pvs=4" target="_blank">Real-Time Anomaly Detection</a>
+                            </h3>
+                            <p class="project-desc">
+                                Architected a real-time, mathematically interpretable anomaly detection engine for noisy medical sensor telemetry. Built using kernel ridge regression for a San Diego healthtech firm.
+                            </p>
+                        </div>
+                        <div class="project-footer">
+                            <div class="project-tags">
+                                <span class="tag">Python</span>
+                                <span class="tag">NumPy</span>
+                                <span class="tag">Scikit-Learn</span>
+                                <span class="tag">TimeSeries</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 6: Recreating Word2Vec -->
+                <article class="project-card">
+                    <div class="project-thumbnail">
+                        <img src="/assets/thumbnails/recreating_word2vec.jpg" alt="Word embeddings vector clustering visualization">
+                    </div>
+                    <div class="project-body">
+                        <div class="project-meta">
+                            <h3 class="project-title">
+                                <a href="https://lucasdino.notion.site/Recreating-Word2Vec-25c1e86e08f14087a49c027a85bd5198" target="_blank">Recreating Word2Vec</a>
+                            </h3>
+                            <p class="project-desc">
+                                Rebuilt vector semantic arithmetic entirely from basic principles. Designed a tokenizer, parsed and cleaned a raw English Wikipedia corpus, and trained a custom skip-gram embedding model.
+                            </p>
+                        </div>
+                        <div class="project-footer">
+                            <div class="project-tags">
+                                <span class="tag">Python</span>
+                                <span class="tag">NumPy</span>
+                                <span class="tag">NLP</span>
+                                <span class="tag">Embeddings</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Section: Blogs Ledger -->
+        <section class="blogs-section">
+            <h2 class="shelf-title">Blogs &amp; Essays</h2>
+            <div class="blog-ledger">
+                <!-- Blog 1 -->
+                <a href="https://lucasdino.notion.site/Why-Pivot-7736665e93394c3886f78950ca66f7d2?pvs=4" target="_blank" class="blog-row">
+                    <span class="blog-date">2024 · 06</span>
+                    <span class="blog-title">Why Pivot?</span>
+                    <span class="blog-summary">Reflecting on leaving finance, mapping out a full-time gap year of self-study, and entering machine learning research.</span>
+                </a>
+                
+                <!-- Blog 2 -->
+                <a href="https://lucasdino.notion.site/My-Honest-Working-Hours-as-an-Investment-Banking-Analyst-03845324522a4b7785f6b752cf8b0da2?pvs=4" target="_blank" class="blog-row">
+                    <span class="blog-date">2024 · 03</span>
+                    <span class="blog-title">Honest Hours in Banking</span>
+                    <span class="blog-summary">Dumping and analyzing hourly logs from two full years in investment banking M&A. Neatly visualized metrics.</span>
+                </a>
+                
+                <!-- Blog 3 -->
+                <a href="https://lucasdino.notion.site/What-is-a-SoTA-Transformer-Model-90d21f0a142349629a416ecce45cd671?pvs=4" target="_blank" class="blog-row">
+                    <span class="blog-date">2024 · 11</span>
+                    <span class="blog-title">Attention to Llama 3</span>
+                    <span class="blog-summary">A structured, technical walkthrough detailing decoder-only improvements in context length, attention, and normalization.</span>
+                </a>
+
+                <!-- Blog 4 -->
+                <a href="https://lucasdino.notion.site/Nvidia-s-Multi-Trillion-Dollar-Moat-Explained-187c748e5e4a803dbd35dfeea250913a?pvs=4" target="_blank" class="blog-row">
+                    <span class="blog-date">2024 · 09</span>
+                    <span class="blog-title">Nvidia's Multi-Trillion Moat</span>
+                    <span class="blog-summary">Explaining CUDA, memory interconnect speeds, and compiler infrastructure to separate business moat from pure compute hardware.</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer-container">
+        <div class="container footer-elements">
+            <div class="footer-byline">
+                <span class="accent">§</span> &nbsp;Set in Fraunces &amp; Plus Jakarta Sans &nbsp;·&nbsp; Collaboration with Gemini 3.5 Flash
+            </div>
+            <div class="social-icons">
+                <div data-attribute="linkedin">
+                    <a href="https://www.linkedin.com/in/lucasdionisopoulos/" aria-label="LinkedIn">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/>
+                        </svg>
+                    </a>
+                </div>
+                <div data-attribute="x-twitter">
+                    <a href="https://x.com/dinoacropolis" aria-label="X (Twitter)">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                        </svg>                
+                    </a>
+                </div> 
+                <div data-attribute="github">
+                    <a href="https://github.com/lucasdino" aria-label="GitHub">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 17">
+                            <path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"/>
+                        </svg>                
+                    </a>
+                </div> 
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

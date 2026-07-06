@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucas Dionisopoulos — Portfolio</title>
+    <link rel="icon" href="/assets/dino/DinoIcon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..700,0..100,0..1;1,9..144,300..700,0..100,0..1&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&family=Kode+Mono:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./stylesheet.css">
+    <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "a31ef88eb6a94f49b864a41163ab806c"}'></script>
+    <script src="/shared_js/version-switcher.js"></script>
+</head>
+<body>
+    <nav class="topbar">
+        <a class="title" href="./index.html">Lucas Dionisopoulos<span class="dot">.</span></a>
+        <div class="nav-links">
+            <a class="navpointer active" href="./index.html">About</a>
+            <a class="navpointer" href="./professional.html">Professional</a>
+            <a class="navpointer" href="./research.html">Research</a>
+            <a class="navpointer" href="./personal.html">Personal</a>
+            <a class="navpointer" href="./contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <main class="meat container">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <span class="mono-tag">Special Projects & ML Research</span>
+                <h1>Finance brain, research appetite, <span class="italic">builder hands.</span></h1>
+                <p class="hero-description">
+                    Hi, I'm Lucas. I'm from Nebraska. I build post-training systems, reinforcement learning algorithms, and environments for language models. Currently doing graduate research at UCSD's PEARLS Lab and working on Special Projects at Hadrian.
+                </p>
+                <div class="hero-cta">
+                    <a href="./research.html" class="btn btn-primary">Read Research</a>
+                    <a href="./professional.html" class="btn btn-secondary">Explore Code</a>
+                    <a href="./contact.html" class="btn btn-secondary">Get in Touch</a>
+                </div>
+            </div>
+            
+            <aside class="profile-card">
+                <div class="profile-img-frame">
+                    <img src="/assets/pics/lucasducas.png" alt="Lucas Dionisopoulos — stripe sessions 2023 headshot">
+                </div>
+                <ul class="profile-facts">
+                    <li>
+                        <span>Current</span>
+                        <span>Hadrian / UCSD</span>
+                    </li>
+                    <li>
+                        <span>Focus</span>
+                        <span>RL & Post-Training</span>
+                    </li>
+                    <li>
+                        <span>Location</span>
+                        <span>Los Angeles, CA</span>
+                    </li>
+                    <li>
+                        <span>Undergrad</span>
+                        <span>WashU St. Louis</span>
+                    </li>
+                </ul>
+            </aside>
+        </section>
+
+        <!-- Interactive Timeline Journey -->
+        <section class="timeline-section">
+            <h2 class="section-title">The Journey <span class="mono-tag">/ How I got here</span></h2>
+            <div class="timeline-wrapper">
+                <div class="timeline-tabs" role="tablist" aria-label="Career Epochs">
+                    <button class="timeline-tab active" role="tab" aria-selected="true" aria-controls="panel-ucsd" id="tab-ucsd">
+                        <h3>Research & Industry</h3>
+                        <span>2025 – Present</span>
+                    </button>
+                    <button class="timeline-tab" role="tab" aria-selected="false" aria-controls="panel-sabbatical" id="tab-sabbatical">
+                        <h3>The Sabbatical Pivot</h3>
+                        <span>2024 – 2025</span>
+                    </button>
+                    <button class="timeline-tab" role="tab" aria-selected="false" aria-controls="panel-banking" id="tab-banking">
+                        <h3>Investment Banking</h3>
+                        <span>2022 – 2024</span>
+                    </button>
+                    <button class="timeline-tab" role="tab" aria-selected="false" aria-controls="panel-washu" id="tab-washu">
+                        <h3>WashU St. Louis</h3>
+                        <span>2018 – 2022</span>
+                    </button>
+                </div>
+
+                <div class="timeline-content">
+                    <!-- Panel 1: UCSD (Active by default) -->
+                    <div class="timeline-content-panel active" id="panel-ucsd" role="tabpanel" aria-labelledby="tab-ucsd">
+                        <h2>UCSD PEARLS Lab & Hadrian</h2>
+                        <span class="timeline-meta">Los Angeles & San Diego · Graduate Researcher & Engineer</span>
+                        <div class="timeline-text">
+                            <p>
+                                I work on reinforcement learning (RL) and post-training methods for Large Language Models. At UC San Diego's <a href="https://pearls-lab.github.io/" target="_blank">PEARLS Lab</a>, I study how SFT and RL data shape qualitative reasoning behaviors, especially using sandboxed environments like chess. Our team published this work at <a href="https://arxiv.org/abs/2604.05134" target="_blank">ICML 2026</a> and presented an Oral talk at the NeurIPS FoRLM workshop.
+                            </p>
+                            <p>
+                                Alongside research, I work on Special Projects at <a href="https://www.hadrian.co/" target="_blank">Hadrian</a>, acting as a technical generalist and builder to automate precision defense manufacturing through advanced software and systems integration.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Panel 2: Sabbatical -->
+                    <div class="timeline-content-panel" id="panel-sabbatical" role="tabpanel" aria-labelledby="tab-sabbatical">
+                        <h2>Self-Study, Airbnbs & Flight Decks</h2>
+                        <span class="timeline-meta">Global Sabbatical · Gap Year ML/CS Intensive</span>
+                        <div class="timeline-text">
+                            <p>
+                                Realizing I wanted to shift from finance models to code, I designed a math and computer science intensive gap year. I studied linear algebra, multivariate calculus, and ML basics full-time.
+                            </p>
+                            <p>
+                                To stretch my savings, I lived out of airport lounges, long-term Airbnbs, and pet sits across Europe, Asia, and North America. While traveling, I wrote baseline RL gyms, autonomous vehicle path planners, and custom neural search engines. Read about what I studied on my year off <a href="https://www.notion.so/lucasdino/What-I-Studied-on-my-Year-Off-271c748e5e4a80c6bc90d2b6e1edf9d6" target="_blank">here</a>.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Panel 3: Banking -->
+                    <div class="timeline-content-panel" id="panel-banking" role="tabpanel" aria-labelledby="tab-banking">
+                        <h2>FT Partners</h2>
+                        <span class="timeline-meta">San Francisco & Los Angeles · Investment Banking Analyst</span>
+                        <div class="timeline-text">
+                            <p>
+                                Spent two intense years working on mergers and acquisitions (M&A) and capital-raising transactions in the fintech industry.
+                            </p>
+                            <p>
+                                Investment banking taught me extreme diligence under pressure and how markets and incentives align. I even kept a detailed log of my <a href="https://lucasdino.notion.site/My-Honest-Working-Hours-as-an-Investment-Banking-Analyst-03845324522a4b7785f6b752cf8b0da2?pvs=4" target="_blank">honest working hours</a> (which averaged 80+ hours/week). Over time, I recognized that I wanted to build systems rather than model them. Read my thoughts on <a href="https://lucasdino.notion.site/Why-Pivot-7736665e93394c3886f78950ca66f7d2?pvs=4" target="_blank">why I pivoted</a>.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Panel 4: WashU -->
+                    <div class="timeline-content-panel" id="panel-washu" role="tabpanel" aria-labelledby="tab-washu">
+                        <h2>Washington University in St. Louis</h2>
+                        <span class="timeline-meta">St. Louis, MO · Undergrad Finance & Ops</span>
+                        <div class="timeline-text">
+                            <p>
+                                Studied finance and operations in undergrad, learning how economic systems operate. St. Louis is where I first got interested in the Midwest-to-tech pipelines.
+                            </p>
+                            <p>
+                                During college, I wanted to do something tangible for the local community, so I founded a project called Clean Our Green, organizing volunteers to clean up and restore St. Louis city parks.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Highlights Section -->
+        <section class="featured-highlights">
+            <h2 class="section-title">Core Highlights <span class="mono-tag">/ Selected accomplishments</span></h2>
+            <div class="featured-row">
+                <div class="featured-card">
+                    <div class="card-head">
+                        <span class="tag-badge">Research</span>
+                        <h3>Chess Reasoning evolution in LLMs</h3>
+                        <p>Led lead-author research studying how SFT and RL post-training data changes downstream reasoning capabilities in a 7B LLM using chess game trees. Published at ICML 2026 and presented as a NeurIPS workshop oral.</p>
+                    </div>
+                    <a href="./research.html" class="action-link">View Publications</a>
+                </div>
+
+                <div class="featured-card">
+                    <div class="card-head">
+                        <span class="tag-badge">Code</span>
+                        <h3>Dungeon Coder & 3D Generators</h3>
+                        <p>Developed a full-stack platform that combines image generation models with image-to-3D asset pipelines to compile interactive web dungeons. Built with React, Three.js, and self-hosted computer vision backends.</p>
+                    </div>
+                    <a href="./professional.html" class="action-link">Explore Projects</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer-container">
+        <div class="container footer-elements">
+            <div class="footer-byline">
+                <span class="accent">§</span> &nbsp;Set in Fraunces &amp; Plus Jakarta Sans &nbsp;·&nbsp; Collaboration with Gemini 3.5 Flash
+            </div>
+            <div class="social-icons">
+                <div data-attribute="linkedin">
+                    <a href="https://www.linkedin.com/in/lucasdionisopoulos/" aria-label="LinkedIn">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/>
+                        </svg>
+                    </a>
+                </div>
+                <div data-attribute="x-twitter">
+                    <a href="https://x.com/dinoacropolis" aria-label="X (Twitter)">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                        </svg>                
+                    </a>
+                </div> 
+                <div data-attribute="github">
+                    <a href="https://github.com/lucasdino" aria-label="GitHub">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 17">
+                            <path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"/>
+                        </svg>                
+                    </a>
+                </div> 
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script for Interactive Timeline Tabs -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const tabs = document.querySelectorAll(".timeline-tab");
+            const panels = document.querySelectorAll(".timeline-content-panel");
+
+            tabs.forEach(tab => {
+                tab.addEventListener("click", () => {
+                    // Remove active classes
+                    tabs.forEach(t => {
+                        t.classList.remove("active");
+                        t.setAttribute("aria-selected", "false");
+                    });
+                    panels.forEach(p => p.classList.remove("active"));
+
+                    // Add active class to clicked tab
+                    tab.classList.add("active");
+                    tab.setAttribute("aria-selected", "true");
+
+                    // Show corresponding panel
+                    const panelId = tab.getAttribute("aria-controls");
+                    const targetPanel = document.getElementById(panelId);
+                    if (targetPanel) {
+                        targetPanel.classList.add("active");
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

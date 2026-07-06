@@ -1,0 +1,1270 @@
+/* 
+===========================================================
+COSMIC PHYSICS STYLE SHEET - Lucas Dionisopoulos Portfolio
+===========================================================
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&family=JetBrains+Mono:wght@300;500;700&family=Outfit:wght@300;500;700;900&family=Monoton&display=swap');
+
+:root {
+  --space-black: #050508;
+  --space-deep: #0b0b14;
+  --neon-pink: #ff5ebc;
+  --neon-blue: #00f0ff;
+  --neon-orange: #ff763b;
+  --neon-purple: #9d4edd;
+  --neon-green: #39ff14;
+  --neon-yellow: #ffd000;
+  
+  --text-white: #f5f5fa;
+  --text-muted: #8d8da8;
+  --line-color: rgba(255, 255, 255, 0.08);
+  --card-bg: rgba(13, 13, 23, 0.45);
+  --card-hover-bg: rgba(20, 20, 35, 0.7);
+  --card-border: rgba(255, 255, 255, 0.07);
+  
+  --nav-height: 70px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--space-black);
+  color: var(--text-white);
+  font-family: 'Outfit', sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+  padding-top: var(--nav-height);
+  padding-bottom: 80px;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--space-black);
+}
+::-webkit-scrollbar-thumb {
+  background: #202030;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--neon-blue);
+}
+
+
+/* 
+===========================================================
+Background Cosmic Elements
+===========================================================
+*/
+.cosmic-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -100;
+  background: radial-gradient(circle at 50% 50%, var(--space-deep) 0%, var(--space-black) 100%);
+  overflow: hidden;
+}
+
+/* Starfields */
+.stars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  pointer-events: none;
+}
+.stars-small {
+  background-image: radial-gradient(circle, #fff 1px, transparent 1px);
+  background-size: 80px 80px;
+  opacity: 0.15;
+}
+.stars-medium {
+  background-image: radial-gradient(circle, #fff 1.5px, transparent 1.5px);
+  background-size: 160px 160px;
+  opacity: 0.25;
+}
+.stars-large {
+  background-image: radial-gradient(circle, #ff5ebc 2px, transparent 2px);
+  background-size: 300px 300px;
+  opacity: 0.2;
+}
+
+/* Nebulae */
+.nebula {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(140px);
+  opacity: 0.12;
+  pointer-events: none;
+}
+.nebula-pink {
+  top: 20%;
+  left: 10%;
+  width: 40vw;
+  height: 40vw;
+  background: var(--neon-pink);
+}
+.nebula-blue {
+  bottom: 10%;
+  right: 15%;
+  width: 50vw;
+  height: 50vw;
+  background: var(--neon-blue);
+}
+
+/* Space Perspective Grid */
+.space-grid {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40%;
+  background-image: 
+    linear-gradient(rgba(0, 240, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 240, 255, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  transform: perspective(300px) rotateX(75deg);
+  transform-origin: bottom center;
+  mask-image: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+  -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+  pointer-events: none;
+}
+
+
+/* 
+===========================================================
+Topbar & Navbar
+===========================================================
+*/
+.topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--nav-height);
+  background: rgba(5, 5, 8, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  z-index: 9000;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 40px;
+}
+
+.title {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-white);
+  text-decoration: none;
+  letter-spacing: -0.5px;
+  background: linear-gradient(90deg, var(--text-white), var(--text-muted));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-right: 40px;
+}
+
+.title::before {
+  content: '✦';
+  color: var(--neon-blue);
+  text-shadow: 0 0 10px var(--neon-blue);
+}
+
+.navpointer {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.95rem;
+  text-decoration: none;
+  color: var(--text-muted);
+  padding: 8px 18px;
+  border-radius: 20px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.navpointer:hover {
+  color: var(--neon-blue);
+  background: rgba(0, 240, 255, 0.05);
+}
+
+.navpointer[attribute="active_page"] {
+  color: var(--text-white);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+}
+
+
+/* 
+===========================================================
+Layout Container
+===========================================================
+*/
+.meat {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+
+h1.page-heading {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 900;
+  letter-spacing: -1.5px;
+  line-height: 1.1;
+  margin-bottom: 30px;
+  background: linear-gradient(135deg, #fff 0%, var(--text-muted) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+/* 
+===========================================================
+Glassmorphic Cards (The physical bodies)
+===========================================================
+*/
+.physics-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  padding: 30px;
+  transition: border-color 0.3s, box-shadow 0.3s, background-color 0.3s;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.physics-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: transform 0.5s ease;
+  transform: translateX(-100%);
+}
+
+.physics-card:hover::before {
+  transform: translateX(100%);
+}
+
+.physics-card:hover {
+  background: var(--card-hover-bg);
+  border-color: rgba(0, 240, 255, 0.3);
+  box-shadow: 0 12px 40px 0 rgba(0, 240, 255, 0.1);
+  cursor: grab;
+}
+
+.physics-card:active {
+  cursor: grabbing;
+}
+
+/* Dragging active shadow */
+.physics-card.dragging-phys {
+  border-color: var(--neon-pink) !important;
+  box-shadow: 0 15px 50px 0 rgba(255, 94, 188, 0.25) !important;
+  cursor: grabbing;
+  z-index: 600;
+  user-select: none;
+}
+
+.transitioning-back {
+  pointer-events: none;
+  z-index: 800;
+}
+
+.physics-placeholder-block {
+  opacity: 0;
+  pointer-events: none;
+}
+
+
+/* 
+===========================================================
+Home Page / Nexus
+===========================================================
+*/
+.hero-container {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 40px;
+  margin-bottom: 50px;
+  align-items: center;
+}
+
+.hero-text-box h2 {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: var(--neon-blue);
+  font-family: 'JetBrains Mono', monospace;
+  margin-bottom: 12px;
+}
+
+.hero-text-box p.description {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  margin-bottom: 24px;
+  line-height: 1.6;
+}
+
+.bullet-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.bullet-list li {
+  position: relative;
+  padding-left: 28px;
+  color: var(--text-white);
+  font-size: 1.05rem;
+}
+
+.bullet-list li::before {
+  content: '✦';
+  position: absolute;
+  left: 0;
+  color: var(--neon-pink);
+  text-shadow: 0 0 5px var(--neon-pink);
+}
+
+.bullet-list li a {
+  color: var(--neon-blue);
+  text-decoration: none;
+  border-bottom: 1px dashed var(--neon-blue);
+  transition: color 0.2s;
+}
+
+.bullet-list li a:hover {
+  color: var(--neon-pink);
+  border-bottom-color: var(--neon-pink);
+}
+
+/* Headshot */
+.headshot {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.headshot-frame {
+  position: relative;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  padding: 10px;
+  background: linear-gradient(135deg, var(--neon-blue), var(--neon-pink));
+  box-shadow: 0 0 30px rgba(0, 240, 255, 0.2);
+  transition: transform 0.5s ease;
+}
+
+.headshot-frame:hover {
+  transform: rotate(5deg) scale(1.03);
+}
+
+.headshot-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid var(--space-black);
+}
+
+/* Grid of Vitals Cards */
+.vitals-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-top: 20px;
+}
+
+.vital-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  color: var(--neon-pink);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.vitals-grid h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.vitals-grid p {
+  color: var(--text-muted);
+  font-size: 0.98rem;
+  line-height: 1.5;
+}
+
+
+/* 
+===========================================================
+Professional Page / Forge (Cartridges)
+===========================================================
+*/
+.cartridges-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 30px;
+}
+
+/* Design Card to resemble a floppy disk or game cartridge */
+.cartridge {
+  height: 380px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 12px;
+  border-top: 15px solid var(--neon-purple); /* Cartridge cap color */
+  background: linear-gradient(180deg, rgba(23, 23, 37, 0.8) 0%, rgba(13, 13, 23, 0.9) 100%);
+}
+
+.cartridge-label {
+  background: #f5f5fa;
+  color: #111;
+  padding: 12px;
+  border-radius: 6px;
+  font-family: 'JetBrains Mono', monospace;
+  margin-bottom: 16px;
+  border-left: 5px solid var(--neon-purple);
+  box-shadow: inset 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.cartridge-title {
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: 4px;
+}
+
+.cartridge-tech {
+  font-size: 0.72rem;
+  color: var(--neon-pink);
+  text-transform: uppercase;
+}
+
+.cartridge-summary {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  line-height: 1.5;
+  flex-grow: 1;
+  margin-bottom: 15px;
+}
+
+.cartridge-thumb-container {
+  height: 110px;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 6px;
+  background: #000;
+  border: 1px solid rgba(255,255,255,0.05);
+  position: relative;
+}
+
+.cartridge-thumb-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.65;
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.cartridge:hover .cartridge-thumb-container img {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+.cartridge-link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+  color: var(--neon-blue);
+  text-decoration: none;
+  margin-top: 10px;
+  align-self: flex-start;
+  transition: color 0.2s;
+}
+
+.cartridge-link-btn:hover {
+  color: var(--neon-pink);
+}
+
+
+/* 
+===========================================================
+Research Page / Laboratory
+===========================================================
+*/
+.research-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.paper-card {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 30px;
+}
+
+.paper-icon-side {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  height: 100%;
+  min-height: 160px;
+  position: relative;
+}
+
+.beaker-icon {
+  font-size: 3rem;
+  filter: drop-shadow(0 0 10px var(--neon-blue));
+}
+
+.badge-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.badge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  font-family: 'JetBrains Mono', monospace;
+  padding: 4px 10px;
+  border-radius: 12px;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.badge--icml {
+  background: linear-gradient(135deg, #ff416c, #ff4b2b);
+  box-shadow: 0 0 10px rgba(255, 75, 43, 0.3);
+}
+
+.badge--neurips {
+  background: linear-gradient(135deg, #8a2387, #e94057);
+  box-shadow: 0 0 10px rgba(233, 64, 87, 0.3);
+}
+
+.paper-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 8px;
+  color: var(--text-white);
+}
+
+.paper-authors {
+  font-size: 0.88rem;
+  color: var(--neon-blue);
+  margin-bottom: 12px;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.paper-abstract {
+  color: var(--text-muted);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.paper-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--neon-pink);
+  text-decoration: none;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.9rem;
+}
+
+.paper-link:hover {
+  text-decoration: underline;
+}
+
+
+/* 
+===========================================================
+Personal Page / Chronicles
+===========================================================
+*/
+.sabbatical-layout {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.map-container-outer {
+  height: 580px;
+  padding: 10px;
+  background: rgba(13, 13, 23, 0.6);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+#travel_map {
+  flex-grow: 1;
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+}
+
+.chronicles-side {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.personal-story-card p {
+  margin-bottom: 15px;
+  color: var(--text-muted);
+  font-size: 1.05rem;
+}
+
+.personal-story-card em {
+  color: var(--neon-pink);
+  font-style: normal;
+  font-weight: 600;
+}
+
+/* Polaroid physical toy card styling */
+.polaroid-toy {
+  background: #f5f5fa !important;
+  color: #111 !important;
+  padding: 12px 12px 20px 12px !important;
+  border-radius: 6px !important;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4) !important;
+  border: 1px solid rgba(0,0,0,0.15) !important;
+  transform-origin: center center;
+  transition: transform 0.1s;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow: hidden;
+  cursor: grab;
+}
+
+.polaroid-image-container {
+  width: 100%;
+  height: 190px;
+  overflow: hidden;
+  background: #222;
+  border: 1px solid rgba(0,0,0,0.1);
+}
+
+.polaroid-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.polaroid-caption {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-align: center;
+  color: #333;
+}
+
+
+/* 
+===========================================================
+Contact Page / Comms (Retro Terminal)
+===========================================================
+*/
+.comms-container {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 40px;
+}
+
+.social-bubbles {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.social-bubble-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  text-decoration: none;
+  color: var(--text-white);
+}
+
+.bubble-icon {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--card-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+}
+
+.bubble-icon svg {
+  width: 24px;
+  height: 24px;
+  fill: var(--text-muted);
+  transition: fill 0.3s;
+}
+
+.social-bubble-card:hover .bubble-icon {
+  background: rgba(0, 240, 255, 0.1);
+  border-color: var(--neon-blue);
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.3);
+  transform: scale(1.08);
+}
+
+.social-bubble-card:hover .bubble-icon svg {
+  fill: var(--neon-blue);
+}
+
+.bubble-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 500;
+  font-size: 1.05rem;
+}
+
+/* Retro-future Command Terminal */
+.terminal-card {
+  background: #06060c;
+  border: 1px solid rgba(0, 240, 255, 0.15);
+  box-shadow: 0 10px 40px rgba(0, 240, 255, 0.05);
+  font-family: 'JetBrains Mono', monospace;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  height: 450px;
+}
+
+.terminal-header {
+  background: #0d0d18;
+  padding: 10px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.terminal-dots {
+  display: flex;
+  gap: 6px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+.dot-red { background: #ff5f56; }
+.dot-yellow { background: #ffbd2e; }
+.dot-green { background: #27c93f; }
+
+.terminal-title {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.terminal-body {
+  padding: 24px;
+  flex-grow: 1;
+  overflow-y: auto;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: var(--neon-green);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.terminal-welcome {
+  color: var(--text-muted);
+}
+
+.terminal-prompt {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.prompt-symbol {
+  color: var(--neon-pink);
+}
+
+.terminal-input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--neon-green);
+  font-family: inherit;
+  font-size: inherit;
+  flex-grow: 1;
+  caret-color: var(--neon-green);
+}
+
+
+/* 
+===========================================================
+Antigravity Panel UI Styles
+===========================================================
+*/
+.physics-floating-toggle {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
+  background: var(--space-black);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 30px;
+  padding: 12px 24px;
+  color: #fff;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.toggle-glow {
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(90deg, var(--neon-blue), var(--neon-pink), var(--neon-blue));
+  background-size: 200% auto;
+  border-radius: 32px;
+  z-index: -1;
+  opacity: 0.3;
+  filter: blur(4px);
+  animation: bg-slide 3s linear infinite;
+}
+
+@keyframes bg-slide {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.physics-floating-toggle:hover {
+  border-color: var(--neon-blue);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 240, 255, 0.2);
+}
+
+.physics-floating-toggle:hover .toggle-glow {
+  opacity: 0.8;
+  filter: blur(8px);
+}
+
+.physics-floating-toggle:active {
+  transform: translateY(1px);
+}
+
+/* Warnings */
+.physics-warning-banner {
+  position: fixed;
+  top: var(--nav-height);
+  left: 0;
+  width: 100%;
+  height: 25px;
+  background: #ffe033;
+  color: #111;
+  z-index: 9500;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  transform: translateY(-100%);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+  overflow: hidden;
+  user-select: none;
+}
+
+.physics-warning-banner.open {
+  transform: translateY(0);
+}
+
+.banner-stripes {
+  width: 60px;
+  height: 100%;
+  background: repeating-linear-gradient(
+    -45deg,
+    #111,
+    #111 6px,
+    #ffe033 6px,
+    #ffe033 12px
+  );
+}
+
+/* Side Dashboard HUD */
+.physics-control-panel {
+  position: fixed;
+  left: 24px;
+  bottom: 24px;
+  width: 320px;
+  background: rgba(10, 10, 18, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+  z-index: 9999;
+  transform: translateX(-350px);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  font-family: 'JetBrains Mono', monospace;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.physics-control-panel.open {
+  transform: translateX(0);
+}
+
+.panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 10px;
+}
+
+.panel-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-white);
+  flex-grow: 1;
+  margin-left: 8px;
+}
+
+.mute-toggle {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: 1.1rem;
+}
+.mute-toggle.active {
+  color: var(--neon-blue);
+  text-shadow: 0 0 5px var(--neon-blue);
+}
+
+.panel-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.panel-group label {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.gravity-selector {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+}
+
+.grav-btn {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+  padding: 6px;
+  color: var(--text-muted);
+  font-family: inherit;
+  font-size: 0.68rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.grav-btn:hover {
+  border-color: rgba(0, 240, 255, 0.2);
+  color: var(--text-white);
+}
+
+.grav-btn.active {
+  background: rgba(0, 240, 255, 0.1);
+  border-color: var(--neon-blue);
+  color: var(--neon-blue);
+  font-weight: 700;
+}
+
+.slider-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.72rem;
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background: rgba(255,255,255,0.1);
+  outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--neon-blue);
+  cursor: pointer;
+  box-shadow: 0 0 5px var(--neon-blue);
+}
+
+.panel-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 12px;
+}
+
+.action-btn {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+  padding: 8px;
+  color: var(--text-white);
+  font-family: inherit;
+  font-size: 0.7rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.action-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--text-white);
+}
+
+.reset-layout-btn {
+  grid-column: span 2;
+  background: rgba(255, 94, 188, 0.15) !important;
+  border-color: var(--neon-pink) !important;
+  color: var(--neon-pink) !important;
+  font-weight: 700;
+}
+
+.reset-layout-btn:hover {
+  background: rgba(255, 94, 188, 0.25) !important;
+  box-shadow: 0 0 8px rgba(255, 94, 188, 0.2);
+}
+
+/* Bouncy Toys */
+.physical-toy {
+  user-select: none;
+  pointer-events: auto;
+  cursor: grab;
+  will-change: transform;
+}
+.physical-toy:active {
+  cursor: grabbing;
+}
+
+.dino-toy svg {
+  filter: drop-shadow(0 0 5px rgba(32, 199, 183, 0.4));
+}
+
+.meteor-toy svg {
+  animation: spin 8s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Shake viewport animation on meteor landing */
+.shake-anim {
+  animation: shake 0.3s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+@keyframes shake {
+  10%, 90% { transform: translate3d(-2px, 0, 0); }
+  20%, 80% { transform: translate3d(3px, 0, 0); }
+  30%, 50%, 70% { transform: translate3d(-5px, 0, 0); }
+  40%, 60% { transform: translate3d(5px, 0, 0); }
+}
+
+
+/* 
+===========================================================
+Footer
+===========================================================
+*/
+.footer-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background: rgba(5, 5, 8, 0.7);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 8500;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+
+/* 
+===========================================================
+Version Switcher Dropdown Styling overrides
+===========================================================
+*/
+.version-switcher {
+  margin-left: auto;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+}
+
+.version-btn {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  color: var(--text-white) !important;
+  border-radius: 6px !important;
+  padding: 6px 12px !important;
+  font-size: 0.82rem !important;
+}
+
+.version-btn:hover {
+  border-color: var(--neon-blue) !important;
+  color: var(--neon-blue) !important;
+}
+
+.version-dropdown {
+  background: rgba(10, 10, 18, 0.95) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  border-radius: 8px !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  box-shadow: 0 10px 45px rgba(0,0,0,0.5) !important;
+}
+
+.version-dropdown .vd-info {
+  color: var(--text-muted) !important;
+  border-bottom: 1px solid rgba(255,255,255,0.08) !important;
+}
+
+.version-dropdown a {
+  color: var(--text-muted) !important;
+}
+
+.version-dropdown a:hover {
+  background: rgba(0, 240, 255, 0.08) !important;
+  color: var(--neon-blue) !important;
+}
+
+.version-dropdown a.active {
+  color: var(--neon-blue) !important;
+}
+
+.version-dropdown a.favorite-version {
+  border: 1px solid rgba(255, 94, 188, 0.3) !important;
+  background: rgba(255, 94, 188, 0.05) !important;
+  color: var(--neon-pink) !important;
+}
+.version-dropdown a.favorite-version:hover {
+  background: rgba(255, 94, 188, 0.15) !important;
+  color: var(--neon-pink) !important;
+  border-color: var(--neon-pink) !important;
+}
+
+
+/* 
+===========================================================
+Responsive Tweaks
+===========================================================
+*/
+@media (max-width: 900px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    text-align: center;
+  }
+  .headshot {
+    order: -1;
+  }
+  .sabbatical-layout {
+    grid-template-columns: 1fr;
+  }
+  .comms-container {
+    grid-template-columns: 1fr;
+  }
+  .topbar {
+    padding: 0 15px;
+  }
+  .navpointer {
+    padding: 6px 10px;
+    font-size: 0.85rem;
+  }
+  .title {
+    margin-right: 15px;
+    font-size: 1.1rem;
+  }
+}

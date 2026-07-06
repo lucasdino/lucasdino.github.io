@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucas Dionisopoulos — Personal</title>
+    <link rel="icon" href="/assets/dino/DinoIcon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..700,0..100,0..1;1,9..144,300..700,0..100,0..1&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&family=Kode+Mono:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./stylesheet.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "a31ef88eb6a94f49b864a41163ab806c"}'></script>
+    <script src="/shared_js/version-switcher.js"></script>
+</head>
+<body>
+    <nav class="topbar">
+        <a class="title" href="./index.html">Lucas Dionisopoulos<span class="dot">.</span></a>
+        <div class="nav-links">
+            <a class="navpointer" href="./index.html">About</a>
+            <a class="navpointer" href="./professional.html">Professional</a>
+            <a class="navpointer" href="./research.html">Research</a>
+            <a class="navpointer active" href="./personal.html">Personal</a>
+            <a class="navpointer" href="./contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <main class="meat container">
+        <header class="page-header">
+            <span class="mono-tag">Travels & Detours</span>
+            <h1>Sabbatical Map & Hobbies</h1>
+            <p>During my gap year, I pet sat and lived in long-term Airbnbs across three continents to study machine learning while keeping costs low.</p>
+        </header>
+
+        <!-- Sabbatical Map Dashboard -->
+        <section class="map-dashboard-section">
+            <div class="travel-dashboard">
+                <div class="travel-dashboard-header">
+                    <div class="dashboard-title">
+                        <div class="dashboard-indicator"></div>
+                        <span>SABBATICAL_GEOLOCATION_LOG</span>
+                    </div>
+                    <span class="mono-tag" style="font-size: 0.72rem; color: var(--color-text-muted);">Click markers to expand logs</span>
+                </div>
+                
+                <div class="dashboard-grid">
+                    <div class="dashboard-sidebar">
+                        <div>
+                            <h3>Study & Sabbatical</h3>
+                            <p>
+                                When I finished investment banking, I wanted to lock in and study ML to see if this was what I really wanted to pursue.
+                            </p>
+                            <p>
+                                I considered my options: study at home in Wisconsin <em>or</em> study abroad in long-term Airbnbs and pet sits (<i>with a bit of leisure ofc</i>).
+                            </p>
+                            <p>
+                                <em>One of these paths seemed more fun…</em>
+                            </p>
+                        </div>
+                        
+                        <div class="dashboard-legend">
+                            <div class="dashboard-legend-item">
+                                <div class="legend-color-dot parent"></div>
+                                <span>Hub Stops (Major Stays)</span>
+                            </div>
+                            <div class="dashboard-legend-item">
+                                <div class="legend-color-dot sub"></div>
+                                <span>Detours & Day Stops</span>
+                            </div>
+                            <p style="margin-top: 10px; font-size: 0.75rem; line-height: 1.4; color: var(--color-text-muted);">
+                                Note: I also did a lot of <a href="https://www.notion.so/lucasdino/What-I-Studied-on-my-Year-Off-271c748e5e4a80c6bc90d2b6e1edf9d6" target="_blank" style="text-decoration: underline; color: var(--color-forest);">work</a>.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-map-container">
+                        <div id="travel_map"></div>
+                        <!-- Sabbatical map loader script (points to our sandbox folder) -->
+                        <script type="module" src="./js/sabbaticalmap.js"></script>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Other Cool Hobbies Section -->
+        <section class="hobbies-section">
+            <h2 class="shelf-title">Other Hobbies &amp; Projects</h2>
+            <div class="cool-stuff-grid">
+                <!-- Hobby 1: JMT -->
+                <article class="cool-stuff-card">
+                    <div class="cool-stuff-img">
+                        <img src="/assets/thumbnails/jmt_2025.jpg" alt="Beautiful mountains and high Sierra pass on John Muir Trail">
+                    </div>
+                    <h3>John Muir Trail (2025)</h3>
+                    <p>Some neat pictures from a thwarted JMT attempt. Wildfires cut the trail short, but the Sierra scenery was still incredible. Read the blog entry <a href="https://leelounsbury.com/john-muir-trail-2025-09/" target="_blank" style="text-decoration: underline;">here</a>.</p>
+                </article>
+
+                <!-- Hobby 2: Clean Our Green -->
+                <article class="cool-stuff-card">
+                    <div class="cool-stuff-img">
+                        <img src="/assets/thumbnails/clean_our_green.jpg" alt="Volunteers in green shirts cleaning up a St Louis city park">
+                    </div>
+                    <h3>Clean Our Green</h3>
+                    <p>Started a student-run project in college to clean up and restore St. Louis city parks. Organized local volunteer cleanups and trash sweeps. Read more on Notion <a href="https://www.notion.so/lucasdino/Clean-Our-Green-271c748e500d8b54de1c0886d2b5" target="_blank" style="text-decoration: underline;">here</a>.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Playable Dino Arcade Game console -->
+        <section class="dino-arcade-section">
+            <div class="dino-game-wrapper">
+                <h3>🦖 Dino Arcade // Press Space or Tap Jump</h3>
+                <div class="dino-game-container">
+                    <div class="dino-game-canvas" id="dino-canvas">
+                        <div class="dino-player" id="dino-player"></div>
+                        <div class="dino-obstacle" id="dino-obstacle"></div>
+                        <div class="dino-ground-line"></div>
+                        <div class="game-over-overlay" id="game-over-screen">
+                            <h3>GAME OVER</h3>
+                            <p>Press Space or Click to Restart</p>
+                        </div>
+                    </div>
+                    <div class="dino-game-controls">
+                        <span class="score-board">SCORE: <span id="game-score">0000</span></span>
+                        <button id="jump-btn" class="jump-btn">JUMP (Space)</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Playable Dino JS Script -->
+            <script type="module" src="./js/dinorun.js"></script>
+        </section>
+    </main>
+
+    <footer class="footer-container">
+        <div class="container footer-elements">
+            <div class="footer-byline">
+                <span class="accent">§</span> &nbsp;Set in Fraunces &amp; Plus Jakarta Sans &nbsp;·&nbsp; Collaboration with Gemini 3.5 Flash
+            </div>
+            <div class="social-icons">
+                <div data-attribute="linkedin">
+                    <a href="https://www.linkedin.com/in/lucasdionisopoulos/" aria-label="LinkedIn">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/>
+                        </svg>
+                    </a>
+                </div>
+                <div data-attribute="x-twitter">
+                    <a href="https://x.com/dinoacropolis" aria-label="X (Twitter)">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                        </svg>                
+                    </a>
+                </div> 
+                <div data-attribute="github">
+                    <a href="https://github.com/lucasdino" aria-label="GitHub">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 17">
+                            <path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"/>
+                        </svg>                
+                    </a>
+                </div> 
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
