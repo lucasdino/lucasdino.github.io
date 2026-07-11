@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Lucas Dionisopoulos builds technical systems, studies how language models reason, and works on special projects at Hadrian.">
+  <title>Lucas Dionisopoulos — Builder & Researcher</title>
+  <link rel="icon" href="/assets/dino/DinoIcon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/ai_designed/gpt_56_sol/stylesheet.css">
+  <script src="/shared_js/version-switcher.js"></script>
+  <script defer src="/ai_designed/gpt_56_sol/js/site.js"></script>
+</head>
+<body data-page="home">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="topbar">
+    <a class="brand" href="/ai_designed/gpt_56_sol/index.html" aria-label="Lucas Dionisopoulos, home">
+      <span class="brand-mark" aria-hidden="true">LD</span>
+      <span class="brand-copy"><span class="title">Lucas Dionisopoulos</span><span class="brand-sub">Builder · researcher · person</span></span>
+    </a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav class="site-nav" id="site-nav" aria-label="Primary navigation">
+      <a class="navpointer" aria-current="page" href="/ai_designed/gpt_56_sol/index.html">Home</a>
+      <a class="navpointer" href="/ai_designed/gpt_56_sol/professional.html">Builds</a>
+      <a class="navpointer" href="/ai_designed/gpt_56_sol/research.html">Research</a>
+      <a class="navpointer" href="/ai_designed/gpt_56_sol/personal.html">Field notes</a>
+      <a class="navpointer" href="/ai_designed/gpt_56_sol/contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="page-shell home-hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Hello from Los Angeles</p>
+        <h1 class="display">I build things, study how models <em>reason,</em> and take the long way home.</h1>
+        <p class="lede">I’m Lucas. My path has run from finance to machine learning research to Special Projects at <a class="text-link" href="https://www.hadrian.co/">Hadrian</a>.</p>
+        <div class="hero-actions">
+          <a class="button-link" href="/ai_designed/gpt_56_sol/professional.html">See what I’ve built</a>
+          <a class="plain-link" href="/ai_designed/gpt_56_sol/personal.html">Or see where I wandered →</a>
+        </div>
+      </div>
+      <div class="portrait-wrap" aria-label="Portrait of Lucas">
+        <div class="portrait-frame"><img src="/assets/pics/lucasducas.png" alt="Lucas Dionisopoulos smiling"></div>
+        <div class="portrait-note">Current mode:<br>jack of all trades,<br>still taking notes.</div>
+      </div>
+    </section>
+
+    <div class="status-strip" aria-label="Current status">
+      <div class="status-inner">
+        <div class="status-item"><span class="status-label">Now</span><span class="status-value">Special Projects @ Hadrian</span></div>
+        <div class="status-item"><span class="status-label">Previously</span><span class="status-value">UCSD · PEARLS Lab · Investment banking</span></div>
+        <div class="status-item"><span class="status-label">Current coordinates</span><span class="status-value">Los Angeles, California</span></div>
+      </div>
+    </div>
+
+    <section class="section page-shell" aria-labelledby="selected-work">
+      <div class="section-head reveal">
+        <span class="section-index">01 / Selected</span>
+        <h2 class="section-title" id="selected-work">Work with receipts</h2>
+        <p class="section-kicker">A paper, a game engine, and a rover. The through-line is getting curious enough to build the machinery myself.</p>
+      </div>
+
+      <a class="feature-work reveal" href="https://arxiv.org/abs/2604.05134">
+        <div class="feature-visual"><img src="/assets/thumbnails/llmchess_takeaway.jpg" alt="Diagram summarizing experiments on language-model chess reasoning"></div>
+        <div class="feature-copy">
+          <span class="feature-number">FEATURE / 001</span>
+          <div>
+            <p class="eyebrow">Lead-author research</p>
+            <h3>How reasoning evolves from post-training data</h3>
+            <p>We used chess as a controlled setting to examine what changes between supervised fine-tuning and reinforcement learning—and found a real tradeoff between performance, stability, and faithful reasoning.</p>
+            <div class="venue-row"><span class="venue venue--red">ICML 2026</span><span class="venue">NeurIPS FoRLM · Oral</span></div>
+          </div>
+          <span class="plain-link">Read the paper ↗</span>
+        </div>
+      </a>
+
+      <div class="work-grid">
+        <a class="work-card reveal" href="https://lucasdino.notion.site/Dungeon-Coder-20dc748e5e4a802cb281ce01fe6272b7?source=copy_link">
+          <div class="work-image"><img src="/assets/thumbnails/dungeoncoder_overview.gif" alt="Dungeon Coder interface showing a generated dungeon"></div>
+          <div class="work-card-body">
+            <div class="work-meta"><span>Build / 3D + generative AI</span><span>↗</span></div>
+            <h3>Dungeon Coder</h3>
+            <p>A full-stack workshop for generating custom 3D assets and entire explorable dungeons. Classical generation algorithms meet LLM agents and self-hosted computer-vision models.</p>
+            <div class="tag-row"><span class="tag">React</span><span class="tag">Three.js</span><span class="tag">CV models</span></div>
+          </div>
+        </a>
+        <a class="work-card reveal" href="https://lucasdino.notion.site/4-Wheel-Rover-Autonomous-Control-31ec748e5e4a8081a7c7ec3951d27317?source=copy_link">
+          <div class="work-image"><img src="/assets/thumbnails/ekfslam_webster.gif" alt="Visualization of rover localization and mapping"></div>
+          <div class="work-card-body">
+            <div class="work-meta"><span>Build / Robotics</span><span>↗</span></div>
+            <h3>Rover autonomy stack</h3>
+            <p>Vision, EKF-SLAM, and path planning for an uncalibrated differential-drive rover. The localization system was implemented from scratch because that was the interesting part.</p>
+            <div class="tag-row"><span class="tag">ROS2</span><span class="tag">OpenCV</span><span class="tag">Python</span></div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <section class="section page-shell" aria-labelledby="notes-title">
+      <div class="section-head reveal">
+        <span class="section-index">02 / Notes</span>
+        <h2 class="section-title" id="notes-title">Writing in the margins</h2>
+        <p class="section-kicker">Explanations, decisions, and one unusually complete record of investment-banking hours.</p>
+      </div>
+      <div class="notes-grid">
+        <p class="notes-intro reveal">Writing is how I check whether I actually understand something.</p>
+        <div class="note-list reveal">
+          <a class="note-link" href="https://lucasdino.notion.site/Why-Pivot-7736665e93394c3886f78950ca66f7d2?pvs=4"><span class="note-no">01</span><span><span class="note-title">Why pivot?</span><span class="note-desc">Leaving finance, taking a year to study ML, and choosing grad school.</span></span><span class="note-arrow">↗</span></a>
+          <a class="note-link" href="https://lucasdino.notion.site/My-Honest-Working-Hours-as-an-Investment-Banking-Analyst-03845324522a4b7785f6b752cf8b0da2?pvs=4"><span class="note-no">02</span><span><span class="note-title">My honest working hours as an analyst</span><span class="note-desc">Two years of tracked hours, made legible with charts.</span></span><span class="note-arrow">↗</span></a>
+          <a class="note-link" href="https://lucasdino.notion.site/What-is-a-SoTA-Transformer-Model-90d21f0a142349629a416ecce45cd671?pvs=4"><span class="note-no">03</span><span><span class="note-title">From Attention Is All You Need to Llama 3</span><span class="note-desc">A technical tour of the modern decoder-only transformer.</span></span><span class="note-arrow">↗</span></a>
+          <a class="note-link" href="https://lucasdino.notion.site/Nvidia-s-Multi-Trillion-Dollar-Moat-Explained-187c748e5e4a803dbd35dfeea250913a?pvs=4"><span class="note-no">04</span><span><span class="note-title">Nvidia’s multi-trillion-dollar moat</span><span class="note-desc">A technically approachable explanation of the stack.</span></span><span class="note-arrow">↗</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-band" aria-labelledby="about-title">
+      <div class="about-grid">
+        <div class="about-stamp reveal"><p id="about-title">From Nebraska. Studied finance. Worked in banking. Changed my mind. Went deep on ML. Still likes a hard left turn.</p></div>
+        <div class="timeline reveal">
+          <div class="timeline-row"><span class="timeline-when">Chapter 01</span><span class="timeline-what"><strong>Finance → banking</strong><br>Two years learning to move quickly, communicate clearly, and live with a truly unreasonable calendar.</span></div>
+          <div class="timeline-row"><span class="timeline-when">Chapter 02</span><span class="timeline-what"><strong>The long detour</strong><br>A year of self-study, long-term Airbnbs, pet sits, and enough travel to require an interactive map.</span></div>
+          <div class="timeline-row"><span class="timeline-when">Chapter 03</span><span class="timeline-what"><strong>UCSD + research</strong><br>Graduate work on RL for language models with PEARLS Lab, plus time with UCSD ProgSys.</span></div>
+          <div class="timeline-row"><span class="timeline-when">Now</span><span class="timeline-what"><strong>Special Projects @ Hadrian</strong><br>Jack-of-all-trades work at the edge of software, operations, and manufacturing.</span></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-note"><strong>Lucas × machine, iteration one.</strong> Lucas supplied the life; the AI supplied an unreasonable commitment to serif type and red ink.<span class="dino-signoff"><span class="dino-sprite" aria-hidden="true"></span><span>Still a personal website.</span></span></div>
+      <div class="footer-links"><a href="https://www.linkedin.com/in/lucasdionisopoulos/">LinkedIn</a><a href="https://github.com/lucasdino">GitHub</a><a href="https://x.com/dinoacropolis">X / Twitter</a><a href="/ai_designed/gpt_56_sol/contact.html">Email</a></div>
+    </div>
+  </footer>
+</body>
+</html>

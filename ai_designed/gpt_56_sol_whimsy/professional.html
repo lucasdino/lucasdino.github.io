@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Things Lucas Dionisopoulos has built, from reinforcement learning engines to autonomous rovers.">
+  <title>The Freight Yard — Lucas Dionisopoulos</title>
+  <link rel="icon" href="/assets/dino/DinoIcon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/ai_designed/gpt_56_sol_whimsy/stylesheet.css">
+  <script defer src="/ai_designed/gpt_56_sol_whimsy/js/site.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip the transit system</a>
+  <header class="topbar">
+    <a class="brand" href="/ai_designed/gpt_56_sol_whimsy/index.html"><span class="brand-dino" aria-hidden="true"></span><span class="brand-copy"><strong>LUCAS D.</strong><small>Nonlinear Transit Authority</small></span></a>
+    <nav class="route-nav" aria-label="Main line">
+      <a class="navpointer" href="index.html"><span>00 Lobby</span></a><a class="navpointer" aria-current="page" href="professional.html"><span>01 Work</span></a><a class="navpointer" href="research.html"><span>02 Research</span></a><a class="navpointer" href="personal.html"><span>03 Outside</span></a><a class="navpointer" href="contact.html"><span>04 Signal</span></a>
+    </nav>
+    <div class="version-wrap"><label class="version-label" for="version-select"><span class="mono">Reality selector</span><select id="version-select" aria-label="Choose website version"><option value="gpt_56_sol_whimsy" selected>Sol 5.6 · Whimsy</option><option value="pages">Current Site</option><option value="opus_47_cli_whimsy">Opus 4.7 · Whimsy</option><option value="gpt_55_cli_whimsy">GPT 5.5 · Whimsy</option><option value="gemini_35_flash_whimsy">Gemini 3.5 · Whimsy</option><option value="gpt_56_sol">Sol 5.6 · Professional</option><option value="opus_47_cli">Opus 4.7 · Professional</option><option value="gpt_55_cli">GPT 5.5 · Professional</option><option value="old_design">Reference Version</option></select></label></div>
+  </header>
+  <div class="scroll-rail" aria-hidden="true"><span class="scroll-train"></span></div>
+
+  <main id="main">
+    <div class="system-strip" aria-hidden="true"><div class="system-strip-track">HEAVY IDEAS IN MOTION&nbsp;&nbsp;✦&nbsp;&nbsp; DO NOT LEAN ON THE ALGORITHMS&nbsp;&nbsp;✦&nbsp;&nbsp; ALL PROJECTS MAY CONTAIN UNREASONABLE AMOUNTS OF CURIOSITY&nbsp;&nbsp;✦&nbsp;&nbsp; HEAVY IDEAS IN MOTION&nbsp;&nbsp;✦&nbsp;&nbsp; DO NOT LEAN ON THE ALGORITHMS&nbsp;&nbsp;✦&nbsp;&nbsp; ALL PROJECTS MAY CONTAIN UNREASONABLE AMOUNTS OF CURIOSITY&nbsp;&nbsp;✦&nbsp;&nbsp;</div></div>
+    <div class="page-shell">
+      <section class="page-hero">
+        <div><p class="section-kicker">Line 01 · The work line</p><h1 class="page-title">The <em>Freight</em> Yard.</h1></div>
+        <p class="page-intro">Things I built because the quickest way to understand a system is to rebuild it, break it, and teach an agent to drive through the wreckage.</p>
+        <span class="page-code" aria-hidden="true">01</span>
+      </section>
+    </div>
+
+    <section class="freight-section" aria-labelledby="cargo-title">
+      <div class="page-shell freight-controls">
+        <div><p class="section-kicker" id="cargo-title">Active cargo · drag or use controls</p><span class="freight-counter">01 / 06</span></div>
+        <div class="control-group"><button class="rail-button" type="button" data-rail-direction="-1" aria-label="Previous project">←</button><button class="rail-button" type="button" data-rail-direction="1" aria-label="Next project">→</button></div>
+      </div>
+
+      <div class="freight-track" tabindex="0" aria-label="Project freight cars">
+        <a class="project-wagon" href="https://lucasdino.notion.site/RL-Benchmarking-300c748e5e4a80cb9a42e3d8be2f7c58?source=copy_link">
+          <div class="wagon-image"><img src="/assets/thumbnails/breakout_rainbow.gif" alt="Rainbow Breakout game used in the RL benchmarking gym"></div>
+          <div class="wagon-copy"><span class="wagon-index">CARGO 01 · ENGINE</span><h2>RL Benchmarking Gym</h2><p>A clean, hackable reinforcement-learning engine built from scratch to implement and ablate algorithms from baseline to state of the art.</p><span class="wagon-tech">RL · ENVIRONMENTS · ABLATIONS →</span></div>
+        </a>
+        <a class="project-wagon" href="https://lucasdino.notion.site/Dungeon-Coder-20dc748e5e4a802cb281ce01fe6272b7?source=copy_link">
+          <div class="wagon-image"><img src="/assets/thumbnails/dungeoncoder_overview.gif" alt="A generated 3D dungeon from Dungeon Coder"></div>
+          <div class="wagon-copy"><span class="wagon-index">CARGO 02 · DUNGEON</span><h2>Dungeon Coder</h2><p>A full-stack playground combining image generation, image-to-3D models, classical dungeon algorithms, and LLM agents. Make an asset, drop it in a dungeon, or 3D print it.</p><span class="wagon-tech">REACT · THREE.JS · SELF-HOSTED CV →</span></div>
+        </a>
+        <a class="project-wagon" href="https://lucasdino.notion.site/4-Wheel-Rover-Autonomous-Control-31ec748e5e4a8081a7c7ec3951d27317?source=copy_link">
+          <div class="wagon-image"><img src="/assets/thumbnails/ekfslam_webster.gif" alt="Autonomous rover mapping a room"></div>
+          <div class="wagon-copy"><span class="wagon-index">CARGO 03 · ROVER</span><h2>SLAM-Based Autonomy</h2><p>An autonomy stack for an uncalibrated four-wheel rover: vision, EKF-SLAM from scratch, localization, and path planning.</p><span class="wagon-tech">ROS2 · OPENCV · PYTHON →</span></div>
+        </a>
+        <a class="project-wagon" href="https://lucasdino.notion.site/Teaching-AI-to-Drive-my-Custom-Racing-Game-214e45ce19704294bd365308a77c68b4?pvs=4">
+          <div class="wagon-image"><img src="/assets/thumbnails/rldriver_originaltrack.gif" alt="A reinforcement-learning race car driving around a custom track"></div>
+          <div class="wagon-copy"><span class="wagon-index">CARGO 04 · RACE CAR</span><h2>RL Driver</h2><p>A custom racing game in Pygame, optimized until it ran fast enough to teach a Double Q-learning agent how to drive it.</p><span class="wagon-tech">PYGAME · DOUBLE Q-LEARNING →</span></div>
+        </a>
+        <a class="project-wagon" href="https://lucasdino.notion.site/Anomaly-Detection-12bc748e5e4a807e8c7afff86b16d975?pvs=4">
+          <div class="wagon-image"><img src="/assets/thumbnails/anomalydetection_thumbnail.jpg" alt="Anomaly detection charts"></div>
+          <div class="wagon-copy"><span class="wagon-index">CARGO 05 · SIGNAL</span><h2>Anomaly Detection</h2><p>A real-time, interpretable system for noisy time-series data, using kernel ridge regression for a San Diego health-tech company.</p><span class="wagon-tech">TIME SERIES · KERNEL METHODS →</span></div>
+        </a>
+        <a class="project-wagon" href="https://lucasdino.notion.site/Recreating-Word2Vec-25c1e86e08f14087a49c027a85bd5198">
+          <div class="wagon-image"><img src="/assets/thumbnails/recreating_word2vec.jpg" alt="Word vectors clustered in embedding space"></div>
+          <div class="wagon-copy"><span class="wagon-index">CARGO 06 · WORDS</span><h2>Word2Vec, Rebuilt</h2><p>Vector arithmetic from first principles: build the tokenizer, clean English Wikipedia, train the model, then ask a king to become a queen.</p><span class="wagon-tech">NLP · EMBEDDINGS · FROM SCRATCH →</span></div>
+        </a>
+      </div>
+    </section>
+
+    <section class="page-shell" aria-labelledby="departures-title">
+      <p class="section-kicker">Printed matter</p><h2 class="section-title" id="departures-title">Departures from the notebook.</h2>
+      <div class="departures">
+        <div class="departures-head"><span>Essay / route</span><span>Status</span></div>
+        <a class="departure-link" href="https://lucasdino.notion.site/Why-Pivot-7736665e93394c3886f78950ca66f7d2?pvs=4"><span class="departure-code">WR-01</span><span>Why Pivot? Leaving finance, taking a gap year, and choosing ML.</span><span class="departure-gate">READ →</span></a>
+        <a class="departure-link" href="https://lucasdino.notion.site/My-Honest-Working-Hours-as-an-Investment-Banking-Analyst-03845324522a4b7785f6b752cf8b0da2?pvs=4"><span class="departure-code">WR-02</span><span>My Honest Working Hours as an Investment Banking Analyst.</span><span class="departure-gate">READ →</span></a>
+        <a class="departure-link" href="https://lucasdino.notion.site/What-is-a-SoTA-Transformer-Model-90d21f0a142349629a416ecce45cd671?pvs=4"><span class="departure-code">WR-03</span><span>From Attention Is All You Need to Llama 3.</span><span class="departure-gate">READ →</span></a>
+        <a class="departure-link" href="https://lucasdino.notion.site/Nvidia-s-Multi-Trillion-Dollar-Moat-Explained-187c748e5e4a803dbd35dfeea250913a?pvs=4"><span class="departure-code">WR-04</span><span>Nvidia's Multi-Trillion-Dollar Moat, Explained.</span><span class="departure-gate">READ →</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="footer-grid"><div><div class="mono">Freight keeps moving</div><div class="footer-line">Next stop: the observatory.</div></div><div class="footer-links"><a href="research.html">Research →</a><a href="https://github.com/lucasdino">GitHub</a><a href="contact.html">Contact</a></div></div></footer>
+</body>
+</html>

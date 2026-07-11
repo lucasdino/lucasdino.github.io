@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Travel, hiking, volunteering, and field notes from Lucas Dionisopoulos.">
+  <title>Field Notes — Lucas Dionisopoulos</title>
+  <link rel="icon" href="/assets/dino/DinoIcon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+  <link rel="stylesheet" href="/ai_designed/gpt_56_sol/stylesheet.css">
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="/shared_js/version-switcher.js"></script>
+  <script defer src="/ai_designed/gpt_56_sol/js/site.js"></script>
+</head>
+<body data-page="field-notes">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="topbar">
+    <a class="brand" href="/ai_designed/gpt_56_sol/index.html" aria-label="Lucas Dionisopoulos, home"><span class="brand-mark" aria-hidden="true">LD</span><span class="brand-copy"><span class="title">Lucas Dionisopoulos</span><span class="brand-sub">Builder · researcher · person</span></span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav class="site-nav" id="site-nav" aria-label="Primary navigation">
+      <a class="navpointer" href="/ai_designed/gpt_56_sol/index.html">Home</a><a class="navpointer" href="/ai_designed/gpt_56_sol/professional.html">Builds</a><a class="navpointer" href="/ai_designed/gpt_56_sol/research.html">Research</a><a class="navpointer" aria-current="page" href="/ai_designed/gpt_56_sol/personal.html">Field notes</a><a class="navpointer" href="/ai_designed/gpt_56_sol/contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <header class="page-hero page-shell">
+      <div><p class="eyebrow">A sabbatical, some trails, a few dogs</p><h1 class="display">Field <em>notes.</em></h1></div>
+      <div class="page-hero-aside"><strong>Not everything belongs on a résumé.</strong>This is where the long detour lives: travel between careers, a thwarted trail, park cleanups, and evidence that I occasionally shut the laptop.</div>
+    </header>
+
+    <section class="section page-shell" aria-labelledby="sabbatical-title">
+      <div class="field-intro reveal">
+        <h2 id="sabbatical-title">The year I studied ML from everywhere</h2>
+        <div class="field-copy"><p>When I finished banking, I wanted to lock in and study machine learning long enough to know whether I really wanted to pursue it.</p><p>The practical options were Wisconsin, or a sequence of long-term Airbnbs and pet sits abroad—with a bit of leisure, naturally. One path seemed more fun.</p><p>I did, in fact, do a lot of <a class="text-link" href="https://www.notion.so/lucasdino/What-I-Studied-on-my-Year-Off-271c748e5e4a80c6bc90d2b6e1edf9d6">work</a>. I also collected enough stops and stories to make the map below necessary.</p></div>
+      </div>
+      <div class="map-frame reveal">
+        <div class="map-label">Click a large ring to open a route. Hover or tap the stops.</div>
+        <div id="travel_map" aria-label="Interactive map of Lucas's sabbatical travels"></div>
+      </div>
+      <script type="module" src="/ai_designed/gpt_56_sol/js/sabbaticalmap.js"></script>
+
+      <div class="photo-ribbon reveal" aria-label="Snapshots from the sabbatical">
+        <figure><img src="/assets/pics/sabbatical/meteora.jpg" alt="Meteora landscape in Greece"><figcaption>Meteora / Greece</figcaption></figure>
+        <figure><img src="/assets/pics/sabbatical/dotty.jpg" alt="Dog named Dotty during a pet sit"><figcaption>Dotty / trusted colleague</figcaption></figure>
+        <figure><img src="/assets/pics/sabbatical/byronbaes.jpg" alt="Friends gathered around a home-cooked meal"><figcaption>Byron Bay / rainy-day souvlaki</figcaption></figure>
+        <figure><img src="/assets/pics/sabbatical/touchinggrassmelbourne.jpg" alt="Lucas lying on grass in Melbourne"><figcaption>Melbourne / mandatory grass</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="section page-shell" aria-labelledby="offscreen-title">
+      <div class="section-head reveal"><span class="section-index">02 / Off-screen</span><h2 class="section-title" id="offscreen-title">Other good uses of time</h2><p class="section-kicker">Two projects where the deliverable was not a model checkpoint.</p></div>
+      <div class="personal-cards">
+        <a class="personal-card reveal" href="https://leelounsbury.com/john-muir-trail-2025-09/"><div class="personal-card-image"><img src="/assets/thumbnails/jmt_2025.jpg" alt="Lucas at the John Muir Wilderness sign"></div><div class="personal-card-copy"><span class="index-no">TRAIL / 2025</span><h3>John Muir Trail</h3><p>Photos from a JMT attempt cut short by wildfires. The trail did not care about the itinerary.</p></div></a>
+        <a class="personal-card reveal" href="https://www.notion.so/lucasdino/Clean-Our-Green-271c748e5e4a800d8b54de1c0886d2b5"><div class="personal-card-image"><img src="/assets/thumbnails/clean_our_green.jpg" alt="Volunteers cleaning a park for Clean Our Green"></div><div class="personal-card-copy"><span class="index-no">COMMUNITY / COLLEGE</span><h3>Clean Our Green</h3><p>A college project that brought people together to clean parks around St. Louis. Simple premise, satisfying result.</p></div></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="footer-inner"><div class="footer-note"><strong>Some research requires leaving the desk.</strong><span class="dino-signoff"><span class="dino-sprite" aria-hidden="true"></span><span>Map mileage may vary.</span></span></div><div class="footer-links"><a href="https://www.linkedin.com/in/lucasdionisopoulos/">LinkedIn</a><a href="https://github.com/lucasdino">GitHub</a><a href="https://x.com/dinoacropolis">X / Twitter</a><a href="/ai_designed/gpt_56_sol/contact.html">Email</a></div></div></footer>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Research by Lucas Dionisopoulos on reinforcement learning, language-model reasoning, and neurosymbolic systems.">
+  <title>Research — Lucas Dionisopoulos</title>
+  <link rel="icon" href="/assets/dino/DinoIcon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/ai_designed/gpt_56_sol/stylesheet.css">
+  <script src="/shared_js/version-switcher.js"></script>
+  <script defer src="/ai_designed/gpt_56_sol/js/site.js"></script>
+</head>
+<body data-page="research">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="topbar">
+    <a class="brand" href="/ai_designed/gpt_56_sol/index.html" aria-label="Lucas Dionisopoulos, home"><span class="brand-mark" aria-hidden="true">LD</span><span class="brand-copy"><span class="title">Lucas Dionisopoulos</span><span class="brand-sub">Builder · researcher · person</span></span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav class="site-nav" id="site-nav" aria-label="Primary navigation">
+      <a class="navpointer" href="/ai_designed/gpt_56_sol/index.html">Home</a><a class="navpointer" href="/ai_designed/gpt_56_sol/professional.html">Builds</a><a class="navpointer" aria-current="page" href="/ai_designed/gpt_56_sol/research.html">Research</a><a class="navpointer" href="/ai_designed/gpt_56_sol/personal.html">Field notes</a><a class="navpointer" href="/ai_designed/gpt_56_sol/contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <header class="page-hero page-shell">
+      <div><p class="eyebrow">RL, LLMs, and the machinery between</p><h1 class="display">Research, with <em>questions.</em></h1></div>
+      <div class="page-hero-aside"><strong>Recent focus</strong>How post-training data shapes the behavior—and the stories—of reasoning models. Work completed with <a class="text-link" href="https://pearls-lab.github.io/">PEARLS Lab</a> and, previously, <a class="text-link" href="https://cseweb.ucsd.edu/groups/progsys/">UCSD ProgSys</a>.</div>
+    </header>
+
+    <section class="section page-shell" aria-labelledby="paper-title">
+      <div class="research-feature reveal">
+        <div class="research-figure"><img src="/assets/thumbnails/llmchess_takeaway.jpg" alt="Summary of supervised fine-tuning and reinforcement-learning experiments in chess"></div>
+        <div class="research-body">
+          <div>
+            <p class="eyebrow">Lead author · 2025–2026</p>
+            <h2 id="paper-title">How Reasoning Evolves from Post-Training Data: An Empirical Study Using Chess</h2>
+            <p>We fine-tuned and reinforced a 7B-parameter language model on theoretically motivated chess datasets, then tracked what happened to its performance, hallucinations, stability, and reasoning quality.</p>
+            <div class="finding-box">The strongest policy was not the most faithful reasoner. Multi-move training produced comparable performance with more stable RL and reasoning that better matched the selected move.</div>
+            <p>Our released system surpassed leading open-source reasoning models in chess. The broader aim was not to solve chess, but to use it as a controlled laboratory for post-training.</p>
+          </div>
+          <div><div class="venue-row"><span class="venue venue--red">ICML 2026</span><span class="venue">NeurIPS 2025 FoRLM · Oral</span></div><p><a class="button-link" href="https://arxiv.org/abs/2604.05134">Paper, code & data</a></p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section page-shell" aria-labelledby="explorations-title">
+      <div class="section-head reveal"><span class="section-index">02 / Explorations</span><h2 class="section-title" id="explorations-title">Other rabbit holes</h2><p class="section-kicker">Smaller research projects with large implementation surfaces.</p></div>
+      <div class="research-grid">
+        <a class="research-card reveal" href="https://lucasdino.notion.site/Attempted-Neural-A-Guided-Search-on-ARC-AGI-171c748e5e4a801796f6d7e13f78714c?pvs=4"><div class="research-card-image"><img src="/assets/thumbnails/arcprize_pcfg_thumbnail.jpg" alt="ARC-AGI puzzle examples and search diagram"></div><div class="research-card-copy"><span class="index-no">EXP / 01</span><h3>A* neural-guided search on ARC-AGI</h3><p>A neurosymbolic approach combining a probabilistic context-free grammar with an image embedding model trained from scratch on a synthetic data pipeline.</p><div class="tag-row"><span class="tag">ARC-AGI</span><span class="tag">Modified iBOT</span><span class="tag">PCFG</span></div></div></a>
+        <a class="research-card reveal" href="https://lucasdino.notion.site/Philosophize-That-147c748e5e4a8054b857eee9e47bf62d?pvs=4"><div class="research-card-image"><img src="/assets/thumbnails/philosophize_thumbnail.jpg" alt="Visualization from a philosophical-text classification project"></div><div class="research-card-copy"><span class="index-no">EXP / 02</span><h3>Philosophize That</h3><p>A corpus of philosophical texts, carefully isolated from correlated noise, used to train a document-embedding model that classifies the philosophical basis of journal entries.</p><div class="tag-row"><span class="tag">Embeddings</span><span class="tag">Corpus design</span><span class="tag">Classification</span></div></div></a>
+      </div>
+    </section>
+
+    <section class="question-band">
+      <div class="question-inner reveal"><p class="eyebrow">The recurring question</p><h2>When a model gets the right answer, what exactly did it <em>learn?</em></h2></div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="footer-inner"><div class="footer-note"><strong>Research should survive contact with its own implementation.</strong><span class="dino-signoff"><span class="dino-sprite" aria-hidden="true"></span><span>Methods, then claims.</span></span></div><div class="footer-links"><a href="https://arxiv.org/abs/2604.05134">arXiv</a><a href="https://github.com/lucasdino">GitHub</a><a href="https://www.linkedin.com/in/lucasdionisopoulos/">LinkedIn</a><a href="/ai_designed/gpt_56_sol/contact.html">Email</a></div></div></footer>
+</body>
+</html>
