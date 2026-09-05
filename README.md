@@ -24,7 +24,7 @@ It better not be the generic fallbacks that I see a lot of AI coding pages look 
 
 You should take advantage of tools you have to QA / test your build as well.
 
-Also don't try to be cringe. And remember you should be doing more than just changing a stylesheet -- redo the whole website.
+Also don't be cringe. Do not be cringe, seriously. And remember you should be doing more than just changing a stylesheet -- redo the whole website.
 
 The folder you have access to is:
 
@@ -41,6 +41,8 @@ Redesign everything. Rethink how the website could look, what information you sh
 You may consider making interactable animations or assets. Maybe you do something super funky that requires you to write a bunch of JS to get working. Import whatever you want -- as long as it works within GitHub pages.
 
 Be whimsical and creative -- it should be your sandbox to show off something truly unique. Think about what your own personality is -- it should have your flair. The only requirements are that your code changes only remain in the folder I point you to and you keep the version dropdown in some part of the page.
+
+Also don't be cringe. Do not be cringe.
 
 You should take advantage of tools you have to QA / test your build as well.
 
